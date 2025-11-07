@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Entrenamiento de Inteligencia Artificial — Soluciones Online y Offline para Empresas</title>
+  <meta name="description" content="Entrena y despliega IA a medida para tu empresa: funciona con internet o sin conexión. Soluciones escalables, seguras y optimizadas para ventas, atención y automatización." />
+  <meta name="keywords" content="Inteligencia Artificial, IA entrenada, IA offline, IA empresarial, modelos personalizados, entrenamiento de datos, soluciones AI para empresas" />
+  <link rel="canonical" href="https://tudominio.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Entrenamiento de Inteligencia Artificial — Soluciones Online y Offline para Empresas" />
+  <meta property="og:description" content="Entrena y despliega IA a medida para tu empresa: funciona con internet o sin conexión. Soluciones escalables, seguras y optimizadas para ventas, atención y automatización." />
+  <meta property="og:url" content="https://tudominio.com/" />
+  <meta property="og:image" content="https://tudominio.com/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Entrenamiento de Inteligencia Artificial — Soluciones Online y Offline para Empresas" />
+  <meta name="twitter:description" content="Entrena y despliega IA a medida para tu empresa: funciona con internet o sin conexión." />
+  <meta name="twitter:image" content="https://tudominio.com/og-image.jpg" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Entrenamiento de IA - Tu Empresa",
+    "url": "https://tudominio.com/",
+    "logo": "https://tudominio.com/logo.png",
+    "description": "Servicios de entrenamiento y despliegue de modelos de IA que funcionan con o sin internet. Automación, ventas y atención al cliente para empresas.",
+    "areaServed": "Worldwide",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+57-1-000-0000",
+      "contactType": "customer service",
+      "areaServed": "CO"
+    }]
+  }
+  </script>
+
+  <!-- Fonts + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- AOS (animaciones on-scroll) y simple GSAP para hero -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+    :root{
+      --bg:#081028; --card:#0f1724; --accent:#06b6d4; --muted:#94a3b8; --glass: rgba(255,255,255,0.04);
+      --max-width:1100px; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%; margin:0; background: radial-gradient(1200px 600px at 10% 10%, rgba(13,24,44,0.6), transparent), linear-gradient(180deg,#021025 0%, #04142a 100%); color:#e6eef8}
+    .wrap{max-width:var(--max-width); margin:0 auto; padding:28px}
+
+    /* HEADER */
+    header.main{display:flex; align-items:center; justify-content:space-between; gap:16px}
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:48px}
+    .nav{display:flex; gap:14px; align-items:center}
+    .btn{background:var(--accent); color:#021124; padding:10px 16px; border-radius:10px; font-weight:700; border:none; cursor:pointer; box-shadow:0 6px 18px rgba(6,182,212,0.12)}
+
+    /* HERO */
+    .hero{display:grid; grid-template-columns:1fr 420px; gap:28px; align-items:center; margin-top:36px}
+    .heroCard{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:36px; border-radius:16px; box-shadow: 0 12px 40px rgba(2,8,23,0.6); position:relative; overflow:hidden}
+    .kicker{color:var(--accent); font-weight:700; letter-spacing:0.6px}
+    h1{font-size:clamp(28px,4.8vw,44px); margin:10px 0 8px; line-height:1.02}
+    p.lead{color:var(--muted); margin-bottom:18px}
+    .ctaRow{display:flex; gap:12px; align-items:center}
+
+    /* Right visual */
+    .visual{height:380px; border-radius:12px; background:linear-gradient(135deg,#002a3a, #07365a); display:flex; align-items:center; justify-content:center; position:relative; box-shadow: inset 0 0 120px rgba(6,182,212,0.06)}
+    .device{width:320px; height:220px; border-radius:8px; background:linear-gradient(180deg,#042433,#06384a); box-shadow:0 18px 40px rgba(2,8,23,0.6); transform:translateY(0)}
+
+    /* Benefits grid */
+    .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px}
+    .card{background:var(--card); padding:18px; border-radius:12px; color:#dbeafe}
+    .card h4{margin:0 0 10px}
+
+    /* Examples & features */
+    .section{margin-top:44px}
+    ul.clean{list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    li.item{background:var(--glass); padding:12px; border-radius:10px}
+
+    /* Testimonials */
+    .testimonials{display:flex; gap:12px; margin-top:18px}
+    .test{background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent); padding:12px; border-radius:12px; flex:1}
+
+    /* Footer */
+    footer{margin-top:36px; padding:22px 0; color:var(--muted); text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){ .hero{grid-template-columns:1fr} .grid{grid-template-columns:repeat(2,1fr)} }
+    @media (max-width:560px){ .grid{grid-template-columns:1fr} .nav{display:none} }
+
+    /* Subtle animations */
+    .pulseRing{position:absolute; right:-60px; top:-60px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(6,182,212,0.08), transparent 30%); animation:spin 18s linear infinite}
+    @keyframes spin{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+
+    /* SEO microcopy */
+    .metaBadges{display:flex; gap:8px; margin-top:12px}
+    .badge{background:rgba(255,255,255,0.03); padding:6px 10px; border-radius:999px; color:var(--muted); font-size:13px}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="main">
+      <div class="brand">
+        <img src="/logo.png" alt="Logo empresa IA" />
+        <div>
+          <div style="font-weight:800; font-size:16px">IA Empresarial</div>
+          <div style="font-size:12px; color:var(--muted)">Entrenamiento y despliegue online/offline</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#ejemplos">Ejemplos</a>
+        <a href="#precios">Precios</a>
+        <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Solicitar demo</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="heroCard" data-aos="fade-up">
+        <div class="kicker">IA a medida · Online & Offline</div>
+        <h1>Entrena modelos con tus datos y despliega IA que funcione con o sin internet</h1>
+        <p class="lead">Automatiza ventas, atención al cliente y procesos internos con modelos finamente entrenados en la información real de tu compañía. Seguridad, privacidad y rendimiento empresarial.</p>
+
+        <div class="ctaRow">
+          <button class="btn" onclick="openDemo()">Probar demo</button>
+          <button class="btn" style="background:transparent; color:var(--accent); border:1px solid rgba(6,182,212,0.12)" onclick="openDocs()">Documentación</button>
+        </div>
+
+        <div class="metaBadges">
+          <div class="badge">Despliegue on-premise</div>
+          <div class="badge">Integración API</div>
+          <div class="badge">Cumple ISO/SGSI</div>
+        </div>
+
+        <!-- Benefits grid (7 benefits) -->
+        <div id="beneficios" class="grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="card" data-aos="fade-up"> <h4>1. Respuestas precisas</h4> <p>Modelos entrenados con datos propios reducen errores y respuestas genéricas.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="80"> <h4>2. Privacidad y control</h4> <p>Datos sensibles permanecen on-premise si lo deseas, minimizando fugas.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="160"> <h4>3. Latencia mínima</h4> <p>Despliegue local asegura respuestas rápidas sin dependencia de la red.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="240"> <h4>4. Adaptación sectorial</h4> <p>El modelo entiende jerga y procesos específicos de tu industria.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="320"> <h4>5. Ahorro en costos</h4> <p>Menos llamadas a servicios externos y optimización de recursos a largo plazo.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="400"> <h4>6. Mejora continua</h4> <p>Retrain programado con datos nuevos para mantener el rendimiento.</p></div>
+          <div class="card" data-aos="fade-up" data-aos-delay="480"> <h4>7. Personalización de ventas</h4> <p>Recomendaciones y scripts de venta basados en historial real de clientes.</p></div>
+        </div>
+
+      </div>
+
+      <aside class="visual" data-aos="fade-left">
+        <div class="pulseRing" aria-hidden></div>
+        <div class="device" id="deviceVisual">
+          <!-- pequeño mockup animado -->
+          <svg width="100%" height="100%" viewBox="0 0 320 220" preserveAspectRatio="none" style="display:block">
+            <rect x="12" y="12" width="296" height="196" rx="6" fill="url(#g)" />
+            <defs>
+              <linearGradient id="g" x1="0" x2="1"><stop offset="0%" stop-color="#062e3b"/><stop offset="100%" stop-color="#044e5c"/></linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Examples -->
+    <section id="ejemplos" class="section">
+      <h2>7 Ejemplos reales de uso</h2>
+      <ul class="clean" data-aos="fade-up">
+        <li class="item"><strong>1.</strong> Asistente de ventas con guiones personalizados y upsell automáticos.</li>
+        <li class="item"><strong>2.</strong> Soporte técnico offline para plantas sin conectividad continua.</li>
+        <li class="item"><strong>3.</strong> Motor de recomendaciones personalizadas en tiendas B2B.</li>
+        <li class="item"><strong>4.</strong> Análisis automático de contratos y extracción de cláusulas.</li>
+        <li class="item"><strong>5.</strong> Generación automática de propuestas comerciales según cliente.</li>
+        <li class="item"><strong>6.</strong> Clasificación y priorización de leads con scoring propio.</li>
+        <li class="item"><strong>7.</strong> Monitor de procesos industriales con alertas y diagnóstico local.</li>
+      </ul>
+
+      <div class="section">
+        <h3>Potencial ampliado</h3>
+        <p class="lead" style="color:var(--muted)">Una IA entrenada con información específica de tu negocio no solo responde mejor: transforma procesos. Puede reducir churn, aumentar conversión, acelerar ciclos de venta, automatizar cumplimiento normativo y ofrecer inteligencia operativa 24/7, incluso sin conexión a internet cuando se despliega on-premise.</p>
+      </div>
+    </section>
+
+    <!-- Deep features -->
+    <section class="section">
+      <h2>Características y capacidades</h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+        <div class="card">Integración APIs (REST/gRPC)</div>
+        <div class="card">Despliegue on-premise y en la nube</div>
+        <div class="card">Retraining automático y pipelines ETL</div>
+        <div class="card">Control de versiones y rollback</div>
+        <div class="card">Encriptación en reposo y en tránsito</div>
+        <div class="card">Auditoría y explicabilidad (logs detallados)</div>
+      </div>
+    </section>
+
+    <!-- Testimonials + CTA -->
+    <section class="section">
+      <h2>Casos de éxito</h2>
+      <div class="testimonials">
+        <div class="test">"Disminuimos tiempos de respuesta un 70%" — Gerente Operaciones, Retail</div>
+        <div class="test">"Ventas recurrentes +18% tras personalizar respuestas" — Director Comercial, SaaS</div>
+      </div>
+
+      <div id="precios" style="margin-top:18px">
+        <h3>Planes</h3>
+        <div class="grid" style="grid-template-columns:repeat(3,1fr);">
+          <div class="card"><strong>Proof of Concept</strong><p>Entrenamiento básico y demo on-premise</p></div>
+          <div class="card"><strong>Producción</strong><p>Despliegue con APIs, SLAs y monitorización</p></div>
+          <div class="card"><strong>Enterprise</strong><p>Integración completa, soporte 24/7 y acuerdos de nivel</p></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Contact / Lead capture -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Solicita una demo</h2>
+      <form id="leadForm" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:720px;">
+        <input name="nombre" placeholder="Nombre completo" required style="padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+        <input name="empresa" placeholder="Empresa" required style="padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+        <input name="email" type="email" placeholder="Correo" required style="grid-column:span 2; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit">
+        <textarea name="mensaje" placeholder="¿Qué necesitas?" rows="4" style="grid-column:span 2; padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit"></textarea>
+        <button type="submit" class="btn" style="grid-column:span 2">Solicitar demo</button>
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2025 IA Empresarial. Todos los derechos reservados. · <a href="#" style="color:var(--muted)">Política de privacidad</a> · <a href="#" style="color:var(--muted)">Términos</a></p>
+    </footer>
+  </div>
+
+  <script>
+    AOS.init({duration:700, easing:'ease-out-cubic', once:true});
+
+    // Animación hero con GSAP
+    gsap.from('#deviceVisual', {y:20, opacity:0, duration:1.2, ease:'power3.out'});
+
+    function openDemo(){ alert('Redirigiendo a demo (configura la url).'); }
+    function openDocs(){ alert('Abrir documentación (configura la url).'); }
+
+    // Lead form: ejemplo que envía a /api/leads (adaptar)
+    document.getElementById('leadForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const form = new FormData(e.target);
+      const payload = Object.fromEntries(form.entries());
+      // Aquí podrías enviar por fetch a tu backend
+      console.log('Lead enviado', payload);
+      alert('Gracias — recibimos tu solicitud.');
+      e.target.reset();
+    });
+
+    /* SEO extras: generar mapa de sitio (sugerencia), lazy load images */
+  </script>
+
+</body>
+</html>
