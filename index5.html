@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IA Colombia — Entrenamiento y Despliegue de IA (Online & Offline)</title>
+  <meta name="description" content="IA Colombia: Entrenamiento de modelos personalizados y soluciones de IA que funcionan con o sin internet para empresas. On‑premise, cloud, integración API y soporte enterprise." />
+  <meta name="keywords" content="IA Colombia, inteligencia artificial, IA entrenada, IA offline, IA on-premise, modelos personalizados, automatización empresarial" />
+  <link rel="canonical" href="https://ia-col.com/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="IA Colombia — Entrenamiento y Despliegue de IA (Online & Offline)" />
+  <meta property="og:description" content="Entrena modelos personalizados y despliega soluciones de IA que operan con o sin conexión. Seguridad, rendimiento y ROI para empresas." />
+  <meta property="og:url" content="https://ia-col.com/" />
+  <meta property="og:image" content="https://ia-col.com/img/IA-Colombia.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IA Colombia — Entrenamiento y Despliegue de IA" />
+  <meta name="twitter:description" content="Soluciones de IA entrenada para empresas que requieren funcionamiento online y offline." />
+  <meta name="twitter:image" content="https://ia-col.com/img/IA-Colombia.webp" />
+
+  <!-- JSON-LD Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "IA Colombia",
+    "url": "https://ia-col.com/",
+    "logo": "https://ia-col.com/img/IA-Colombia.webp",
+    "description": "Entrenamiento y despliegue de inteligencia artificial que funciona con o sin internet para empresas. On-premise, cloud y APIs.",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+57-1-000-0000",
+      "contactType": "customer service",
+      "email": "contacto@ia-col.com",
+      "areaServed": "CO"
+    }],
+    "sameAs": ["https://www.linkedin.com/company/ia-colombia"]
+  }
+  </script>
+
+  <!-- Fonts and Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <style>
+  :root {
+    --bg: #f3f6fb;
+    --glass: rgba(255, 255, 255, 0.7);
+    --card: rgba(255, 255, 255, 0.8);
+    --accent: #2563eb;
+    --accent-2: #1d4ed8;
+    --muted: #4b5563;
+    --max: 1200px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background: linear-gradient(180deg, #e8edf7 0%, #f9fbff 100%);
+    color: #1e293b;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 28px;
+  }
+
+  /* === Header estilo Win11 claro === */
+  header.win11 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .brand img {
+    height: 48px;
+    border-radius: 10px;
+  }
+
+  .brand .title {
+    font-weight: 800;
+    font-size: 18px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: var(--muted);
+    font-weight: 600;
+    transition: background 0.2s;
+  }
+
+  .nav a:hover {
+    background: rgba(37, 99, 235, 0.1);
+  }
+
+  .cta {
+    display: flex;
+    gap: 8px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(37, 99, 235, 0.25);
+    transition: transform 0.1s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #334155;
+  }
+
+  /* === Hero === */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 24px;
+    align-items: center;
+    margin-top: 28px;
+  }
+
+  .heroCard {
+    padding: 28px;
+    border-radius: 16px;
+    background: var(--card);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .kicker {
+    color: var(--accent);
+    font-weight: 800;
+    letter-spacing: 0.6px;
+  }
+
+  h1 {
+    font-size: clamp(26px, 4.4vw, 44px);
+    margin: 10px 0;
+    line-height: 1.1;
+  }
+
+  p.lead {
+    color: var(--muted);
+    margin-bottom: 18px;
+    max-width: 62ch;
+  }
+
+  .ctaRow {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  /* === Visual === */
+  .visual {
+    height: 420px;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #e2e8f0, #f1f5f9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: inset 0 0 60px rgba(37, 99, 235, 0.08);
+  }
+
+  .glassCard {
+    width: 360px;
+    height: 240px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px;
+    backdrop-filter: blur(12px);
+  }
+
+  .visual img {
+    max-width: 90%;
+    border-radius: 8px;
+  }
+
+  /* === Cards y secciones === */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 22px;
+  }
+
+  .card {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    color: #1e293b;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+  }
+
+  .examples, .pricing {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .example, .plan {
+    background: var(--glass);
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  input, textarea {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    color: #1e293b;
+  }
+
+  footer {
+    margin-top: 28px;
+    padding: 18px;
+    color: var(--muted);
+    text-align: center;
+  }
+
+  /* === Responsive === */
+  @media(max-width:980px) {
+    .hero { grid-template-columns: 1fr; }
+    .grid { grid-template-columns: repeat(2,1fr); }
+    .pricing { grid-template-columns: 1fr; }
+  }
+
+  @media(max-width:560px) {
+    .grid { grid-template-columns: 1fr; }
+    .nav { display: none; }
+    form { grid-template-columns: 1fr; }
+  }
+
+  a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid rgba(37, 99, 235, 0.2);
+    outline-offset: 2px;
+  }
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <header class="win11" role="banner">
+      <div class="brand">
+        <img src="https://ia-col.com/img/IA-Colombia.webp" alt="IA Colombia logo">
+        <div>
+          <div class="title">IA Colombia</div>
+          <div style="font-size:12px; color:var(--muted)">Entrenamiento y despliegue de IA — Online & Offline</div>
+        </div>
+      </div>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#ejemplos">Ejemplos</a>
+        <a href="#precios">Planes</a>
+        <a href="#contact">Contacto</a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contactar</button>
+        <button class="btn-primary" onclick="openDemo()">Solicitar demo</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" role="main">
+      <section class="heroCard" data-aos="fade-up">
+        <div class="kicker">Soluciones de IA a tu medida</div>
+        <h1>Entrena modelos con tus datos y despliega IA que funciona incluso sin conexión</h1>
+        <p class="lead">IA Colombia ofrece modelos finamente ajustados con tu información —comercial, técnica y regulatoria— para automatizar ventas, atención y procesos críticos dentro y fuera de la nube.</p>
+
+        <div class="ctaRow">
+          <button class="btn-primary" onclick="openDemo()">Ver demo en vivo</button>
+          <button class="btn-ghost" onclick="openDocs()">Ver documentación técnica</button>
+        </div>
+
+        <div class="grid" style="margin-top:20px;">
+          <div class="card"> <h4>1. Respuestas hiper‑relevantes</h4><p>Modelos entrenados con tu base reducen ambigüedad y mejoran la conversión.</p></div>
+          <div class="card"> <h4>2. Privacidad total</h4><p>Opciones on‑premise para datos sensibles y cumplimiento normativo.</p></div>
+          <div class="card"> <h4>3. Operación offline</h4><p>Despliegue local para entornos sin conectividad continua.</p></div>
+          <div class="card"> <h4>4. Integración nativa</h4><p>APIs REST y SDKs para integrar en CRM, ERP y sistemas legacy.</p></div>
+          <div class="card"> <h4>5. Ahorro operativo</h4><p>Menos costos por llamadas a servicios externos y latencia mínima.</p></div>
+          <div class="card"> <h4>6. Retraining automático</h4><p>Pipelines que reentrenan periódicamente con datos nuevos.</p></div>
+          <div class="card"> <h4>7. Mejora del funnel</h4><p>IA que segmenta, prioriza y sugiere acciones para equipos de ventas.</p></div>
+        </div>
+
+      </section>
+
+      <aside class="visual" data-aos="fade-left">
+        <div class="glowPulse" aria-hidden></div>
+        <div class="glassCard" id="deviceVisual">
+          <img src="https://ia-col.com/img/IA-Colombia.webp" alt="IA Colombia visual">
+        </div>
+      </aside>
+    </main>
+
+    <!-- EJEMPLOS -->
+    <section id="ejemplos" class="section" data-aos="fade-up">
+      <h2>7 ejemplos reales de uso</h2>
+      <div class="examples">
+        <div class="example"><strong>1.</strong> Asistente de ventas omnicanal con scripts adaptativos.</div>
+        <div class="example"><strong>2.</strong> Soporte técnico en planta sin internet para equipos industriales.</div>
+        <div class="example"><strong>3.</strong> Motor de recomendaciones B2B con historial de compras.</div>
+        <div class="example"><strong>4.</strong> Extracción y análisis de cláusulas en contratos.</div>
+        <div class="example"><strong>5.</strong> Generación automática de propuestas comerciales personalizadas.</div>
+        <div class="example"><strong>6.</strong> Scoring y priorización de leads integrados al CRM.</div>
+        <div class="example"><strong>7.</strong> Monitor local de procesos con diagnósticos y alertas predictivas.</div>
+      </div>
+
+      <div style="margin-top:14px; color:var(--muted)">
+        <h3>Potencial ampliado</h3>
+        <p>Una IA entrenada con información específica transforma operaciones: reduce churn, acelera ventas, disminuye costos de soporte y mejora cumplimiento normativo. Despliegues on‑premise permiten operación crítica sin dependencia de la nube y mejor control sobre datos sensibles.</p>
+      </div>
+    </section>
+
+    <!-- CAPACIDADES -->
+    <section class="section" data-aos="fade-up">
+      <h2>Capacidades técnicas</h2>
+      <div class="grid" style="grid-template-columns:repeat(3,1fr); margin-top:12px;">
+        <div class="card">APIs REST / gRPC y Webhooks</div>
+        <div class="card">Despliegue on‑premise, edge y cloud</div>
+        <div class="card">Quantization y optimización para GPU/CPU</div>
+        <div class="card">Retraining con pipelines ETL automatizados</div>
+        <div class="card">Monitorización, logs y explicabilidad</div>
+        <div class="card">Seguridad: cifrado en tránsito y reposo</div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="precios" class="section" data-aos="fade-up">
+      <h2>Planes y despliegue</h2>
+      <div class="pricing">
+        <div class="plan">
+          <h4>Proof of Concept</h4>
+          <p>Entrenamiento mínimo, demo y validación de resultados.</p>
+          <p><strong>Ideal para:</strong> Validar datos y casos de uso.</p>
+        </div>
+        <div class="plan">
+          <h4>Producción</h4>
+          <p>Despliegue con APIs, SLAs, monitoreo y retraining programado.</p>
+          <p><strong>Ideal para:</strong> Equipos que requieren alta disponibilidad.</p>
+        </div>
+        <div class="plan">
+          <h4>Enterprise</h4>
+          <p>Integración completa, soporte 24/7 y acuerdos personalizados.</p>
+          <p><strong>Ideal para:</strong> Grandes empresas y entornos regulados.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Solicita una demo o cotización</h2>
+      <form id="leadForm">
+        <input name="nombre" placeholder="Nombre completo" required class="full">
+        <input name="empresa" placeholder="Empresa" required>
+        <input name="email" type="email" placeholder="Correo" required>
+        <textarea name="mensaje" placeholder="Describe tu caso de uso" rows="4" class="full"></textarea>
+        <button type="submit" class="btn-primary full">Enviar solicitud</button>
+      </form>
+    </section>
+
+    <!-- FAQ y SEO ampliado -->
+    <section class="section" data-aos="fade-up">
+      <h2>Preguntas frecuentes (FAQ)</h2>
+      <div style="display:grid; gap:8px; margin-top:10px;">
+        <details open>
+          <summary><strong>¿La IA funciona sin internet?</strong></summary>
+          <div style="color:var(--muted); padding:8px 12px">Sí. Ofrecemos opciones de despliegue on‑premise o en edge para entornos con conectividad limitada.</div>
+        </details>
+        <details>
+          <summary><strong>¿Cómo protegen los datos sensibles?</strong></summary>
+          <div style="color:var(--muted); padding:8px 12px">Ciframos datos en tránsito y en reposo, ofrecemos on‑premise y control de acceso granular. Además, mantenemos logs y auditoría para compliance.</div>
+        </details>
+        <details>
+          <summary><strong>¿Pueden integrarlo con nuestro CRM?</strong></summary>
+          <div style="color:var(--muted); padding:8px 12px">Sí. Proveemos conectores para CRMs comunes y APIs para integraciones personalizadas.</div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <p>© 2025 IA Colombia · <a href="#">Política de privacidad</a> · <a href="#">Términos</a></p>
+    </footer>
+  </div>
+
+  <script>
+    AOS.init({duration:700, easing:'ease-out-cubic', once:true});
+    gsap.from('#deviceVisual', {y:10, opacity:0, duration:1, ease:'power3.out'});
+
+    function openDemo(){ window.alert('Abrir demo — configura la URL del demo en el script.'); }
+    function openDocs(){ window.alert('Abrir documentación — configura la URL en el script.'); }
+
+    // Lead form: enviar a tu endpoint
+    document.getElementById('leadForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('Lead:', data);
+      // Ejemplo: fetch('/api/leads', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
+      alert('Gracias — tu solicitud fue recibida.');
+      e.target.reset();
+    });
+
+    // SEO extras: generar sitemap, lazyload images y preconnect
+  </script>
+</body>
+</html>
