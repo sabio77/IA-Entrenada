@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ia-col.com/sitemap.xml
+Sitemap: https://ia-col.com/page-sitemap.xml
