@@ -82,7 +82,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: #1e293b;
-    width: 100%;
   }
 
   a {
@@ -298,13 +297,6 @@
   }
 
   @media(max-width:560px) {
-    .hero {
-      grid-template-columns: 1fr !important;
-    }
-    .visual {
-      width: 100% !important;
-      height: auto !important;
-    }
     .grid { grid-template-columns: 1fr; }
     .nav { display: none; }
     form { grid-template-columns: 1fr; }
@@ -548,13 +540,13 @@
     function openDocs(){ window.alert('Abrir documentación — configura la URL en el script.'); }
 
     // Lead form: enviar a tu endpoint
-    //document.getElementById('leadForm').addEventListener('submit', async (e)=>{
-      //e.preventDefault();
-      //const data = Object.fromEntries(new FormData(e.target).entries());
-      //console.log('Lead:', data);
+    document.getElementById('leadForm').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(e.target).entries());
+      console.log('Lead:', data);
       // Ejemplo: fetch('/api/leads', {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data)})
-      //alert('Gracias — tu solicitud fue recibida.');
-      //e.target.reset();
+      alert('Gracias — tu solicitud fue recibida.');
+      e.target.reset();
     });
 
     // SEO extras: generar sitemap, lazyload images y preconnect
