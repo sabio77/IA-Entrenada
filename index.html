@@ -217,38 +217,36 @@
 
   /* === Visual === */
   .visual {
-    height: 420px;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-width: 0;
     display: flex;
-    border-radius: 18px;
-    background: linear-gradient(180deg, #e2e8f0, #f1f5f9);
     align-items: center;
     justify-content: center;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #e2e8f0, #f1f5f9);
     position: relative;
     box-shadow: inset 0 0 60px rgba(37, 99, 235, 0.08);
+    box-sizing: border-box;
+    overflow: hidden; /* evita que algo sobresalga */
+  }
+  
+  .visual img {
     width: 100%;
     max-width: 100%;
-    box-sizing: border-box;
-    min-width: 0;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    display: block;
   }
 
-  .glassCard {
-    width: 100%;
-    max-width: 360px; /* conserva el tamaño en desktop */
-    height: auto;
-    aspect-ratio: 3/2; /* mantiene proporción similar */
+
+ .glassCard {
+    width: 360px;
+    height: 240px;
     padding: 16px;
     backdrop-filter: blur(12px);
-    box-sizing: border-box;
-    min-width: 0; /* evita que imponga ancho mínimo y provoque overflow */
-  }
-
-
-  .visual img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    width: 100%;
-    object-fit: cover;
   }
 
   /* === Cards y secciones === */
@@ -407,9 +405,12 @@
 
       </section>
 
-        <div class="glassCard">
+      <aside class="visual" data-aos="fade-left">
+        <div class="glowPulse" aria-hidden></div>
+        <div class="glassCard" id="deviceVisual">
           <img src="https://ia-col.com/img/IA-Colombia.webp" alt="Entrenamiento de modelos de IA en Colombia para empresas">
         </div>
+      </aside>
     </main>
 
     <!-- EJEMPLOS -->
