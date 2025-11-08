@@ -82,6 +82,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     color: #1e293b;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   a {
@@ -93,6 +95,7 @@
     max-width: var(--max);
     margin: 0 auto;
     padding: 28px;
+    overflow-x: hidden;
   }
 
   /* === Header estilo Win11 claro === */
@@ -260,6 +263,8 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 18px;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   .example, .plan {
@@ -297,6 +302,13 @@
   }
 
   @media(max-width:560px) {
+    .hero {
+      grid-template-columns: 1fr !important;
+    }
+    .visual {
+      width: 100% !important;
+      height: auto !important;
+    }
     .grid { grid-template-columns: 1fr; }
     .nav { display: none; }
     form { grid-template-columns: 1fr; }
