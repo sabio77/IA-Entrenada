@@ -219,8 +219,8 @@
   .visual {
     width: 100%;
     max-width: 100%;
-    height: auto;
     min-width: 0;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -229,7 +229,8 @@
     position: relative;
     box-shadow: inset 0 0 60px rgba(37, 99, 235, 0.08);
     box-sizing: border-box;
-    overflow: hidden; /* evita que algo sobresalga */
+    overflow: hidden; /* <- IMPORTANTE: evita que la animación se salga */
+    transform: translateZ(0); /* <- fuerza render en GPU, elimina jitter */
   }
   
   .visual img {
@@ -239,6 +240,8 @@
     border-radius: 8px;
     object-fit: cover;
     display: block;
+    transform-origin: center center;
+    will-change: transform;
   }
 
 
