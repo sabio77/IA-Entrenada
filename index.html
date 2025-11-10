@@ -563,56 +563,7 @@
     // 1️⃣ Idioma por defecto
     let lang = 'fr';
 
-    // Intentar usar idioma inyectado por el widget
-    const waitIdioma = () => new Promise(resolve => {
-      // Si ya existe, resolvemos inmediatamente
-      if (window.idiomaMapsX) return resolve(window.idiomaMapsX);
-    
-      // Sino esperamos al evento
-      const handler = () => {
-        window.removeEventListener('idiomaMapsXReady', handler); // solo una vez
-        resolve(window.idiomaMapsX);
-      };
-      window.addEventListener('idiomaMapsXReady', handler);
-    });
-    
-    // Usar idioma cuando esté disponible
-    /*waitIdioma().then(detectedLang => {
-      lang = detectedLang;
-      console.log("Idioma final:", lang);
-      // Aquí puedes actualizar tu widget o textos dinámicos
-    });*/
-
-    function actualizarTextos(lang) {
-      // Reemplaza todos los elementos con atributo data-t
-      document.querySelectorAll('[data-t]').forEach(el => {
-        const key = el.getAttribute('data-t');
-        if (!key) return;
-        const value = idiomasTEXTOS[lang][key];
-        if (value === undefined) {
-          // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
-          el.innerHTML = '';
-          return;
-        }
-        // Si el elemento es un input/alt/meta se tratan aparte
-        const tag = el.tagName.toLowerCase();
-        if (tag === 'img') {
-          el.setAttribute('alt', value);
-        } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
-          // ya manejadas arriba
-        } else if (tag === 'input' || tag === 'textarea') {
-          el.value = value;
-        } else {
-          el.innerHTML = value;
-        }
-      });
-    }
-
-    waitIdioma().then(actualizarTextos);
-
-    
-    
-    /*// 2️⃣ Revisar hash #/en
+    // 2️⃣ Revisar hash #/en
     const hashPath = window.location.hash.slice(2) || null; 
     
     // 3️⃣ Revisar query param ?lang=
@@ -628,15 +579,44 @@
       window.history.replaceState({}, document.title, `/${lang}`);
     } else {
       // 5️⃣ Escuchar variable inyectada por widget
-      window.idiomaMapsX = window.idiomaMapsX || 'fr'; // valor inicial por defecto
-    
-      window.addEventListener('idiomaMapsXReady', () => {
-        lang = window.idiomaMapsX;
-        console.log("Idioma actualizado desde widget:", lang);
+      const waitIdioma = () => new Promise(resolve => {
+        if (window.idiomaMapsX) return resolve(window.idiomaMapsX);
+        const handler = () => {
+          window.removeEventListener('idiomaMapsXReady', handler); // solo una vez
+          resolve(window.idiomaMapsX);
+        };
+        window.addEventListener('idiomaMapsXReady', handler);
       });
+  
+      function actualizarTextos(lang) {
+        // Reemplaza todos los elementos con atributo data-t
+        document.querySelectorAll('[data-t]').forEach(el => {
+          const key = el.getAttribute('data-t');
+          if (!key) return;
+          const value = idiomasTEXTOS[lang][key];
+          if (value === undefined) {
+            // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
+            el.innerHTML = '';
+            return;
+          }
+          // Si el elemento es un input/alt/meta se tratan aparte
+          const tag = el.tagName.toLowerCase();
+          if (tag === 'img') {
+            el.setAttribute('alt', value);
+          } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
+            // ya manejadas arriba
+          } else if (tag === 'input' || tag === 'textarea') {
+            el.value = value;
+          } else {
+            el.innerHTML = value;
+          }
+        });
+      }
+  
+      waitIdioma().then(actualizarTextos);
     }
     
-    console.log("Idioma inicial:", lang);*/
+    console.log("Idioma inicial:", lang);
 
 
 
