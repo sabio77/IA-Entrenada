@@ -560,31 +560,35 @@
     };
 
 
-     // 2️⃣ Idioma por defecto
-  let lang = 'fr';
-
-  const hashPath = window.location.hash.slice(2) || 'xx'; 
-
-// 2. Revisar query param ?lang=
-    const urlParams = new URLSearchParams(window.location.search);
-const lang2 = urlParams.get('lang') || 'yy';
+    // 1️⃣ Idioma por defecto
+    let lang = 'fr';
     
-// Apenas cargue la página
-if (lang2 && lang2 !== 'yy') {
-lang = idiomasTEXTOS[lang2] ? lang2: 'en';
-window.history.replaceState({}, document.title, `/${lang}`);
-} else if (hashPath && hashPath !== 'xx') {
-lang = idiomasTEXTOS[hashPath] ? hashPath: 'en';
-window.history.replaceState({}, document.title, `/${lang}`);
-} else {
-//---------
-window.addEventListener('idiomaMapsXReady', () => {
-  console.log("Idioma disponible:", window.idiomaMapsX);
-  lang = window.idiomaMapsX;
-  // Aquí ya puedes ejecutar código que dependa del idioma
-});
+    // 2️⃣ Revisar hash #/en
+    const hashPath = window.location.hash.slice(2) || null; 
+    
+    // 3️⃣ Revisar query param ?lang=
+    const urlParams = new URLSearchParams(window.location.search);
+    const langQuery = urlParams.get('lang') || null;
+    
+    // 4️⃣ Prioridad: query param > hash > variable global > default
+    if (langQuery && idiomasTEXTOS[langQuery]) {
+      lang = langQuery;
+      window.history.replaceState({}, document.title, `/${lang}`);
+    } else if (hashPath && idiomasTEXTOS[hashPath]) {
+      lang = hashPath;
+      window.history.replaceState({}, document.title, `/${lang}`);
+    } else {
+      // 5️⃣ Escuchar variable inyectada por widget
+      window.idiomaMapsX = window.idiomaMapsX || 'fr'; // valor inicial por defecto
+    
+      window.addEventListener('idiomaMapsXReady', () => {
+        lang = window.idiomaMapsX;
+        console.log("Idioma actualizado desde widget:", lang);
+      });
+    }
+    
+    console.log("Idioma inicial:", lang);
 
-}
 
 
 
