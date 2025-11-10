@@ -2,6 +2,14 @@
 <urlset
    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
    xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   
+   <!-- versión principal / por defecto -->
+   <url>
+     <loc>https://ia-col.com/</loc> 
+     <lastmod>2025-11-25T20:00:00+00:00</lastmod>
+     <changefreq>weekly</changefreq>
+     <priority>1.0</priority>
+   </url>
 
   <!-- Español -->
   <url>
