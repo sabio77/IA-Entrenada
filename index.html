@@ -577,11 +577,38 @@
     });
     
     // Usar idioma cuando esté disponible
-    waitIdioma().then(detectedLang => {
+    /*waitIdioma().then(detectedLang => {
       lang = detectedLang;
       console.log("Idioma final:", lang);
       // Aquí puedes actualizar tu widget o textos dinámicos
-    });
+    });*/
+
+    function actualizarTextos(lang) {
+      // Reemplaza todos los elementos con atributo data-t
+      document.querySelectorAll('[data-t]').forEach(el => {
+        const key = el.getAttribute('data-t');
+        if (!key) return;
+        const value = idiomasTEXTOS[lang][key];
+        if (value === undefined) {
+          // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
+          el.innerHTML = '';
+          return;
+        }
+        // Si el elemento es un input/alt/meta se tratan aparte
+        const tag = el.tagName.toLowerCase();
+        if (tag === 'img') {
+          el.setAttribute('alt', value);
+        } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
+          // ya manejadas arriba
+        } else if (tag === 'input' || tag === 'textarea') {
+          el.value = value;
+        } else {
+          el.innerHTML = value;
+        }
+      });
+    }
+
+    waitIdioma().then(actualizarTextos);
 
     
     
