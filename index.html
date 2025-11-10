@@ -564,9 +564,9 @@
   let lang = 'en';
 
   // 3️⃣ Detectar idioma desde la URL (ej: /en o /es)
-  const pathLang = window.location.pathname.split('/')[1]; // primer segmento
-  if (idiomasTEXTOS[pathLang]) {
-    lang = pathLang;
+  const hashPath = window.location.hash.slice(2); // "/en" → "en"
+  if(hashPath && ['en','es', 'fr'].includes(hashPath)) 
+    lang = hashPath;
   } else {
     // 4️⃣ Si no hay idioma en URL, usar navegador
     try {
