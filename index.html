@@ -562,8 +562,28 @@
 
     // 1️⃣ Idioma por defecto
     let lang = 'fr';
+
+    // Intentar usar idioma inyectado por el widget
+    const waitIdioma = () => new Promise(resolve => {
+      // Si ya existe, resolvemos inmediatamente
+      if (window.idiomaMapsX) return resolve(window.idiomaMapsX);
     
-    // 2️⃣ Revisar hash #/en
+      // Sino esperamos al evento
+      const handler = () => {
+        window.removeEventListener('idiomaMapsXReady', handler); // solo una vez
+        resolve(window.idiomaMapsX);
+      };
+      window.addEventListener('idiomaMapsXReady', handler);
+    });
+    
+    // Usar idioma cuando esté disponible
+    waitIdioma().then(detectedLang => {
+      lang = detectedLang;
+      console.log("Idioma final:", lang);
+      // Aquí puedes actualizar tu widget o textos dinámicos
+    });
+    
+    /*// 2️⃣ Revisar hash #/en
     const hashPath = window.location.hash.slice(2) || null; 
     
     // 3️⃣ Revisar query param ?lang=
@@ -587,7 +607,7 @@
       });
     }
     
-    console.log("Idioma inicial:", lang);
+    console.log("Idioma inicial:", lang);*/
 
 
 
