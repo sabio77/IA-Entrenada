@@ -563,24 +563,10 @@
      // 2️⃣ Idioma por defecto
   let lang = 'en';
 
-  // 3️⃣ Detectar idioma desde la URL (ej: /en o /es)
-  const hashPath = window.location.hash.slice(2); // "/en" → "en"
-  if(hashPath && ['en','es', 'fr'].includes(hashPath)) 
+  const hashPath = window.location.hash.slice(2) || 'es'; 
     lang = hashPath;
-  } else {
-    // 4️⃣ Si no hay idioma en URL, usar navegador
-    try {
-      const navLangRaw = navigator.language || navigator.userLanguage || 'en';
-      const navLang = navLangRaw.split('-')[0];
-      if (idiomasTEXTOS[navLang]) {
-        lang = navLang;
-      }
-    } catch(e) {
-      lang = 'en'; // fallback
-    }
-  }
 
-  console.log("Idioma seleccionado:", lang);
+
 
 
     // Actualizar meta tags y elementos especiales
