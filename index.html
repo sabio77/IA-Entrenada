@@ -560,16 +560,27 @@
     };
 
 
-    // idioma activo
-    const lang = 'en';
+     // 2️⃣ Idioma por defecto
+  let lang = 'en';
 
-    const pathLang = window.location.pathname.split('/')[1];
-    if(idiomasTEXTOS[pathLang]) {
-      lang = pathLang; // si la URL tiene idioma válido, usarlo
-    } else {
-      const navLang = (navigator.language || navigator.userLanguage).split('-')[0];
-      if(idiomasTEXTOS[navLang]) lang = navLang; // si el navegador tiene idioma válido
+  // 3️⃣ Detectar idioma desde la URL (ej: /en o /es)
+  const pathLang = window.location.pathname.split('/')[1]; // primer segmento
+  if (idiomasTEXTOS[pathLang]) {
+    lang = pathLang;
+  } else {
+    // 4️⃣ Si no hay idioma en URL, usar navegador
+    try {
+      const navLangRaw = navigator.language || navigator.userLanguage || 'en';
+      const navLang = navLangRaw.split('-')[0];
+      if (idiomasTEXTOS[navLang]) {
+        lang = navLang;
+      }
+    } catch(e) {
+      lang = 'en'; // fallback
     }
+  }
+
+  console.log("Idioma seleccionado:", lang);
 
 
     // Actualizar meta tags y elementos especiales
