@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Language" content="es">
+  <meta name="author" content="IA Colombia">
+  <meta name="theme-color" content="#2563eb">
+
+  <!-- Meta dinámicos -->
+  <title id="meta-title">IA Colombia</title>
+  <meta name="description" id="meta-description" content="">
+  <meta name="keywords" id="meta-keywords" content="">
+  <link rel="canonical" href="https://ia-col.com/">
+  <link rel="icon" href="https://ia-col.com/img/IA-Colombia.webp" type="image/webp">
+
+  <!-- Open Graph / Social (se rellenan dinámicamente) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" id="og-title" content="">
+  <meta property="og:description" id="og-description" content="">
+  <meta property="og:url" content="https://ia-col.com/">
+  <meta property="og:image" id="og-image" content="https://ia-col.com/img/IA-Colombia.webp">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="tw-title" content="">
+  <meta name="twitter:description" id="tw-description" content="">
+  <meta name="twitter:image" id="tw-image" content="https://ia-col.com/img/IA-Colombia.webp">
+
+  <!-- JSON-LD básicos (se construyen y actualizan luego) -->
+  <!-- Fuentes y librerías -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script src="https://mapsx.app/chat-ia" data-source="mapsx" async=""></script>
+
+  <style>
+    :root {
+      --bg: #f3f6fb;
+      --glass: rgba(255,255,255,0.7);
+      --card: rgba(255,255,255,0.85);
+      --accent: #2563eb;
+      --accent-2: #1d4ed8;
+      --muted: #4b5563;
+      --max: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#e8edf7 0%,#f9fbff 100%);background-attachment:fixed;color:#1e293b}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:28px}
+    header.win11{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px;border-radius:14px;background:rgba(255,255,255,0.7);box-shadow:0 8px 30px rgba(0,0,0,0.1);backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,0.05)}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:48px;border-radius:10px}
+    .brand .title{font-weight:800;font-size:18px}
+    .nav{display:flex;gap:12px;align-items:center}
+    .nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:background .2s}
+    .nav a:hover{background:rgba(37,99,235,0.08)}
+    .cta{display:flex;gap:8px}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(37,99,235,0.25);transition:transform .1s}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:8px 12px;border-radius:10px;color:#334155}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:28px}
+    .heroCard{padding:28px;border-radius:16px;background:var(--card);box-shadow:0 18px 60px rgba(0,0,0,0.05);position:relative;overflow:hidden}
+    .kicker{color:var(--accent);font-weight:800;letter-spacing:.6px}
+    h1{font-size:clamp(26px,4.4vw,44px);margin:10px 0;line-height:1.1}
+    p.lead{color:var(--muted);margin-bottom:18px;max-width:62ch}
+    .ctaRow{display:flex;gap:12px;align-items:center;margin-top:8px}
+    .visual{width:100%;max-width:100%;min-width:0;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(180deg,#e2e8f0,#f1f5f9);position:relative;box-shadow:inset 0 0 60px rgba(37,99,235,0.08);overflow:hidden;transform:translateZ(0)}
+    .visual img{width:100%;height:100%;object-fit:contain;border-radius:8px;display:block;transform-origin:center;will-change:transform}
+    .glassCard{width:360px;height:240px;padding:16px;backdrop-filter:blur(12px)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+    .card{background:var(--card);padding:16px;border-radius:12px;color:#1e293b;border:1px solid rgba(0,0,0,0.06)}
+    .examples,.pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .example,.plan{background:var(--glass);padding:12px;border-radius:10px}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    input,textarea{background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.05);padding:12px;border-radius:10px;color:#1e293b}
+    footer{margin-top:28px;padding:18px;color:var(--muted);text-align:center}
+    .ocultar-movil{display:block}
+    @media(max-width:980px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.pricing{grid-template-columns:1fr}}
+    @media(max-width:560px){.ocultar-movil{display:none}.brand .title{display:none !important}.grid{grid-template-columns:1fr}.nav{display:none}form{grid-template-columns:1fr}}
+    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(37,99,235,0.2);outline-offset:2px}
+  </style>
+</head>
+<body data-aos-easing="ease-out-cubic" data-aos-duration="700" data-aos-delay="0">
+  <div class="container">
+    <header class="win11" role="banner">
+      <div class="brand">
+        <img src="https://ia-col.com/img/IA-Colombia.webp" alt="IA Colombia" data-t="imgAlt">
+        <div>
+          <div class="title" data-t="brandTitle"></div>
+          <div style="font-size:12px; color:var(--muted)" data-t="brandSubtitle"></div>
+        </div>
+      </div>
+
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="#beneficios" data-t="nav1"></a>
+        <a href="#ejemplos" data-t="nav2"></a>
+        <a href="#precios" data-t="nav3"></a>
+        <a href="#contact" data-t="nav4"></a>
+      </nav>
+
+      <div class="cta">
+        <button class="btn-ghost" data-t="btnContact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"></button>
+        <div class="ocultar-movil">
+          <button class="btn-primary" data-t="btnDemo" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"></button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero" role="main">
+      <section class="heroCard aos-init aos-animate" data-aos="fade-up">
+        <div class="kicker" data-t="kicker"></div>
+        <h1 data-t="h1"></h1>
+        <p class="lead" data-t="lead"></p>
+
+        <div class="ctaRow">
+          <button class="btn-primary" data-t="ctaDemo" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"></button>
+          <button class="btn-ghost" data-t="ctaDocs" onclick="openDocs()"></button>
+        </div>
+
+        <h2 data-t="h2"></h2>
+
+        <div class="grid" style="margin-top:20px;">
+          <div class="card"><h4 data-t="card1h"></h4><p data-t="card1p"></p></div>
+          <div class="card"><h4 data-t="card2h"></h4><p data-t="card2p"></p></div>
+          <div class="card"><h4 data-t="card3h"></h4><p data-t="card3p"></p></div>
+          <div class="card"><h4 data-t="card4h"></h4><p data-t="card4p"></p></div>
+          <div class="card"><h4 data-t="card5h"></h4><p data-t="card5p"></p></div>
+          <div class="card"><h4 data-t="card6h"></h4><p data-t="card6p"></p></div>
+          <div class="card"><h4 data-t="card7h"></h4><p data-t="card7p"></p></div>
+        </div>
+
+      </section>
+
+      <aside class="visual aos-init aos-animate" data-aos="fade-left">
+        <div class="glowPulse" aria-hidden="true"></div>
+        <div class="glassCard" id="deviceVisual" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+          <img src="https://ia-col.com/img/IA-Colombia.webp" alt="" data-t="visualAlt">
+        </div>
+      </aside>
+    </main>
+
+    <!-- EJEMPLOS -->
+    <section id="ejemplos" class="section aos-init aos-animate" data-aos="fade-up">
+      <h2 data-t="ejemplosTitle"></h2>
+      <div class="examples">
+        <div class="example" data-t="example1"></div>
+        <div class="example" data-t="example2"></div>
+        <div class="example" data-t="example3"></div>
+        <div class="example" data-t="example4"></div>
+        <div class="example" data-t="example5"></div>
+        <div class="example" data-t="example6"></div>
+        <div class="example" data-t="example7"></div>
+      </div>
+
+      <div style="margin-top:14px; color:var(--muted)">
+        <h3 data-t="potencialTitle"></h3>
+        <p data-t="potencialP1"></p>
+        <p data-t="potencialP2"></p>
+      </div>
+    </section>
+
+    <!-- CAPACIDADES -->
+    <section class="section aos-init aos-animate" data-aos="fade-up">
+      <h2 data-t="capacidadesTitle"></h2>
+      <div class="examples">
+        <div class="card" data-t="cap1"></div>
+        <div class="card" data-t="cap2"></div>
+        <div class="card" data-t="cap3"></div>
+        <div class="card" data-t="cap4"></div>
+        <div class="card" data-t="cap5"></div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section id="precios" class="section aos-init aos-animate" data-aos="fade-up">
+      <h2 data-t="planesTitle"></h2>
+      <div class="pricing">
+        <div class="plan">
+          <h4 data-t="plan1h"></h4>
+          <p data-t="plan1p"></p>
+          <p><strong data-t="plan1IdealTitle"></strong> <span data-t="plan1Ideal"></span></p>
+        </div>
+        <div class="plan">
+          <h4 data-t="plan2h"></h4>
+          <p data-t="plan2p"></p>
+          <p><strong data-t="plan2IdealTitle"></strong> <span data-t="plan2Ideal"></span></p>
+        </div>
+        <div class="plan">
+          <h4 data-t="plan3h"></h4>
+          <p data-t="plan3p"></p>
+          <p><strong data-t="plan3IdealTitle"></strong> <span data-t="plan3Ideal"></span></p>
+        </div>
+        <div class="plan">
+          <h4 data-t="plan4h"></h4>
+          <p data-t="plan4p"></p>
+          <p><strong data-t="plan4IdealTitle"></strong> <span data-t="plan4Ideal"></span></p>
+        </div>
+        <div class="plan">
+          <h4 data-t="plan5h"></h4>
+          <p data-t="plan5p"></p>
+          <p><strong data-t="plan5IdealTitle"></strong> <span data-t="plan5Ideal"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contact" class="section aos-init aos-animate" data-aos="fade-up" style="text-align:center; padding:80px 20px;">
+      <div style="max-width:600px;margin:auto;background:rgba(255,255,255,0.7);backdrop-filter:blur(16px);border-radius:24px;box-shadow:rgba(0,0,0,0.1) 0px 8px 32px;padding:40px 30px;transition:transform .3s;transform:scale(1);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <h2 style="font-size:1.8em;color:#1e3a8a;margin-bottom:10px;" data-t="contactH"></h2>
+        <p style="font-size:1.1em;color:#334155;margin-bottom:30px;" data-t="contactLead"></p>
+        <button onclick="window.location.href='#chat'" style="background:linear-gradient(90deg,#3b82f6,#1e40af);border:none;padding:14px 40px;color:#fff;font-size:1.05em;font-weight:600;border-radius:9999px;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,0.4);transition:all .3s ease;" onmouseover="this.style.boxShadow='0 6px 18px rgba(59,130,246,0.6)'" onmouseout="this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" data-t="contactBtn">
+          <!-- texto dinamico -->
+        </button>
+      </div>
+    </section>
+
+    <!-- FAQ y SEO ampliado -->
+    <section class="section aos-init aos-animate" data-aos="fade-up">
+      <h2 data-t="faqTitle"></h2>
+      <div style="display:grid;gap:8px;margin-top:10px;">
+        <details open>
+          <summary><strong data-t="faqQ1"></strong></summary>
+          <div style="color:var(--muted);padding:8px 12px" data-t="faqA1"></div>
+        </details>
+        <details open>
+          <summary><strong data-t="faqQ2"></strong></summary>
+          <div style="color:var(--muted);padding:8px 12px" data-t="faqA2"></div>
+        </details>
+        <details open>
+          <summary><strong data-t="faqQ3"></strong></summary>
+          <div style="color:var(--muted);padding:8px 12px" data-t="faqA3"></div>
+        </details>
+      </div>
+    </section>
+
+    <footer>
+      <p data-t="footerText"></p>
+    </footer>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // textos extraídos en la clave 'es'
+    const idiomasTEXTOS = {
+      es: {
+        /* Header / Brand */
+        imgAlt: "Entrenamiento de modelos de IA en Colombia para empresas",
+        brandTitle: "IA Colombia",
+        brandSubtitle: "Entrenamiento y despliegue de IA — Online & Offline",
+        nav1: "Beneficios",
+        nav2: "Ejemplos",
+        nav3: "Planes",
+        nav4: "Contacto",
+        btnContact: "Contactar",
+        btnDemo: "Solicitar demo",
+
+        /* Hero */
+        kicker: "Soluciones de IA a tu medida",
+        h1: "Desarrollamos y entrenamos modelos de IA personalizados que funcionan online y offline",
+        lead: "IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.",
+        ctaDemo: "Solicitar Demo",
+        ctaDocs: "Ver documentación técnica",
+
+        /* Cards principales */
+        h2: "Ventajas de usar sistemas de IA",
+        card1h: "1. Respuestas hiper-relevantes",
+        card1p: "Modelos entrenados con base de datos reales y específicas reducen ambigüedad y mejoran el rendimiento.",
+        card2h: "2. Privacidad total",
+        card2p: "Opciones cifradas para datos sensibles y cumplimiento normativo.",
+        card3h: "3. Operación offline",
+        card3p: "Despliegue local para entornos sin internet, ideal para actividades empresariales y gubernamentales.",
+        card4h: "4. Operación Online",
+        card4p: "Personalización de procesos IA para apps, webs, software, empresas y entidades estatales.",
+        card5h: "5. Ahorro operativo offline",
+        card5p: "No requiere mensualidades; una sola compra obtiene una IA propia entrenada con la información de tu empresa.",
+        card6h: "6. Sistema de Reentrenamiento automático",
+        card6p: "Sistema comercial con auto-entrenamiento, ideal para alimentación de modelos en líneas de producción.",
+        card7h: "7. Desarrollo local por IA Colombia",
+        card7p: "Atención directa, instalación e implementación en sitio o por videollamada con personal técnico especializado.",
+
+        visualAlt: "Visual — IA Colombia",
+
+        /* Ejemplos largos (resumidos para elementos individuales) */
+        ejemplosTitle: "Tipo de IA y Cómo ganar dinero usándola",
+        example1: "<strong>1. IA Webs:</strong> Un asistente de ventas y atención para páginas puede ayudar a dar información, precios y detalles 24/7.",
+        example2: "<strong>2. IA Soporte Técnico:</strong> Asistencia técnica inteligente para plantas de producción sin conexión, aprende de casos reales y guía pasos de reparación.",
+        example3: "<strong>3. IA Center:</strong> Crea tu propia plataforma tipo ChatGPT alojada en tus servidores y bajo tu marca para ofrecer servicios.",
+        example4: "<strong>4. LexIA:</strong> IA especializada en derecho y jurisprudencia, diseñada para bufetes y departamentos legales.",
+        example5: "<strong>5. Omnia IA:</strong> Inteligencia abierta y autoentrenable que aprende de cualquier industria y evoluciona automáticamente.",
+        example6: "<strong>6. Post AI:</strong> Analítica por solicitud vía API — procesa POSTs y devuelve análisis, clasificaciones y diagnósticos.",
+        example7: "<strong>7. IA Entrenada:</strong> Solución personalizada entrenada con documentos y casos propios para cada organización.",
+
+        potencialTitle: "Potencial ampliado",
+        potencialP1: "Una IA entrenada con la información propia de tu empresa puede transformar por completo tus operaciones: reduce pérdida de clientes, acelera ventas y mejora cumplimiento.",
+        potencialP2: "Además, puedes instalarla en tus propios servidores (on-premise), funcionando sin conexión y manteniendo control sobre tus datos sensibles.",
+
+        /* Capacidades técnicas */
+        capacidadesTitle: "Capacidades técnicas",
+        cap1: "Conectamos tu IA mediante APIs estándar y webhooks en tiempo real para integrarla sin fricción.",
+        cap2: "Instalación en tus servidores (on-premise), en la nube o en dispositivos edge según tu necesidad.",
+        cap3: "Optimización y cuantización para rendimiento en GPU y CPU, logrando modelos ligeros y eficientes.",
+        cap4: "Reentrenamiento automático que mantiene el conocimiento del modelo actualizado.",
+        cap5: "Cifrado completo, control de acceso granular y soporte para cumplimiento normativo.",
+
+        /* Planes */
+        planesTitle: "Planes y despliegue",
+        plan1h: "Chat-IA para webs",
+        plan1p: "Chat-IA integrado en sitios web que interactúa con visitantes en tiempo real, entrenado con datos del negocio para soporte y venta.",
+        plan1IdealTitle: "Ideal para:",
+        plan1Ideal: "Páginas web.",
+
+        plan2h: "IA offline para empresas (entrenamiento previo)",
+        plan2p: "IA privada que funciona sin conexión, entrenada localmente para garantizar confidencialidad y disponibilidad.",
+        plan2IdealTitle: "Ideal para:",
+        plan2Ideal: "Entornos industriales o gubernamentales que requieren alta seguridad.",
+
+        plan3h: "IA online para empresas (nube)",
+        plan3p: "Modelo en la nube con aprendizaje y respuesta en tiempo real; integración con CRM y ERPs.",
+        plan3IdealTitle: "Ideal para:",
+        plan3Ideal: "Grandes empresas que necesitan escalabilidad y actualización continua.",
+
+        plan4h: "IA Center (Centro de IA personalizada)",
+        plan4p: "Plataforma para crear, administrar y distribuir IA personalizadas, con control total sobre modelos y datos.",
+        plan4IdealTitle: "Ideal para:",
+        plan4Ideal: "Empresas que buscan ofrecer servicios de IA a terceros.",
+
+        plan5h: "IA Comercial Entrenamiento Abierto",
+        plan5p: "Sistema configurable para crear IA entrenadas comercialmente y ofrecerlas bajo distintas marcas.",
+        plan5IdealTitle: "Ideal para:",
+        plan5Ideal: "Empresas interesadas en monetizar soluciones IA.",
+
+        /* Contacto */
+        contactH: "¿Necesitas ayuda o más información?",
+        contactLead: "Nuestro Chat-IA está disponible para responder tus preguntas y guiarte para obtener tu IA entrenada o contactarnos.",
+        contactBtn: ">>>",
+
+        /* FAQ */
+        faqTitle: "Preguntas frecuentes (FAQ)",
+        faqQ1: "¿La IA funciona sin internet?",
+        faqA1: "Sí. Ofrecemos despliegues on-premise o en edge para entornos sin conectividad continua.",
+        faqQ2: "¿Cómo protegen los datos sensibles?",
+        faqA2: "Ciframos datos en tránsito y en reposo, con control de acceso granular y auditoría para compliance.",
+        faqQ3: "¿Pueden integrar una IA a un proceso propio?",
+        faqA3: "Sí. Integramos IA con procesos y sistemas mediante APIs y solicitudes POST para automatizar flujos empresariales.",
+
+        footerText: "© 2025 IA Colombia · Política de privacidad · Términos"
+      }
+    };
+
+    // idioma activo
+    const lang = 'es';
+
+    // Actualizar meta tags y elementos especiales
+    document.getElementById('meta-title').textContent = idiomasTEXTOS[lang].brandTitle + " | " + "Inteligencia Artificial Entrenada para Empresas (Online & Offline)";
+    document.getElementById('meta-description').setAttribute('content', idiomasTEXTOS[lang].lead);
+    document.getElementById('meta-keywords').setAttribute('content', "IA Colombia, inteligencia artificial, IA empresarial, IA offline, IA online, automatización, modelos entrenados");
+
+    // OG / Twitter
+    document.getElementById('og-title').setAttribute('content', idiomasTEXTOS[lang].brandTitle + " — Entrenamiento y Despliegue de IA");
+    document.getElementById('og-description').setAttribute('content', idiomasTEXTOS[lang].lead);
+    document.getElementById('og-image').setAttribute('content', "https://ia-col.com/img/IA-Colombia.webp");
+
+    document.getElementById('tw-title').setAttribute('content', idiomasTEXTOS[lang].brandTitle + " — Entrenamiento y Despliegue de IA");
+    document.getElementById('tw-description').setAttribute('content', idiomasTEXTOS[lang].lead);
+    document.getElementById('tw-image').setAttribute('content', "https://ia-col.com/img/IA-Colombia.webp");
+
+    // Reemplaza todos los elementos con atributo data-t
+    document.querySelectorAll('[data-t]').forEach(el => {
+      const key = el.getAttribute('data-t');
+      if (!key) return;
+      const value = idiomasTEXTOS[lang][key];
+      if (value === undefined) {
+        // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
+        el.innerHTML = '';
+        return;
+      }
+      // Si el elemento es un input/alt/meta se tratan aparte
+      const tag = el.tagName.toLowerCase();
+      if (tag === 'img') {
+        el.setAttribute('alt', value);
+      } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
+        // ya manejadas arriba
+      } else if (tag === 'input' || tag === 'textarea') {
+        el.value = value;
+      } else {
+        el.innerHTML = value;
+      }
+    });
+
+    // Generar JSON-LD dinámico (Organization + WebSite + FAQ)
+    function insertJSONLD(){
+      const org = {
+        "@context":"https://schema.org",
+        "@type":"Organization",
+        "name": idiomasTEXTOS[lang].brandTitle,
+        "url": "https://ia-col.com/",
+        "logo": "https://ia-col.com/img/IA-Colombia.webp",
+        "description": idiomasTEXTOS[lang].lead,
+        "contactPoint": [{
+          "@type":"ContactPoint",
+          "telephone":"+57-1-000-0000",
+          "contactType":"customer service",
+          "email":"contacto@ia-col.com",
+          "areaServed":"CO"
+        }],
+        "sameAs":["https://www.linkedin.com/company/ia-colombia"]
+      };
+
+      const website = {
+        "@context":"https://schema.org/",
+        "@type":"WebSite",
+        "name": idiomasTEXTOS[lang].brandTitle,
+        "url":"https://ia-col.com/",
+        "potentialAction": {
+          "@type":"SearchAction",
+          "target":"https://ia-col.com/?q={search_term_string}",
+          "query-input":"required name=search_term_string"
+        }
+      };
+
+      const faq = {
+        "@context":"https://schema.org",
+        "@type":"FAQPage",
+        "mainEntity":[
+          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ1,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA1 } },
+          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ2,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA2 } },
+          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ3,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA3 } }
+        ]
+      };
+
+      const scriptOrg = document.createElement('script');
+      scriptOrg.type = "application/ld+json";
+      scriptOrg.text = JSON.stringify(org, null, 2);
+      document.head.appendChild(scriptOrg);
+
+      const scriptWeb = document.createElement('script');
+      scriptWeb.type = "application/ld+json";
+      scriptWeb.text = JSON.stringify(website, null, 2);
+      document.head.appendChild(scriptWeb);
+
+      const scriptFAQ = document.createElement('script');
+      scriptFAQ.type = "application/ld+json";
+      scriptFAQ.text = JSON.stringify(faq, null, 2);
+      document.head.appendChild(scriptFAQ);
+    }
+
+    insertJSONLD();
+
+    // Inicializar librerías de animación
+    if (window.AOS) AOS.init({duration:700, easing:'ease-out-cubic', once:true});
+    if (window.gsap) gsap.from('#deviceVisual', {y:10, opacity:0, duration:1, ease:'power3.out'});
+
+    // Funciones de ejemplo
+    function openDemo(){ window.alert('Abrir demo — configura la URL del demo en el script.'); }
+    function openDocs(){ window.alert('Abrir documentación — configura la URL en el script.'); }
+
+    // SEO extras: lazy load images (simple)
+    document.querySelectorAll('img').forEach(img=>{
+      if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+    });
+
+    // Analytics (mantener la carga asíncrona)
+    (function(){
+      const s = document.createElement('script');
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=G-KLM5SLY4ZT";
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-KLM5SLY4ZT');
+    })();
+
+  </script>
+</body>
+</html>
