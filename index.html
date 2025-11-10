@@ -578,19 +578,12 @@ lang = idiomasTEXTOS[hashPath] ? hashPath: 'en';
 window.history.replaceState({}, document.title, `/${lang}`);
 } else {
 //---------
-const waitIdioma = () => new Promise(resolve => {
-  const check = setInterval(() => {           // 🔹 Revisa cada 10 ms
-    if(window.idiomaMapsX) {                  // 🔹 Si la variable ya existe
-      clearInterval(check);                   // 🔹 Detiene el setInterval
-      resolve(window.idiomaMapsX);           // 🔹 Resuelve la promesa con el valor
-    }
-  }, 10);
+window.addEventListener('idiomaMapsXReady', () => {
+  console.log("Idioma disponible:", window.idiomaMapsX);
+  lang = window.idiomaMapsX;
+  // Aquí ya puedes ejecutar código que dependa del idioma
 });
 
-waitIdioma().then(lang3 => {
-  console.log("Idioma disponible:", lang3);
-lang = lang3;
-});
 }
 
 
