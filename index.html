@@ -582,6 +582,23 @@ if (idiomasTEXTOS[navLang]) {lang = navLang;}
 }*/
 
 
+//---------
+const waitIdioma = () => new Promise(resolve => {
+  const check = setInterval(() => {           // 🔹 Revisa cada 10 ms
+    if(window.idiomaMapsX) {                  // 🔹 Si la variable ya existe
+      clearInterval(check);                   // 🔹 Detiene el setInterval
+      resolve(window.idiomaMapsX);           // 🔹 Resuelve la promesa con el valor
+    }
+  }, 10);
+});
+
+waitIdioma().then(lang3 => {
+  console.log("Idioma disponible:", lang3);
+lang = lang3;
+});
+
+
+
 
 
 
