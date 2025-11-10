@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset 
    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
    <url>
       <loc>https://ia-col.com/</loc>
+      <xhtml:link rel="alternate" hreflang="es" href="https://ia-col.com/?lang=es" />
+      <xhtml:link rel="alternate" hreflang="fr" href="https://ia-col.com/?lang=fr" />
+      <xhtml:link rel="alternate" hreflang="en" href="https://ia-col.com/?lang=en" />
       <lastmod>2025-11-25T20:00:00+00:00</lastmod>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
