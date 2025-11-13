@@ -791,9 +791,11 @@
     if (langQuery && idiomasTEXTOS[langQuery]) {
       lang = langQuery;
       window.history.replaceState({}, document.title, `/${lang}`);
+		aplicarDireccion(lang);
     } else if (hashPath && idiomasTEXTOS[hashPath]) {
       lang = hashPath;
       window.history.replaceState({}, document.title, `/${lang}`);
+		aplicarDireccion(lang);
     } else {
       // 5️⃣ Escuchar variable inyectada por widget
       const waitIdioma = () => new Promise(resolve => {
