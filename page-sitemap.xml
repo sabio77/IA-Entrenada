@@ -6,7 +6,7 @@
    <!-- versión principal / por defecto -->
    <url>
      <loc>https://ia-col.com/</loc> 
-     <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+     <lastmod>2025-11-26T22:00:00+00:00</lastmod>
      <changefreq>weekly</changefreq>
      <priority>1.0</priority>
    </url>
@@ -14,7 +14,7 @@
   <!-- Español -->
   <url>
     <loc>https://ia-col.com/?lang=es</loc>
-    <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -26,7 +26,55 @@
    <!-- arabe -->
   <url>
     <loc>https://ia-col.com/?lang=ar</loc>
-    <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ia-col.com/img/IA-Colombia.webp</image:loc>
+      <image:caption>IA-Colombia</image:caption>
+    </image:image>
+  </url>
+
+   <!-- portugues brazil -->
+  <url>
+    <loc>https://ia-col.com/?lang=br</loc>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ia-col.com/img/IA-Colombia.webp</image:loc>
+      <image:caption>IA-Colombia</image:caption>
+    </image:image>
+  </url>
+
+   <!-- portugues portugal -->
+  <url>
+    <loc>https://ia-col.com/?lang=pt</loc>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ia-col.com/img/IA-Colombia.webp</image:loc>
+      <image:caption>IA-Colombia</image:caption>
+    </image:image>
+  </url>
+
+   <!-- chino -->
+  <url>
+    <loc>https://ia-col.com/?lang=zh</loc>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://ia-col.com/img/IA-Colombia.webp</image:loc>
+      <image:caption>IA-Colombia</image:caption>
+    </image:image>
+  </url>
+
+   <!-- indu -->
+  <url>
+    <loc>https://ia-col.com/?lang=hi</loc>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -38,7 +86,7 @@
    <!-- polaco -->
   <url>
     <loc>https://ia-col.com/?lang=pl</loc>
-    <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -50,7 +98,7 @@
   <!-- Francés -->
   <url>
     <loc>https://ia-col.com/?lang=fr</loc>
-    <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
@@ -62,7 +110,7 @@
   <!-- Inglés -->
   <url>
     <loc>https://ia-col.com/?lang=en</loc>
-    <lastmod>2025-11-25T22:00:00+00:00</lastmod>
+    <lastmod>2025-11-26T22:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
