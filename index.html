@@ -829,8 +829,12 @@
           }
         });
       }
-  
-      waitIdioma().then(actualizarTextos);
+  		
+		waitIdioma().then(lang => {
+		  aplicarDireccion(lang);
+		  actualizarTextos(lang);
+		});
+
     }
     
     console.log("Idioma inicial:", lang);
@@ -965,6 +969,22 @@
       gtag('js', new Date());
       gtag('config', 'G-KLM5SLY4ZT');
     })();
+
+  	function aplicarDireccion(lang) {
+	  // Lista de idiomas RTL (de derecha a izquierda)
+	  const rtlIdiomas = ['ar', 'he', 'fa', 'ur'];
+	
+	  // Si el idioma detectado está en la lista, aplica RTL
+	  if (rtlIdiomas.includes(lang)) {
+	    document.documentElement.setAttribute('dir', 'rtl');
+	  } else {
+	    document.documentElement.setAttribute('dir', 'ltr');
+	  }
+	
+	  // También actualiza el atributo lang del HTML
+	  document.documentElement.setAttribute('lang', lang);
+	}
+
 
   </script>
 </body>
