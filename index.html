@@ -105,9 +105,9 @@
       </nav>
 
       <div class="cta">
-        <button class="btn-ghost" data-t="btnContact" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contactar</button>
+        <button class="btn-ghost" data-t="btnContact" onclick="abrirChat()">Contactar</button>
         <div class="ocultar-movil">
-          <button class="btn-primary" data-t="btnDemo" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Solicitar demo</button>
+          <button class="btn-primary" data-t="btnDemo" onclick="abrirChat()">Solicitar demo</button>
         </div>
       </div>
     </header>
@@ -120,7 +120,7 @@
         <p class="lead" data-t="lead">IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.</p>
 
         <div class="ctaRow">
-          <button class="btn-primary" data-t="ctaDemo" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Solicitar Demo</button>
+          <button class="btn-primary" data-t="ctaDemo" onclick="abrirChat()">Solicitar Demo</button>
           <button class="btn-ghost" data-t="ctaDocs" onclick="openDocs()">Ver documentación técnica</button>
         </div>
 
@@ -216,7 +216,7 @@
         <h2 style="font-size:1.8em;color:#1e3a8a;margin-bottom:10px;" data-t="contactH">¿Necesitas ayuda o más información?</h2>
         <p style="font-size:1.1em;color:#334155;margin-bottom:30px;" data-t="contactLead">Nuestro Chat-IA está disponible para responder tus preguntas y guiarte para obtener tu IA entrenada o contactarnos.</p>
 		<p style="font-size:1.1em;color:#334155;margin-bottom:30px;" data-t="contactLead2">IA disponible desde 10.000 USD</p>
-        <button id="abrirChatExtra" style="background:linear-gradient(90deg,#3b82f6,#1e40af);border:none;padding:14px 40px;color:#fff;font-size:1.05em;font-weight:600;border-radius:9999px;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,0.4);transition:all .3s ease;" onmouseover="this.style.boxShadow='0 6px 18px rgba(59,130,246,0.6)'" onmouseout="this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" data-t="contactBtn">>>>
+        <button onclick="abrirChat()" style="background:linear-gradient(90deg,#3b82f6,#1e40af);border:none;padding:14px 40px;color:#fff;font-size:1.05em;font-weight:600;border-radius:9999px;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,0.4);transition:all .3s ease;" onmouseover="this.style.boxShadow='0 6px 18px rgba(59,130,246,0.6)'" onmouseout="this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" data-t="contactBtn">>>>
           <!-- texto dinamico -->
         </button>
       </div>
@@ -1620,13 +1620,11 @@
 	}
 
 
-  	document.getElementById("abrirChatExtra").addEventListener("click", () => {
-	  const btn = document.querySelector(".mapsx-float-btn");
-	  if (btn) {
-	    btn.click();
-	  }
-	});
-
+	//onclick="abrirChat()"
+	function abrirChat() {
+		const btn = document.querySelector(".mapsx-float-btn");
+		if (btn) btn.click(); // dispara la apertura del chat
+	}
 
 
   </script>
