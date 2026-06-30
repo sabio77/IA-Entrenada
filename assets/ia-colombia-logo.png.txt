@@ -1,0 +1,9 @@
+{
+  "asset": "ia-colombia-logo.png",
+  "brand": "IA Colombia",
+  "format": "png",
+  "purpose": "Logo principal IA Colombia",
+  "prompt": "Logo moderno para IA Colombia: símbolo abstracto de red neuronal y mapa sutil de Colombia formado por nodos azules, cian y violeta luminosos; fondo transparente sobre lienzo de referencia claro; estilo tecnológico premium, limpio, escalable, brillante, de alta legibilidad en favicon, encabezado y loader.",
+  "negative_prompt": "No incluir texto ilegible, marcas externas, logos de terceros, fotografías reales de personas identificables ni elementos que aparenten ser una imagen ya existente. No generar imágenes oscuras, modo oscuro, fondos negros, fondos nocturnos, baja iluminación, sombras pesadas, estética lúgubre, escenas opacas ni composiciones con poco contraste.",
+  "fallback_behavior": "Si el archivo PNG no existe, la interfaz debe mostrar una figura geométrica responsiva del mismo tamaño y cargar automáticamente la imagen cuando sea agregada a assets."
+}

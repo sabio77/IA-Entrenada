@@ -1,0 +1,9 @@
+{
+  "asset": "ia-scene-04-ia-center.png",
+  "brand": "IA Colombia",
+  "format": "png",
+  "purpose": "IA Center comercial",
+  "prompt": "Panel futurista de plataforma SaaS de IA bajo marca propia, usuarios, suscripciones, modelos y monitoreo; composición elegante, interfaz clara tipo dashboard premium, fondo luminoso, tarjetas blancas o azul muy claro, acentos cian y violeta, alta legibilidad visual sin texto.",
+  "negative_prompt": "No incluir texto ilegible, marcas externas, logos de terceros, fotografías reales de personas identificables ni elementos que aparenten ser una imagen ya existente. No generar imágenes oscuras, modo oscuro, fondos negros, fondos nocturnos, baja iluminación, sombras pesadas, estética lúgubre, escenas opacas ni composiciones con poco contraste.",
+  "fallback_behavior": "Si el archivo PNG no existe, la interfaz debe mostrar una figura geométrica responsiva del mismo tamaño y cargar automáticamente la imagen cuando sea agregada a assets."
+}

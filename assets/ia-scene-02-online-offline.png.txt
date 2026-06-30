@@ -1,0 +1,9 @@
+{
+  "asset": "ia-scene-02-online-offline.png",
+  "brand": "IA Colombia",
+  "format": "png",
+  "purpose": "Despliegue online y offline",
+  "prompt": "Arquitectura visual con nube segura, servidor local on-premise y dispositivo edge conectados por líneas luminosas, representando IA funcionando con o sin internet; iluminación clara de laboratorio tecnológico, fondo blanco o azul muy claro, volumen definido, sombras suaves, sin texto.",
+  "negative_prompt": "No incluir texto ilegible, marcas externas, logos de terceros, fotografías reales de personas identificables ni elementos que aparenten ser una imagen ya existente. No generar imágenes oscuras, modo oscuro, fondos negros, fondos nocturnos, baja iluminación, sombras pesadas, estética lúgubre, escenas opacas ni composiciones con poco contraste.",
+  "fallback_behavior": "Si el archivo PNG no existe, la interfaz debe mostrar una figura geométrica responsiva del mismo tamaño y cargar automáticamente la imagen cuando sea agregada a assets."
+}

@@ -1,0 +1,9 @@
+{
+  "asset": "clientes/ia-colombia-logo.png",
+  "brand": "IA Colombia",
+  "format": "png",
+  "purpose": "Logo de experiencia IA Colombia",
+  "prompt": "Versión horizontal del logo de IA Colombia para sección de experiencia y prueba social, fondo transparente sobre lienzo de referencia claro, símbolo de red neuronal con Colombia abstracta, iluminación limpia de estudio, alto contraste amable, paleta azul cian violeta luminosa, apariencia clara y profesional, sin texto pequeño.",
+  "negative_prompt": "No incluir texto ilegible, marcas externas, logos de terceros, fotografías reales de personas identificables ni elementos que aparenten ser una imagen ya existente. No generar imágenes oscuras, modo oscuro, fondos negros, fondos nocturnos, baja iluminación, sombras pesadas, estética lúgubre, escenas opacas ni composiciones con poco contraste.",
+  "fallback_behavior": "Si el archivo PNG no existe, la interfaz debe mostrar una figura geométrica responsiva del mismo tamaño y cargar automáticamente la imagen cuando sea agregada a assets."
+}

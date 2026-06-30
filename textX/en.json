@@ -1,0 +1,709 @@
+{
+  "iso": "en",
+  "name": "English",
+  "nativeName": "English",
+  "htmlLang": "en",
+  "dir": "ltr",
+  "meta": {
+    "title": "IA Colombia | Trained AI for companies online and offline",
+    "description": "IA Colombia develops, trains and deploys custom artificial intelligence models for companies: Web AI, 24/7 Chat-AI, offline AI without external subscriptions, online AI, industrial technical support, IA Center, LexIA, Omnia AI and PostAI through secure APIs with encryption, retraining and access control.",
+    "ogTitle": "IA Colombia | Enterprise AI training and deployment",
+    "ogDescription": "Custom AI solutions that learn from your company data, run in the cloud, on your own servers or offline, and integrate through APIs, webhooks and secure business processes.",
+    "appleTitle": "IA Colombia",
+    "applicationName": "IA Colombia",
+    "author": "IA Colombia",
+    "keywords": "IA Colombia, ia-col.com, artificial intelligence Colombia, enterprise AI, trained AI, offline AI, online AI, custom models, Web Chat AI, technical support AI, IA Center, LexIA, Omnia AI, PostAI, AI APIs, AI automation, automatic retraining, on-premise AI, cloud AI, AI for companies, production plant AI, legal AI, AI for sales, offline artificial intelligence, fine-tuned models, AI deployment Colombia, Web AI, 24/7 sales assistant, AI without subscriptions, one-time AI purchase, government entities, production lines, staff rotation, technical video call, specialized technical staff, POST requests, AI risk management"
+  },
+  "ui": {
+    "skip": "Skip to the current question",
+    "stageLabel": "Interactive IA Colombia experience",
+    "topbarLabel": "Main controls",
+    "brandAria": "Return to IA Colombia start",
+    "brandSmall": "trained AI online and offline",
+    "progressLabel": "Diagnosis progress",
+    "languageLabel": "Language",
+    "languageAria": "Change initial language",
+    "contentLabel": "Main content",
+    "pathLabelAria": "Registered decisions",
+    "decisionZoneLabel": "Current diagnosis options",
+    "summaryLabelAria": "Generated technical summary",
+    "footerLabel": "Diagnosis navigation",
+    "primaryFinance": "Request demo",
+    "primaryQuote": "Diagnose my AI",
+    "back": "Back",
+    "restart": "Restart",
+    "contactLabel": "Contact details",
+    "contactPlaceholder": "Business email",
+    "commentLabel": "Describe your case",
+    "commentPlaceholder": "Tell us what information you want to train, where the AI must run, whether it needs online, offline, own-server or API operation, and which process you want to improve: sales, support, maintenance, analytics, legal, production or customer service.",
+    "submitRoute": "Send to IA Colombia",
+    "copySummaryAction": "Copy summary",
+    "formNote": "Your answers remain saved only in this browser until you decide to send them. The summary helps IA Colombia prepare a technical route with scope, deployment, security and integration according to your real operation.",
+    "contactRequired": "Add your business email and WhatsApp number so IA Colombia can confirm the request, review the technical context and reply with the right training, deployment or integration route.",
+    "copySuccess": "Summary copied. You can paste it into WhatsApp, email or CRM to share the technical request without losing the generated context.",
+    "copyFailure": "Automatic copy failed, but the request can still be sent by email with the prepared summary.",
+    "mailOpening": "The automatic submission could not be confirmed in this attempt. We will open your email app with the prepared request for contacto@ia-col.com.",
+    "waitSummary": "Preparing AI route",
+    "preparingOptions": "Preparing options",
+    "optionFallback": "Choose an option",
+    "pathLabel": "Your decisions:",
+    "pathEmpty": "Every tap builds your diagnosis",
+    "interactionFallback": "Interaction",
+    "summaryTitle": "AI route prepared by IA Colombia",
+    "projectChosen": "Selected solution",
+    "expectedUse": "Expected use",
+    "wantedValue": "Wanted value",
+    "prioritySecurity": "Priority security",
+    "paymentMode": "Deployment mode",
+    "financing": "Commercial approach",
+    "pace": "Pace",
+    "technicalBase": "Suggested technical base",
+    "suggestedControls": "Suggested controls",
+    "nextStep": "Next step",
+    "contact": "Contact",
+    "additionalComment": "Additional comment",
+    "registeredInteractions": "Registered interactions",
+    "directRouteRequested": "Direct route requested.",
+    "directQuoteSubject": "IA Colombia request",
+    "financedSubject": "IA Colombia AI diagnosis request",
+    "directQuoteAudit": "The route jumps to diagnosis to define scope, data, model, deployment and integration.",
+    "financeAudit": "The route jumps to diagnosis prioritizing technical viability, security and enterprise deployment.",
+    "directQuoteTech": "AI diagnosis + technical and commercial scope",
+    "financeTech": "AI diagnosis + secure deployment + phased route",
+    "topActionsLabel": "Solutions · Language",
+    "proofEntryAria": "IA Colombia experience",
+    "proofOpenButton": "Experience",
+    "proofTitle": "Enterprise AI trained with real data",
+    "proofLead": "IA Colombia develops and trains custom artificial intelligence models for companies that need to automate sales, service, technical support, analytics, critical processes or internal knowledge, with online, offline, on-premise, cloud or secure API deployment options.",
+    "proofCloseAria": "Close IA Colombia experience",
+    "proofContentAria": "Experience, trust, method and quick questions from IA Colombia",
+    "proofSummaryAria": "IA Colombia technical trust",
+    "proofSummaryTitle": "Own, secure and retrainable AI models that can operate with or without internet",
+    "proofTrustLabel": "Technical trust:",
+    "proofTrustText": "training with real company information, Web AI for 24/7 service, offline deployment without external subscriptions, cloud, on-premise and edge, standard APIs, webhooks, full encryption, granular access control, auditing, automatic retraining, industrial technical support, on-site or video-call implementation and CRM/ERP integration. It also preserves total privacy, efficient execution on GPU and CPU, and deployment on your own servers when the business requires maximum control.",
+    "proofMethodLabel": "Method:",
+    "proofMethodText": "we analyze the process, organize the information, define training data, design the architecture, prepare security, train or adapt the model, validate responses and deploy the AI where the company needs it.",
+    "proofUseCasesLabel": "Use cases:",
+    "proofUseCasesText": "Web Chat-AI, offline AI, online AI, industrial technical support for production plants, own-brand IA Center, self-trainable commercial AI, legal LexIA, Omnia AI, PostAI through API, customer service, sales, maintenance, industrial diagnosis, risk management and document classification. It also covers sales assistants that provide product prices and information, IA Center on your own servers and under your own brand, and open commercial systems to feed and solve problems on production lines.",
+    "proofBrandsTitle": "IA Colombia solutions and AI lines",
+    "proofBrandsAria": "IA Colombia solutions and lines with automatic loading from assets/clientes",
+    "proofLogoPlaceholder": "IA Colombia",
+    "proofLogoAltTemplate": "{name} logo",
+    "proofFaqAria": "Quick frequently asked questions about IA Colombia",
+    "proofFaqWhyQuestion": "Why choose IA Colombia?",
+    "proofFaqWhyAnswer": "Because it turns real company information into useful, private models deployable in the cloud, on own servers or offline; offline projects can operate without external subscriptions, provide 24/7 service, be retrained with new data and receive on-site or technical video-call implementation.",
+    "proofFaqWhoQuestion": "Who is it for?",
+    "proofFaqWhoAnswer": "For companies, production plants, government or private teams, legal teams, commercial areas or businesses that need their own AI to respond, analyze, classify, learn and automate critical processes.",
+    "proofFaqStartQuestion": "How do I start?",
+    "proofFaqStartAnswer": "Request a diagnosis to review your data, define the AI type, choose online or offline deployment, estimate integration, security, training and implementation route.",
+    "proofBrandsStructuredDescription": "SEO list of IA Colombia solutions, service lines and future visual assets."
+  },
+  "services": [
+    {
+      "value": "software_online",
+      "label": "Online AI for companies",
+      "tech": "cloud + proprietary data",
+      "short": "Online"
+    },
+    {
+      "value": "app_movil",
+      "label": "Web and app Chat-AI",
+      "tech": "Web AI for 24/7 service and sales, trained with products, services, prices and contact rules to answer visitors in real time and escalate opportunities.",
+      "short": "Chat-AI"
+    },
+    {
+      "value": "software_pc",
+      "label": "Offline on-premise AI",
+      "tech": "Private AI without internet for own servers, designed for confidentiality, data control and operational continuity without permanent external subscriptions.",
+      "short": "Offline"
+    },
+    {
+      "value": "automatizacion",
+      "label": "PostAI and intelligent APIs",
+      "tech": "API + webhooks",
+      "short": "PostAI"
+    },
+    {
+      "value": "ia",
+      "label": "Specialized trained AI",
+      "tech": "Model that learns from documents, cases, experience and real data; it can specialize in law, medicine, manufacturing, education, sales or technical support.",
+      "short": "AI"
+    },
+    {
+      "value": "modernizacion",
+      "label": "Commercial IA Center",
+      "tech": "multi-AI platform",
+      "short": "Center"
+    }
+  ],
+  "sceneAssets": {
+    "intro": {
+      "symbol": "AI",
+      "label": "own models"
+    },
+    "serviceFamily": {
+      "symbol": "Route",
+      "label": "AI type"
+    },
+    "buildType": {
+      "symbol": "Deploy",
+      "label": "online/offline"
+    },
+    "automationType": {
+      "symbol": "API",
+      "label": "integration"
+    },
+    "modernization": {
+      "symbol": "Center",
+      "label": "AI business"
+    },
+    "operation": {
+      "symbol": "Edge",
+      "label": "cloud/local"
+    },
+    "value": {
+      "symbol": "Data",
+      "label": "operational value"
+    },
+    "risk": {
+      "symbol": "Trust",
+      "label": "security"
+    },
+    "finance": {
+      "symbol": "USD",
+      "label": "from 10,000"
+    },
+    "timeline": {
+      "symbol": "MVP",
+      "label": "deployment"
+    },
+    "summary": {
+      "symbol": "Ready",
+      "label": "diagnosis"
+    }
+  },
+  "metricsByScene": {
+    "intro": [
+      [
+        "24/7",
+        "service"
+      ],
+      [
+        "offline",
+        "option"
+      ],
+      [
+        "API",
+        "integration"
+      ]
+    ],
+    "serviceFamily": [
+      [
+        "7",
+        "AI lines"
+      ],
+      [
+        "2",
+        "languages"
+      ],
+      [
+        "1",
+        "diagnosis"
+      ]
+    ],
+    "buildType": [
+      [
+        "Cloud",
+        "online"
+      ],
+      [
+        "Local",
+        "on-premise"
+      ],
+      [
+        "Edge",
+        "device"
+      ]
+    ],
+    "automationType": [
+      [
+        "POST",
+        "API"
+      ],
+      [
+        "CRM",
+        "ERP"
+      ],
+      [
+        "Webhook",
+        "real time"
+      ]
+    ],
+    "modernization": [
+      [
+        "SaaS",
+        "own brand"
+      ],
+      [
+        "Plans",
+        "access"
+      ],
+      [
+        "Models",
+        "control"
+      ]
+    ],
+    "operation": [
+      [
+        "Online",
+        "remote"
+      ],
+      [
+        "Offline",
+        "private"
+      ],
+      [
+        "Edge",
+        "fast"
+      ]
+    ],
+    "value": [
+      [
+        "Sales",
+        "support"
+      ],
+      [
+        "Legal",
+        "LexIA"
+      ],
+      [
+        "Plant",
+        "technical"
+      ]
+    ],
+    "risk": [
+      [
+        "Encrypted",
+        "data"
+      ],
+      [
+        "RBAC",
+        "access"
+      ],
+      [
+        "Audit",
+        "trace"
+      ]
+    ],
+    "finance": [
+      [
+        "USD",
+        "from 10,000"
+      ],
+      [
+        "Phases",
+        "control"
+      ],
+      [
+        "Demo",
+        "route"
+      ]
+    ],
+    "timeline": [
+      [
+        "MVP",
+        "first"
+      ],
+      [
+        "1-3",
+        "months"
+      ],
+      [
+        "Scale",
+        "enterprise"
+      ]
+    ],
+    "summary": [
+      [
+        "Data",
+        "training"
+      ],
+      [
+        "Deploy",
+        "route"
+      ],
+      [
+        "Security",
+        "ready"
+      ]
+    ]
+  },
+  "scenes": {
+    "intro": {
+      "title": "Build your own AI with your data, online or offline",
+      "copy": "IA Colombia trains custom models for sales, support, maintenance, legal, analytics and critical processes. You can operate in the cloud, on your own servers, on edge devices or without internet.",
+      "insight": "The diagnosis identifies what information must be trained, which deployment fits and how to protect sensitive data before building.",
+      "optionQuestion": "What do you need to solve first?",
+      "options": [
+        {
+          "label": "Request demo",
+          "hint": "I want to review my case with IA Colombia",
+          "tech": "diagnosis + demo",
+          "insight": "I want IA Colombia to review my data, process and goal to propose a viable AI route."
+        },
+        {
+          "label": "Design my AI",
+          "hint": "I want AI trained with my information",
+          "tech": "custom model",
+          "insight": "I want to create a specialized artificial intelligence that understands my business and evolves with new data."
+        },
+        {
+          "label": "Quote integration",
+          "hint": "I want to connect AI to existing systems",
+          "tech": "API + deployment",
+          "insight": "I want to know how to integrate AI into my website, app, software, CRM, ERP or internal process."
+        }
+      ],
+      "progress": "Start"
+    },
+    "serviceFamily": {
+      "title": "What type of AI does your company need?",
+      "copy": "Choose the closest line: trained AI, Chat-AI, offline AI, IA Center, LexIA, Omnia AI or PostAI.",
+      "insight": "Each family defines data, infrastructure, security and the monetization or automation model.",
+      "optionQuestion": "Select the main approach",
+      "options": [
+        {
+          "label": "Trained AI",
+          "hint": "Specialized model with proprietary information",
+          "tech": "fine-tuning/RAG",
+          "insight": "I need AI that is expert in my operation, documents, cases, products or internal knowledge."
+        },
+        {
+          "label": "Automate with AI",
+          "hint": "Assistant, support, analytics or API",
+          "tech": "Chat-AI/PostAI",
+          "insight": "I want AI to respond, classify, analyze or trigger processes through web, app or API."
+        },
+        {
+          "label": "Create an AI business",
+          "hint": "IA Center or commercial Omnia AI",
+          "tech": "multi-model platform",
+          "insight": "I want to offer trained AI to third parties, sell access or manage models under my brand."
+        }
+      ],
+      "progress": "AI type"
+    },
+    "buildType": {
+      "title": "Where should the AI run?",
+      "copy": "IA Colombia can deploy models in the cloud, on your own servers, edge devices, websites, apps or offline environments.",
+      "insight": "The execution place defines privacy, performance, cost, maintenance and scalability.",
+      "optionQuestion": "Choose the environment",
+      "options": [
+        {
+          "label": "In the cloud",
+          "hint": "Remote and scalable access",
+          "tech": "cloud AI",
+          "insight": "I need AI to respond from anywhere, scale users and integrate corporate systems."
+        },
+        {
+          "label": "On websites or apps",
+          "hint": "Chat-AI for support and sales",
+          "tech": "web/app assistant",
+          "insight": "I want to serve users 24/7, answer about products and transfer to a salesperson when needed."
+        },
+        {
+          "label": "Without internet",
+          "hint": "Own server or edge",
+          "tech": "offline/on-premise",
+          "insight": "I need privacy, operational continuity and local control of sensitive data."
+        }
+      ],
+      "progress": "Deployment"
+    },
+    "automationType": {
+      "title": "What should AI do for your process?",
+      "copy": "It can respond, guide technicians, analyze POST requests, classify documents, support decisions or learn from new records.",
+      "insight": "The right automation keeps limits, traceability and human review when risk requires it.",
+      "optionQuestion": "Choose the key capability",
+      "options": [
+        {
+          "label": "Process POST requests",
+          "hint": "Analytics from any system",
+          "tech": "PostAI API",
+          "insight": "I need to send structured or unstructured data to receive diagnostics, classifications or predictions."
+        },
+        {
+          "label": "Serve customers",
+          "hint": "Chat-AI on web or digital channels",
+          "tech": "24/7 assistant",
+          "insight": "I want to answer questions, improve conversion and reduce human workload without losing commercial contact."
+        },
+        {
+          "label": "Technical support",
+          "hint": "Maintenance and production guidance",
+          "tech": "offline industrial AI",
+          "insight": "I want AI to remember failures, solutions and procedures to support operators even without internet."
+        }
+      ],
+      "progress": "Automation"
+    },
+    "modernization": {
+      "title": "Do you want AI to operate or to sell AI?",
+      "copy": "IA Center and Omnia AI make it possible to build own platforms, manage models, retrain knowledge and offer AI services to companies. IA Center can be hosted on your own servers and under your own brand to create a technology business with subscriptions or access plans.",
+      "insight": "The old website presented IA Center as a ChatGPT-style system hosted on owned infrastructure, with full control over data, models, performance and commercial brand.",
+      "optionQuestion": "Define the business model",
+      "options": [
+        {
+          "label": "IA Center",
+          "hint": "Your own ChatGPT-style center under your brand",
+          "tech": "multi-AI portal",
+          "insight": "I want to manage models, users, plans and conversation or automation services for third parties."
+        },
+        {
+          "label": "Omnia AI",
+          "hint": "Open and self-trainable AI",
+          "tech": "controlled self-learning",
+          "insight": "I want to create knowledge models that update with new data and serve multiple industries."
+        },
+        {
+          "label": "LexIA or vertical AI",
+          "hint": "Specialized in law or another sector",
+          "tech": "vertical model",
+          "insight": "I want to train expert AI in laws, cases, jurisprudence or specialized knowledge."
+        }
+      ],
+      "progress": "AI business"
+    },
+    "operation": {
+      "title": "How will it be used in real operation?",
+      "copy": "AI can be private, public, hybrid, API-connected or locally installed for industrial, government or corporate environments.",
+      "insight": "Good architecture avoids internet dependency when the company needs continuity or confidentiality.",
+      "optionQuestion": "Select the scenario",
+      "options": [
+        {
+          "label": "Remote users",
+          "hint": "Support, sales or online analytics",
+          "tech": "secure cloud",
+          "insight": "I need access from different offices, teams or clients."
+        },
+        {
+          "label": "Plant or sensitive entity",
+          "hint": "High security and internal data",
+          "tech": "on-premise/offline",
+          "insight": "I need information to remain inside the company or entity and operate without internet."
+        },
+        {
+          "label": "Connected systems",
+          "hint": "CRM, ERP, app, web or backend",
+          "tech": "API/webhook",
+          "insight": "I need to integrate AI into existing systems without duplicating data or processes."
+        }
+      ],
+      "progress": "Operation"
+    },
+    "value": {
+      "title": "What value should it create first?",
+      "copy": "It can reduce customer loss, accelerate sales, improve support, lower costs, improve compliance or turn internal knowledge into a reusable asset.",
+      "insight": "The first module should attack the most costly loss: time, customers, errors, knowledge or continuity.",
+      "optionQuestion": "Main priority",
+      "options": [
+        {
+          "label": "Sales and service",
+          "hint": "24/7 answers and better conversion",
+          "tech": "commercial Chat-AI",
+          "insight": "I want AI to answer about products, prices and requirements, and escalate to a human contact when needed."
+        },
+        {
+          "label": "Internal knowledge",
+          "hint": "Documents, cases, manuals and data",
+          "tech": "trained AI",
+          "insight": "I want my company to preserve experience, cases and procedures even when staff changes."
+        },
+        {
+          "label": "Analytics and decision",
+          "hint": "Classification, prediction or diagnosis",
+          "tech": "PostAI/analytics",
+          "insight": "I want each request or document to return a useful, measurable and traceable answer."
+        }
+      ],
+      "progress": "Value"
+    },
+    "risk": {
+      "title": "What must be protected from the beginning?",
+      "copy": "IA Colombia considers encryption, granular access control, private deployment, auditing, validations, model limits and compliance support.",
+      "insight": "Security is not added at the end: it defines architecture, allowed data, permissions and traceability.",
+      "optionQuestion": "Most important risk",
+      "options": [
+        {
+          "label": "Sensitive data",
+          "hint": "Privacy and confidentiality",
+          "tech": "encryption + on-premise",
+          "insight": "I need to protect documents, customers, processes, legal information or internal data."
+        },
+        {
+          "label": "Model accuracy",
+          "hint": "Verifiable and retrainable answers",
+          "tech": "validation + feedback",
+          "insight": "I need to reduce ambiguity, correct answers and keep knowledge updated."
+        },
+        {
+          "label": "Critical processes",
+          "hint": "Human supervision and audit",
+          "tech": "AI governance",
+          "insight": "I need limits, logs and human review for important decisions."
+        }
+      ],
+      "progress": "Security"
+    },
+    "finance": {
+      "title": "How do you want to start commercially?",
+      "copy": "The trained AI service starts at 10,000 USD and includes training, deployment and initial technical support according to the validated scope. Diagnosis organizes scope, phases, infrastructure and priority before committing investment.",
+      "insight": "Any additional software development, hardware or specialized AI server must be quoted separately. The system can adapt from small companies to large corporations with personalized advice.",
+      "optionQuestion": "Way forward",
+      "options": [
+        {
+          "label": "Technical demo",
+          "hint": "Validate viability before contracting",
+          "tech": "demo + sample data",
+          "insight": "I want to validate with examples, understand whether I need cloud, own server or specialized equipment, and confirm AI can solve my case."
+        },
+        {
+          "label": "Phased project",
+          "hint": "Diagnosis, training and deployment",
+          "tech": "AI roadmap",
+          "insight": "I want to advance by stages to control risk, investment, data, integration, initial technical support and infrastructure."
+        },
+        {
+          "label": "Enterprise proposal",
+          "hint": "Full scope from 10,000 USD",
+          "tech": "formal quote",
+          "insight": "I want a proposal with training, deployment, initial technical support, security, hardware, cloud, additional software and personalized advice."
+        }
+      ],
+      "progress": "Commercial start"
+    },
+    "timeline": {
+      "title": "How quickly should it be working?",
+      "copy": "A first version can validate data and answers; then it becomes robust with security, integration, retraining and final deployment.",
+      "insight": "Speed depends on information availability, data quality, deployment environment and security level.",
+      "optionQuestion": "Expected pace",
+      "options": [
+        {
+          "label": "Fast demo",
+          "hint": "Validate concept with sample data",
+          "tech": "AI MVP",
+          "insight": "I want to see a working proof before expanding scope."
+        },
+        {
+          "label": "1 to 3 months",
+          "hint": "Controlled modular build",
+          "tech": "short phases",
+          "insight": "I want to train, test, tune and deploy with real users."
+        },
+        {
+          "label": "Enterprise route",
+          "hint": "Security, integration and robust operation",
+          "tech": "enterprise architecture",
+          "insight": "I want a scalable solution with audit, permissions, support and continuous evolution."
+        }
+      ],
+      "progress": "Timeline"
+    },
+    "summary": {
+      "title": "Your AI route is ready.",
+      "copy": "IA Colombia can review your decisions, confirm training data, model type, integration, security, deployment and next commercial step.",
+      "insight": "Send the summary to prepare a clear technical route without losing context.",
+      "progress": "Request"
+    }
+  },
+  "labels": {
+    "serviceFamily": "AI type",
+    "service": "Solution",
+    "operation": "Real use",
+    "value": "Value",
+    "risk": "Protection",
+    "financing": "Commercial start",
+    "timeline": "Pace"
+  },
+  "valueLabels": {
+    "diagnostico": "Diagnosis or demo",
+    "producto_digital": "Trained AI",
+    "automatizacion_ia": "AI automation",
+    "modernizacion_operativa": "AI business / IA Center",
+    "software_online": "Online cloud AI",
+    "app_movil": "Web or app Chat-AI",
+    "software_pc": "Offline local AI",
+    "automatizacion": "PostAI / intelligent API",
+    "ia": "Specialized AI model",
+    "modernizacion": "Commercial IA Center",
+    "web_global": "remote users",
+    "mobile_first": "websites and apps",
+    "pc_local": "offline local server",
+    "workflow": "sales and service",
+    "automation": "internal knowledge",
+    "analytics": "analytics and decision",
+    "ai": "internal knowledge",
+    "experience": "user experience",
+    "analytics_ai": "analytics and decision",
+    "roles_permisos": "sensitive data",
+    "datos_sensibles": "accuracy and privacy",
+    "ia_critica": "critical processes",
+    "financiamiento_100": "technical demo or diagnosis",
+    "fases": "phased project",
+    "asesor": "enterprise proposal",
+    "mvp_rapido": "fast demo",
+    "fases_cortas": "1 to 3 months",
+    "enterprise": "enterprise route",
+    "contacto_directo": "request demo",
+    "sin_financiacion": "quote integration",
+    "ia_controlada": "AI or critical processes",
+    "1_3_meses": "1 to 3 months"
+  },
+  "recommendation": {
+    "defaults": {
+      "service": "custom enterprise AI",
+      "operation": "online/offline deployment",
+      "value": "automation and reusable knowledge",
+      "risk": "data security",
+      "financing": "commercial diagnosis",
+      "timeline": "phased route",
+      "technical": "AI model + data + deployment"
+    },
+    "technicalParts": {
+      "software_online": "secure cloud + knowledge base + API",
+      "app_movil": "Chat-AI widget + web/app channel + human escalation",
+      "software_pc": "on-premise server + local model + optional sync",
+      "automatizacion": "PostAI API + webhooks + validations",
+      "ia": "RAG/fine-tuning + retraining + evaluation",
+      "modernizacion": "IA Center + user management + access plans",
+      "web_global": "cloud + remote users",
+      "mobile_first": "web/app + conversational assistant",
+      "pc_local": "offline/on-premise + encryption",
+      "workflow": "commercial chat + contact rules",
+      "automation": "document base + knowledge retention",
+      "analytics": "classification + prediction + reports",
+      "roles_permisos": "RBAC + audit",
+      "datos_sensibles": "encryption + private deployment",
+      "ia_critica": "governance + human review"
+    },
+    "controlBase": [
+      "data scope",
+      "permission matrix",
+      "response logging",
+      "tests with real cases"
+    ],
+    "controlParts": {
+      "financiamiento_100": "validated technical demo",
+      "fases": "phased roadmap",
+      "asesor": "enterprise proposal",
+      "mvp_rapido": "MVP with sample data",
+      "enterprise": "robust architecture"
+    },
+    "nextSteps": {
+      "noService": "Request an initial diagnosis with IA Colombia.",
+      "mvp": "Prepare demo with sample data, quality criteria and target environment.",
+      "default": "Define training data, deployment, integration, security and support."
+    }
+  },
+  "schemaVersion": 1
+}

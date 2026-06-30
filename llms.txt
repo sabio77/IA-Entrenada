@@ -1,0 +1,179 @@
+# IA Colombia
+
+## Español (es)
+
+> Catálogo SEO de modelos entrenados, Chat-IA, IA offline, IA online, IA Center, LexIA, Omnia IA, PostAI, seguridad, APIs y despliegue empresarial.
+
+- Inicio: https://ia-col.com/es/
+- Soluciones IA: https://ia-col.com/es/soluciones/
+- Soluciones de inteligencia artificial de IA Colombia: Catálogo SEO de modelos entrenados, Chat-IA, IA offline, IA online, IA Center, LexIA, Omnia IA, PostAI, seguridad, APIs y despliegue empresarial.
+
+### Ficha técnica IA Colombia
+Información final para entender alcance, datos, despliegue, seguridad e integración.
+En sencillo. Técnico. Preguntas: FAQPage. Glosario: DefinedTermSet. Guía: TechArticle. Service. BreadcrumbList. OfferCatalog.
+
+### Alcance posible de IA Colombia
+
+#### Soluciones de IA
+Modelos y soluciones principales de IA Colombia.
+- [IA entrenada para empresas](https://ia-col.com/es/soluciones/ia-entrenada-empresas/): IA personalizada que aprende de documentos, casos, experiencias y datos reales de una empresa para dominar un sector como derecho, medicina, manufactura, educación, ventas o soporte técnico.
+- [Guía completa de IA Colombia desde la web vieja](https://ia-col.com/es/soluciones/guia-completa-ia-colombia-web-vieja/): Soluciones de IA a tu medida con modelos finamente ajustados usando información comercial, técnica o procesos críticos de la empresa, preservando la información esencial de la web vieja de IA Colombia.
+- [Chat-IA para webs e IA Webs](https://ia-col.com/es/soluciones/chat-ia-para-webs/): Asistente de ventas y atención al cliente para páginas web que entrega precios e información de productos, responde 24/7, reduce carga humana y deriva a contacto humano cuando se requiere.
+- [IA para soporte técnico industrial](https://ia-col.com/es/soluciones/ia-soporte-tecnico-industrial/): Asistencia técnica inteligente para plantas de producción sin internet, diseñada para alimentar y resolver problemas de líneas de producción con conocimiento de fallas reales y soluciones aplicadas.
+- [Reentrenamiento automático](https://ia-col.com/es/soluciones/reentrenamiento-automatico-ia/): Sistema para actualizar conocimiento con nuevos datos, informes, registros y casos sin perder trazabilidad.
+- [Datos de entrenamiento empresarial](https://ia-col.com/es/soluciones/datos-entrenamiento-empresa/): Preparación de documentos, bases de conocimiento, casos, manuales y registros para entrenar IA útil.
+- [RAG y ajuste fino empresarial](https://ia-col.com/es/soluciones/rag-fine-tuning-empresarial/): Arquitecturas para combinar búsqueda de conocimiento, contexto empresarial y respuestas controladas.
+- [Base de conocimiento empresarial](https://ia-col.com/es/soluciones/base-conocimiento-empresa/): Estructura documental para que la IA responda con información actualizada, aprobada y trazable.
+- [Diagnóstico IA Colombia](https://ia-col.com/es/soluciones/diagnostico-ia-colombia/): Revisión técnica para definir datos, modelo, despliegue, seguridad, integración y fases del proyecto.
+- [IA para retención de conocimiento y rotación de personal](https://ia-col.com/es/soluciones/ia-retencion-conocimiento-rotacion-personal/): Sistema de IA para conservar fallas, soluciones aplicadas, decisiones y aprendizajes internos aunque cambie el personal.
+
+#### Despliegue online y offline
+Arquitecturas de nube, on-premise, edge y operación sin internet.
+- [IA offline para empresas](https://ia-col.com/es/despliegue/ia-offline-empresas/): Modelo privado que funciona sin internet en servidores propios o infraestructura local.
+- [IA online en la nube](https://ia-col.com/es/despliegue/ia-online-nube/): Modelo alojado en la nube que aprende y responde en tiempo real con datos propios, se integra con CRM/ERP y puede escalar miles de solicitudes simultáneamente sin requerir servidor especializado IA en la empresa.
+- [IA on-premise en servidores propios](https://ia-col.com/es/despliegue/ia-on-premise-servidores-propios/): Despliegue local para organizaciones que necesitan control total sobre infraestructura y datos.
+- [IA en dispositivos edge](https://ia-col.com/es/despliegue/ia-edge-dispositivos-locales/): Modelos optimizados para operar cerca del proceso con baja latencia y dependencia mínima de internet.
+- [Optimización y cuantización](https://ia-col.com/es/despliegue/modelos-ligeros-cuantizacion/): Reducción de tamaño y consumo para ejecutar modelos en GPU, CPU o hardware especializado.
+- [IA offline sin mensualidad externa](https://ia-col.com/es/despliegue/ia-sin-mensualidad-offline/): IA propia para operar offline sin mensualidades externas: una compra e instalación puede cubrir el modelo entrenado con información de la empresa.
+- [IA para producción industrial sin internet](https://ia-col.com/es/despliegue/ia-produccion-industrial-sin-internet/): IA local para plantas de producción que necesitan soporte técnico, diagnóstico y consulta de conocimiento sin depender de conectividad externa.
+
+#### Industrias y usos
+Aplicaciones por área, sector y proceso empresarial.
+- [LexIA para bufetes y áreas legales](https://ia-col.com/es/industrias/lexia-ia-legal/): IA legal especializada en leyes, derecho penal y jurisprudencia que puede reentrenarse con decretos, sentencias, casos internos y estrategias del bufete.
+- [IA para ventas y conversión](https://ia-col.com/es/industrias/ia-para-ventas/): Asistente que responde dudas, orienta al comprador y mejora atención comercial 24/7.
+- [IA para atención al cliente](https://ia-col.com/es/industrias/ia-atencion-cliente/): Automatización de preguntas frecuentes, soporte inicial, escalamiento humano y seguimiento.
+- [IA para mantenimiento](https://ia-col.com/es/industrias/ia-mantenimiento-industrial/): Soporte técnico que conserva conocimiento de fallas y soluciones para reducir paradas y dependencia de personal experto.
+- [IA para entidades y alta seguridad](https://ia-col.com/es/industrias/ia-gobierno-entidades/): Despliegue privado para ambientes gubernamentales, industriales o corporativos con datos sensibles.
+- [IA para bufetes de abogados](https://ia-col.com/es/industrias/ia-bufetes-abogados/): Modelo legal reentrenable con sentencias, decretos, casos y estrategias internas.
+- [IA para salud y educación](https://ia-col.com/es/industrias/ia-salud-educacion/): Modelos de conocimiento para soporte, capacitación, consulta documental y procesos especializados.
+- [Soporte 24/7 con IA](https://ia-col.com/es/industrias/ia-para-soporte-24-7/): Atención continua para clientes o colaboradores, con reglas de escalamiento y contacto humano.
+- [IA para capacitación empresarial](https://ia-col.com/es/industrias/ia-capacitacion-empresarial/): IA entrenada con manuales, procedimientos y casos internos para capacitar equipos, resolver dudas y preservar conocimiento operativo.
+- [IA para ventas y atención 24/7](https://ia-col.com/es/industrias/ia-automatizacion-ventas-atencion-24-7/): Chat-IA para responder visitantes, explicar productos, informar precios y capturar oportunidades de venta todos los días.
+
+#### Integración y automatización
+APIs, webhooks, PostAI y conexión con sistemas existentes.
+- [PostAI por API](https://ia-col.com/es/integracion/postai-api-analitica/): PostAI procesa solicitudes POST con datos estructurados o no estructurados y devuelve análisis, clasificaciones, predicciones o diagnósticos en tiempo real.
+- [APIs y webhooks para IA](https://ia-col.com/es/integracion/apis-webhooks-ia/): Conexiones estándar para integrar la IA con webs, apps, backend, CRM, ERP y procesos internos.
+- [Clasificación documental con IA](https://ia-col.com/es/integracion/clasificacion-documental-ia/): Análisis de documentos, tickets, registros o solicitudes para clasificar, resumir y priorizar.
+- [Diagnóstico industrial con IA](https://ia-col.com/es/integracion/diagnostico-industrial-ia/): Análisis de señales, reportes o incidentes para sugerir causas, soluciones y próximos pasos.
+- [Análisis financiero y de riesgo](https://ia-col.com/es/integracion/analisis-financiero-riesgo-ia/): PostAI puede clasificar riesgos, revisar registros y devolver diagnósticos para procesos internos.
+- [Integración con CRM y ERP](https://ia-col.com/es/integracion/integracion-crm-erp-ia/): Conexión de IA con sistemas corporativos para responder, analizar y actualizar procesos.
+- [Webhooks en tiempo real](https://ia-col.com/es/integracion/webhooks-tiempo-real-ia/): Eventos automáticos para conectar IA con formularios, apps, alertas, pedidos o soporte.
+- [IA para apps, webs y software empresarial](https://ia-col.com/es/integracion/ia-apps-webs-software-empresarial/): Personalización de procesos IA para páginas web, aplicaciones, software interno, backends y plataformas empresariales.
+- [IA para diagnóstico, clasificación y predicción](https://ia-col.com/es/integracion/ia-diagnostico-clasificacion-prediccion/): PostAI y modelos entrenados pueden analizar datos, clasificar casos, generar diagnósticos y devolver predicciones a sistemas empresariales.
+
+#### Seguridad y gobierno
+Privacidad, cifrado, permisos, auditoría y cumplimiento.
+- [Privacidad de datos sensibles](https://ia-col.com/es/seguridad/privacidad-datos-ia/): Diseño para mantener información corporativa bajo control, con opciones cifradas y despliegue privado.
+- [Cifrado y control de acceso](https://ia-col.com/es/seguridad/cifrado-control-acceso/): Privacidad total para datos sensibles mediante cifrado en tránsito y en reposo, control de acceso granular, auditoría y despliegue on-premise cuando la seguridad lo exige.
+- [Auditoría y trazabilidad](https://ia-col.com/es/seguridad/auditoria-trazabilidad-ia/): Registro de consultas, respuestas, cambios de conocimiento y eventos críticos.
+- [Gobernanza con revisión humana](https://ia-col.com/es/seguridad/gobernanza-ia-humano/): Límites, validaciones y revisión humana para procesos críticos o decisiones sensibles.
+- [Cumplimiento normativo en IA](https://ia-col.com/es/seguridad/cumplimiento-normativo-ia/): Soporte para políticas internas, seguridad documental y requerimientos de operación privada.
+- [IA para procesos críticos empresariales](https://ia-col.com/es/seguridad/ia-procesos-criticos-empresariales/): IA diseñada para apoyar procesos sensibles con controles, revisión humana, trazabilidad y reglas de seguridad desde el inicio.
+
+#### Negocio y monetización
+IA Center, Omnia IA y modelos para vender IA como servicio.
+- [IA Center comercial](https://ia-col.com/es/comercial/ia-center-plataforma-comercial/): Plataforma tipo ChatGPT alojada en tus propios servidores y bajo tu marca para ofrecer conversación, automatización o asistencia inteligente a empresas y usuarios finales mediante suscripciones o planes de acceso.
+- [Omnia IA autoentrenable](https://ia-col.com/es/comercial/omnia-ia-autoentrenable/): IA universal, abierta y autoentrenable que aprende procedimientos técnicos, manuales, procesos administrativos y conocimiento propio para soporte, capacitación y venta de IA entrenadas.
+- [IA comercial de entrenamiento abierto](https://ia-col.com/es/comercial/ia-comercial-entrenamiento-abierto/): Sistema configurable para que una empresa cree y venda IA entrenadas por sector o cliente.
+- [Suscripciones y planes de acceso IA](https://ia-col.com/es/comercial/suscripciones-planes-ia/): Modelo comercial para vender conversación, automatización o asistencia inteligente con planes.
+- [IA bajo marca propia](https://ia-col.com/es/comercial/marca-propia-ia/): Despliegue de portal, experiencia y administración de IA con identidad comercial propia.
+- [Monitoreo de modelos IA](https://ia-col.com/es/comercial/monitoreo-modelos-ia/): Supervisión de uso, rendimiento, calidad de respuesta, usuarios y evolución de modelos.
+- [IA disponible desde 10.000 USD](https://ia-col.com/es/comercial/ia-desde-10000-usd/): Referencia comercial heredada de la web anterior para iniciar evaluación de proyectos empresariales.
+- [Contacto IA Colombia](https://ia-col.com/es/comercial/ia-colombia-contacto/): Canal para solicitar demo, diagnóstico, instalación en sitio o implementación por videollamada con personal técnico especializado de IA Colombia.
+- [Implementación de IA en sitio o por videollamada](https://ia-col.com/es/comercial/implementacion-ia-en-sitio-videollamada/): IA Colombia ofrece atención directa, instalación e implementación en sitio o por videollamada con personal técnico especializado.
+- [Planes y despliegue de IA Colombia](https://ia-col.com/es/comercial/planes-despliegue-ia-colombia/): El servicio de IA entrenada arranca desde 10.000 USD e incluye entrenamiento, despliegue y soporte técnico inicial según alcance; software adicional, hardware o servidor especializado IA se cotizan por separado.
+
+- Sitemap: https://ia-col.com/sitemap.xml
+- Robots: https://ia-col.com/robots.txt
+- ia-col.com
+- IA Colombia
+
+## English (en)
+
+> SEO catalog for trained models, Chat-AI, offline AI, online AI, IA Center, LexIA, Omnia AI, PostAI, security, APIs and enterprise deployment.
+
+- Home: https://ia-col.com/en/
+- AI solutions: https://ia-col.com/en/solutions/
+- IA Colombia artificial intelligence solutions: SEO catalog for trained models, Chat-AI, offline AI, online AI, IA Center, LexIA, Omnia AI, PostAI, security, APIs and enterprise deployment.
+
+### IA Colombia technical page
+Final information to understand scope, data, deployment, security and integration.
+Simple. Technical. Questions: FAQPage. Glossary: DefinedTermSet. Guide: TechArticle. Service. BreadcrumbList. OfferCatalog.
+
+### Possible IA Colombia scope
+
+#### AI solutions
+Main IA Colombia AI models and products.
+- [Trained AI for companies](https://ia-col.com/en/solutions/ia-entrenada-empresas/): Custom AI that learns from company documents, cases, experience and real data to master a sector such as law, medicine, manufacturing, education, sales or technical support.
+- [Complete IA Colombia guide from the old website](https://ia-col.com/en/solutions/ia-colombia-old-website-complete-guide/): Tailored AI solutions with fine-tuned models using commercial, technical or critical-process information from the company, preserving the essential information from the old IA Colombia website.
+- [Web Chat-AI and Web AI](https://ia-col.com/en/solutions/chat-ia-para-webs/): Sales and customer-service assistant for websites that provides product prices and information, responds 24/7, reduces human workload and routes to human contact when required.
+- [Industrial technical support AI](https://ia-col.com/en/solutions/ia-soporte-tecnico-industrial/): Intelligent technical assistance for offline production plants, designed to feed and solve production-line problems with knowledge from real failures and applied solutions.
+- [Automatic retraining](https://ia-col.com/en/solutions/reentrenamiento-automatico-ia/): System to update knowledge with new data, reports, records and cases without losing traceability.
+- [Enterprise training data](https://ia-col.com/en/solutions/datos-entrenamiento-empresa/): Preparation of documents, knowledge bases, cases, manuals and records to train useful AI.
+- [Enterprise RAG and fine-tuning](https://ia-col.com/en/solutions/rag-fine-tuning-empresarial/): Architectures to combine knowledge retrieval, enterprise context and controlled answers.
+- [Enterprise knowledge base](https://ia-col.com/en/solutions/base-conocimiento-empresa/): Document structure so AI answers with updated, approved and traceable information.
+- [IA Colombia diagnosis](https://ia-col.com/en/solutions/diagnostico-ia-colombia/): Technical review to define data, model, deployment, security, integration and project phases.
+- [AI for knowledge retention and staff rotation](https://ia-col.com/en/solutions/ai-knowledge-retention-staff-rotation/): AI system to preserve failures, applied solutions, decisions and internal lessons even when staff changes.
+
+#### Online and offline deployment
+Cloud, on-premise, edge and offline operation architectures.
+- [Offline AI for companies](https://ia-col.com/en/deployment/ia-offline-empresas/): Private model that works without internet on own servers or local infrastructure.
+- [Online cloud AI](https://ia-col.com/en/deployment/ia-online-nube/): Cloud-hosted model that learns and responds in real time with company data, integrates with CRM/ERP and can scale to thousands of simultaneous requests without requiring a specialized AI server inside the company.
+- [On-premise AI on own servers](https://ia-col.com/en/deployment/ia-on-premise-servidores-propios/): Local deployment for organizations that need full control over infrastructure and data.
+- [AI on edge devices](https://ia-col.com/en/deployment/ia-edge-dispositivos-locales/): Models optimized to operate near the process with low latency and minimal internet dependency.
+- [Optimization and quantization](https://ia-col.com/en/deployment/modelos-ligeros-cuantizacion/): Reducing size and consumption to run models on GPU, CPU or specialized hardware.
+- [Offline AI without external monthly fees](https://ia-col.com/en/deployment/ia-sin-mensualidad-offline/): Own AI to operate offline without external subscriptions: one purchase and installation can cover the model trained with company information.
+- [AI for industrial production without internet](https://ia-col.com/en/deployment/industrial-ai-without-internet/): Local AI for production plants that need technical support, diagnosis and knowledge consultation without depending on external connectivity.
+
+#### Industries and uses
+Applications by area, sector and enterprise process.
+- [LexIA for law firms and legal teams](https://ia-col.com/en/industries/lexia-ia-legal/): Legal AI specialized in law, criminal law and jurisprudence that can be retrained with decrees, rulings, internal cases and law firm strategies.
+- [AI for sales and conversion](https://ia-col.com/en/industries/ia-para-ventas/): Assistant that answers questions, guides buyers and improves 24/7 commercial service.
+- [AI for customer service](https://ia-col.com/en/industries/ia-atencion-cliente/): Automation for FAQs, initial support, human escalation and follow-up.
+- [AI for maintenance](https://ia-col.com/en/industries/ia-mantenimiento-industrial/): Technical support that preserves failure and solution knowledge to reduce downtime and dependence on expert staff.
+- [AI for entities and high-security environments](https://ia-col.com/en/industries/ia-gobierno-entidades/): Private deployment for government, industrial or corporate environments with sensitive data.
+- [AI for law firms](https://ia-col.com/en/industries/ia-bufetes-abogados/): Retrainable legal model with rulings, decrees, cases and internal strategies.
+- [AI for health and education](https://ia-col.com/en/industries/ia-salud-educacion/): Knowledge models for support, training, document consultation and specialized processes.
+- [24/7 AI support](https://ia-col.com/en/industries/ia-para-soporte-24-7/): Continuous service for customers or collaborators, with escalation rules and human contact.
+- [AI for enterprise training](https://ia-col.com/en/industries/enterprise-ai-training/): AI trained with manuals, procedures and internal cases to train teams, answer questions and preserve operational knowledge.
+- [AI for sales and 24/7 service](https://ia-col.com/en/industries/ai-sales-service-automation-24-7/): Chat-AI to answer visitors, explain products, provide prices and capture sales opportunities every day.
+
+#### Integration and automation
+APIs, webhooks, PostAI and connection with existing systems.
+- [PostAI through API](https://ia-col.com/en/integration/postai-api-analitica/): PostAI processes POST requests with structured or unstructured data and returns real-time analysis, classifications, predictions or diagnostics.
+- [APIs and webhooks for AI](https://ia-col.com/en/integration/apis-webhooks-ia/): Standard connections to integrate AI with websites, apps, backends, CRM, ERP and internal processes.
+- [Document classification with AI](https://ia-col.com/en/integration/clasificacion-documental-ia/): Analysis of documents, tickets, records or requests to classify, summarize and prioritize.
+- [Industrial diagnosis with AI](https://ia-col.com/en/integration/diagnostico-industrial-ia/): Analysis of signals, reports or incidents to suggest causes, solutions and next steps.
+- [Financial and risk analysis](https://ia-col.com/en/integration/analisis-financiero-riesgo-ia/): PostAI can classify risks, review records and return diagnostics for internal processes.
+- [CRM and ERP integration](https://ia-col.com/en/integration/integracion-crm-erp-ia/): Connecting AI with corporate systems to respond, analyze and update processes.
+- [Real-time webhooks](https://ia-col.com/en/integration/webhooks-tiempo-real-ia/): Automatic events to connect AI with forms, apps, alerts, orders or support.
+- [AI for apps, websites and enterprise software](https://ia-col.com/en/integration/ai-for-apps-websites-enterprise-software/): Customization of AI processes for websites, applications, internal software, backends and enterprise platforms.
+- [AI for diagnosis, classification and prediction](https://ia-col.com/en/integration/ai-diagnosis-classification-prediction/): PostAI and trained models can analyze data, classify cases, generate diagnoses and return predictions to enterprise systems.
+
+#### Security and governance
+Privacy, encryption, permissions, auditing and compliance.
+- [Sensitive data privacy](https://ia-col.com/en/security/privacidad-datos-ia/): Design to keep corporate information under control, with encrypted options and private deployment.
+- [Encryption and access control](https://ia-col.com/en/security/cifrado-control-acceso/): Total privacy for sensitive data through encryption in transit and at rest, granular access control, auditing and on-premise deployment when security requires it.
+- [Audit and traceability](https://ia-col.com/en/security/auditoria-trazabilidad-ia/): Logging of queries, answers, knowledge changes and critical events.
+- [Governance with human review](https://ia-col.com/en/security/gobernanza-ia-humano/): Limits, validations and human review for critical processes or sensitive decisions.
+- [AI compliance support](https://ia-col.com/en/security/cumplimiento-normativo-ia/): Support for internal policies, document security and private operation requirements.
+- [AI for critical enterprise processes](https://ia-col.com/en/security/ai-for-critical-enterprise-processes/): AI designed to support sensitive processes with controls, human review, traceability and security rules from the beginning.
+
+#### Business and monetization
+IA Center, Omnia AI and models to sell AI as a service.
+- [Commercial IA Center](https://ia-col.com/en/business/ia-center-plataforma-comercial/): ChatGPT-style platform hosted on your own servers and under your own brand to offer conversation, automation or intelligent assistance to companies and end users through subscriptions or access plans.
+- [Self-trainable Omnia AI](https://ia-col.com/en/business/omnia-ia-autoentrenable/): Universal, open and self-trainable AI that learns technical procedures, manuals, administrative processes and proprietary knowledge for support, training and sale of trained AI products.
+- [Open-training commercial AI](https://ia-col.com/en/business/ia-comercial-entrenamiento-abierto/): Configurable system for a company to create and sell trained AI by sector or client.
+- [AI subscriptions and access plans](https://ia-col.com/en/business/suscripciones-planes-ia/): Commercial model to sell conversation, automation or intelligent assistance through plans.
+- [AI under your own brand](https://ia-col.com/en/business/marca-propia-ia/): Deployment of portal, experience and AI administration with your own commercial identity.
+- [AI model monitoring](https://ia-col.com/en/business/monitoreo-modelos-ia/): Monitoring usage, performance, response quality, users and model evolution.
+- [AI available from 10,000 USD](https://ia-col.com/en/business/ia-desde-10000-usd/): Commercial reference inherited from the previous website to start enterprise project evaluation.
+- [Contact IA Colombia](https://ia-col.com/en/business/ia-colombia-contacto/): Channel to request demo, diagnosis, on-site installation or video-call implementation with IA Colombia specialized technical staff.
+- [AI implementation on site or by video call](https://ia-col.com/en/business/on-site-video-call-ai-implementation/): IA Colombia offers direct support, installation and implementation on site or by video call with specialized technical staff.
+- [IA Colombia AI plans and deployment](https://ia-col.com/en/business/ia-colombia-ai-plans-deployment/): The trained AI service starts at 10,000 USD and includes training, deployment and initial technical support depending on scope; additional software, hardware or a specialized AI server are quoted separately.
+
+- Sitemap: https://ia-col.com/sitemap.xml
+- Robots: https://ia-col.com/robots.txt
+- ia-col.com
+- IA Colombia

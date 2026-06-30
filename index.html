@@ -1,1635 +1,512 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" dir="ltr" data-language="es" data-text-script="latin">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="Content-Language" content="es">
-  <meta name="author" content="IA Colombia">
-  <meta name="theme-color" content="#2563eb">
-
-  <!-- Meta dinámicos -->
-  <title id="meta-title">IA Colombia — Entrenamiento y Despliegue de IA</title>
-  <meta name="description" id="meta-description" content="IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.">
-  <meta name="keywords" id="meta-keywords" content="">
-  <link rel="canonical" href="https://ia-col.com/">
-  <link rel="icon" href="https://ia-col.com/img/IA-Colombia.webp" type="image/webp">
-
-  <!-- Open Graph (Facebook, WhatsApp, Telegram, Discord, LinkedIn, etc.) -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" id="og-title" content="IA Colombia — Entrenamiento y Despliegue de IA">
-  <meta property="og:description" id="og-description" content="IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.">
-  <meta property="og:url" content="https://ia-col.com/">
-  <meta property="og:image" id="og-image" content="https://ia-col.com/img/IA-Colombia.webp">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" id="tw-title" content="IA Colombia — Entrenamiento y Despliegue de IA">
-  <meta name="twitter:description" id="tw-description" content="IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.">
-  <meta name="twitter:image" id="tw-image" content="https://ia-col.com/img/IA-Colombia.webp">
-
-  <!-- JSON-LD básicos (se construyen y actualizan luego) -->
-  <!-- Fuentes y librerías -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-  <script src="https://mapsx.app/chat-ia" data-source="mapsx" async=""></script>
-
-  <style>
-    :root {
-      --bg: #f3f6fb;
-      --glass: rgba(255,255,255,0.7);
-      --card: rgba(255,255,255,0.85);
-      --accent: #2563eb;
-      --accent-2: #1d4ed8;
-      --muted: #4b5563;
-      --max: 1200px;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#d9e9f2" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="IA Colombia" data-i18n-content="meta.appleTitle" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="application-name" content="IA Colombia" data-i18n-content="meta.applicationName" />
+  <meta name="author" content="IA Colombia" data-i18n-content="meta.author" />
+  <script>
+    (() => {
+      const timezoneToCountry = {
+        'America/Bogota': 'CO', 'America/New_York': 'US', 'America/Chicago': 'US', 'America/Denver': 'US', 'America/Los_Angeles': 'US',
+        'America/Mexico_City': 'MX', 'America/Lima': 'PE', 'America/Santiago': 'CL', 'America/Argentina/Buenos_Aires': 'AR', 'America/Sao_Paulo': 'BR',
+        'Europe/Madrid': 'ES', 'Europe/London': 'GB', 'Europe/Paris': 'FR', 'Europe/Berlin': 'DE', 'Europe/Moscow': 'RU',
+        'Asia/Shanghai': 'CN', 'Asia/Kolkata': 'IN', 'Asia/Dubai': 'AE', 'Asia/Dhaka': 'BD', 'Asia/Jakarta': 'ID', 'Asia/Karachi': 'PK', 'Asia/Tokyo': 'JP'
+      };
+      const daylightProfiles = {
+        DEFAULT: [6, 18], CO: [6, 18], US: [7, 19], MX: [7, 19], PE: [6, 18], CL: [7, 20], AR: [7, 20], BR: [6, 19], ES: [8, 20],
+        GB: [8, 19], FR: [8, 20], DE: [8, 20], RU: [8, 18], CN: [7, 19], IN: [6, 18], AE: [6, 18], BD: [6, 18], ID: [6, 18], PK: [6, 18], JP: [6, 18]
+      };
+      const localeRegion = (() => {
+        for (const locale of navigator.languages || [navigator.language]) {
+          try {
+            const region = new Intl.Locale(locale).region;
+            if (region) return region.toUpperCase();
+          } catch {}
+        }
+        return null;
+      })();
+      const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      const country = timezoneToCountry[timeZone] || localeRegion || 'DEFAULT';
+      const [start, end] = daylightProfiles[country] || daylightProfiles.DEFAULT;
+      const hour = new Date().getHours();
+      const theme = hour >= start && hour < end ? 'light' : 'dark';
+      document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.themeCountry = country;
+      document.documentElement.style.colorScheme = theme;
+    })();
+  </script>
+  <link rel="icon" type="image/png" href="./assets/ia-colombia-logo.png" />
+  <link rel="apple-touch-icon" href="./assets/ia-colombia-logo.png" />
+  <link rel="preload" as="image" href="./assets/ia-colombia-logo.png" fetchpriority="high" />
+  <meta name="description" content="" data-i18n-content="meta.description" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="IA Colombia" data-i18n-content="meta.applicationName" />
+  <meta property="og:title" content="" data-i18n-content="meta.ogTitle" />
+  <meta property="og:description" content="" data-i18n-content="meta.ogDescription" />
+  <meta property="og:url" content="https://ia-col.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="" data-i18n-content="meta.ogTitle" />
+  <meta name="twitter:description" content="" data-i18n-content="meta.ogDescription" />
+  <meta name="keywords" data-i18n-content="meta.keywords" content="" />
+  <script type="application/ld+json" id="hmStructuredData">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ia-col.com/#organization",
+      "name": "IA Colombia",
+      "url": "https://ia-col.com/",
+      "logo": "https://ia-col.com/assets/ia-colombia-logo.png",
+      "email": "contacto@ia-col.com",
+      "description": "IA Colombia desarrolla, entrena y despliega modelos de inteligencia artificial personalizados para empresas que necesitan operar online, offline, en servidores propios, nube o mediante APIs seguras.",
+      "sameAs": [
+        "https://www.linkedin.com/company/ia-colombia"
+      ],
+      "knowsAbout": [
+        "IA entrenada",
+        "IA offline",
+        "IA online",
+        "Chat-IA para webs",
+        "IA Center",
+        "LexIA",
+        "Omnia IA",
+        "PostAI",
+        "APIs de IA",
+        "reentrenamiento automático",
+        "modelos personalizados",
+        "on-premise AI",
+        "cifrado y control de acceso"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://ia-col.com/#website",
+      "name": "IA Colombia",
+      "url": "https://ia-col.com/",
+      "publisher": {
+        "@id": "https://ia-col.com/#organization"
+      },
+      "inLanguage": [
+        "es",
+        "en"
+      ],
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ia-col.com/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://ia-col.com/#webpage",
+      "url": "https://ia-col.com/",
+      "name": "IA Colombia | IA entrenada para empresas online y offline",
+      "description": "Nueva experiencia bilingüe de IA Colombia con la información de la web vieja preservada: IA entrenada, Chat-IA, IA offline, IA online, IA Center, Omnia IA, LexIA, PostAI, seguridad, despliegue y planes desde 10.000 USD.",
+      "isPartOf": {
+        "@id": "https://ia-col.com/#website"
+      },
+      "publisher": {
+        "@id": "https://ia-col.com/#organization"
+      },
+      "inLanguage": "es",
+      "breadcrumb": {
+        "@id": "https://ia-col.com/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://ia-col.com/#solutions-itemlist"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://ia-col.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://ia-col.com/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://ia-col.com/#solutions-itemlist",
+      "name": "Soluciones IA Colombia",
+      "description": "Catálogo principal de soluciones, despliegues, integraciones, seguridad y planes de IA Colombia.",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://ia-col.com/es/soluciones/ia-entrenada-empresas/",
+          "name": "IA entrenada para empresas",
+          "description": "IA personalizada que aprende de documentos, casos, experiencias y datos reales de una empresa para dominar un sector como derecho, medicina, manufactura, educación, ventas o soporte técnico."
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://ia-col.com/es/soluciones/chat-ia-para-webs/",
+          "name": "Chat-IA para webs e IA Webs",
+          "description": "Asistente de ventas y atención al cliente para páginas web que entrega precios e información de productos, responde 24/7, reduce carga humana y deriva a contacto humano cuando se requiere."
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://ia-col.com/es/soluciones/ia-soporte-tecnico-industrial/",
+          "name": "IA para soporte técnico industrial",
+          "description": "Asistencia técnica inteligente para plantas de producción sin internet, diseñada para alimentar y resolver problemas de líneas de producción con conocimiento de fallas reales y soluciones aplicadas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://ia-col.com/es/comercial/ia-center-plataforma-comercial/",
+          "name": "IA Center comercial",
+          "description": "Plataforma tipo ChatGPT alojada en tus propios servidores y bajo tu marca para ofrecer conversación, automatización o asistencia inteligente a empresas y usuarios finales mediante suscripciones o planes de acceso."
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://ia-col.com/es/comercial/omnia-ia-autoentrenable/",
+          "name": "Omnia IA autoentrenable",
+          "description": "IA universal, abierta y autoentrenable que aprende procedimientos técnicos, manuales, procesos administrativos y conocimiento propio para soporte, capacitación y venta de IA entrenadas."
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://ia-col.com/es/industrias/lexia-ia-legal/",
+          "name": "LexIA para bufetes y áreas legales",
+          "description": "IA legal especializada en leyes, derecho penal y jurisprudencia que puede reentrenarse con decretos, sentencias, casos internos y estrategias del bufete."
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://ia-col.com/es/integracion/postai-api-analitica/",
+          "name": "PostAI por API",
+          "description": "PostAI procesa solicitudes POST con datos estructurados o no estructurados y devuelve análisis, clasificaciones, predicciones o diagnósticos en tiempo real."
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://ia-col.com/es/comercial/planes-despliegue-ia-colombia/",
+          "name": "Planes y despliegue de IA Colombia",
+          "description": "El servicio de IA entrenada arranca desde 10.000 USD e incluye entrenamiento, despliegue y soporte técnico inicial según alcance; software adicional, hardware o servidor especializado IA se cotizan por separado."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://ia-col.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿La IA funciona sin internet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. IA Colombia ofrece despliegues offline y on-premise para entornos con conectividad limitada o alta confidencialidad, además de opciones online en la nube."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo protegen los datos sensibles?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se contemplan cifrado, control de acceso granular, auditoría, despliegue privado y gobierno de IA según el tipo de información y proceso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se puede integrar con sistemas propios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Las soluciones pueden integrarse mediante APIs, webhooks, solicitudes POST, CRM, ERP, webs, apps o backend empresarial."
+          }
+        }
+      ]
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;background:linear-gradient(180deg,#e8edf7 0%,#f9fbff 100%);background-attachment:fixed;color:#1e293b}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max);margin:0 auto;padding:28px}
-    header.win11{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px;border-radius:14px;background:rgba(255,255,255,0.7);box-shadow:0 8px 30px rgba(0,0,0,0.1);backdrop-filter:blur(16px);border:1px solid rgba(0,0,0,0.05)}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:48px;border-radius:10px}
-    .brand .title{font-weight:800;font-size:18px}
-    .nav{display:flex;gap:12px;align-items:center}
-    .nav a{padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:600;transition:background .2s}
-    .nav a:hover{background:rgba(37,99,235,0.08)}
-    .cta{display:flex;gap:8px}
-    .btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#fff;padding:10px 16px;border-radius:12px;font-weight:700;border:none;cursor:pointer;box-shadow:0 4px 18px rgba(37,99,235,0.25);transition:transform .1s}
-    .btn-primary:hover{transform:translateY(-1px)}
-    .btn-ghost{background:transparent;border:1px solid rgba(0,0,0,0.08);padding:8px 12px;border-radius:10px;color:#334155}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:center;margin-top:28px}
-    .heroCard{padding:28px;border-radius:16px;background:var(--card);box-shadow:0 18px 60px rgba(0,0,0,0.05);position:relative;overflow:hidden}
-    .kicker{color:var(--accent);font-weight:800;letter-spacing:.6px}
-    h1{font-size:clamp(26px,4.4vw,44px);margin:10px 0;line-height:1.1}
-    p.lead{color:var(--muted);margin-bottom:18px;max-width:62ch}
-    .ctaRow{display:flex;gap:12px;align-items:center;margin-top:8px}
-    .visual{width:100%;max-width:100%;min-width:0;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;border-radius:18px;background:linear-gradient(180deg,#e2e8f0,#f1f5f9);position:relative;box-shadow:inset 0 0 60px rgba(37,99,235,0.08);overflow:hidden;transform:translateZ(0)}
-    .visual img{width:100%;height:100%;object-fit:contain;border-radius:8px;display:block;transform-origin:center;will-change:transform}
-    .glassCard{width:360px;height:240px;padding:16px;backdrop-filter:blur(12px)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-    .card{background:var(--card);padding:16px;border-radius:12px;color:#1e293b;border:1px solid rgba(0,0,0,0.06)}
-    .examples,.pricing{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
-    .example,.plan{background:var(--card);padding:12px;border-radius:10px}
-    form{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    input,textarea{background:rgba(255,255,255,0.7);border:1px solid rgba(0,0,0,0.05);padding:12px;border-radius:10px;color:#1e293b}
-    footer{margin-top:28px;padding:18px;color:var(--muted);text-align:center}
-    .ocultar-movil{display:block}
-	.ocultar-tablet{display:block}
-	.muted{ color:var(--muted) }
-    .small{ font-size:0.9rem; color:var(--muted) }
-    @media(max-width:980px){.ocultar-tablet{display:none} .hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.pricing{grid-template-columns:1fr}}
-    @media(max-width:560px){.ocultar-movil{display:none}.brand .title{display:none !important}.grid{grid-template-columns:1fr}.nav{display:none}form{grid-template-columns:1fr}}
-    a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(37,99,235,0.2);outline-offset:2px}
-  </style>
+  ]
+}
+  </script>
+  <title>IA Colombia | IA entrenada para empresas online y offline</title>
+  <link rel="canonical" href="https://ia-col.com/" />
+  <link rel="alternate" type="text/plain" title="IA Colombia llms.txt" href="https://ia-col.com/llms.txt" />
+  <link rel="stylesheet" href="./css/hashinmy-immersive.css" />
 </head>
-<body data-aos-easing="ease-out-cubic" data-aos-duration="700" data-aos-delay="0">
-  <div class="container">
-    <header class="win11" role="banner">
-      <div class="brand">
-        <img src="https://ia-col.com/img/IA-Colombia.webp" alt="Entrenamiento de modelos de IA en Colombia para empresas" data-t="imgAlt">
-        <div>
-          <div class="title" data-t="brandTitle">IA Colombia</div>
-          <div style="font-size:12px; color:var(--muted)" data-t="brandSubtitle">Entrenamiento y despliegue de IA — Online & Offline</div>
+<body>
+  <section class="hm-page-loader" id="hmPageLoader" role="status" aria-live="polite" aria-label="IA Colombia cargando">
+    <div class="hm-page-loader__surface">
+      <span class="hm-page-loader__mark" aria-hidden="true">
+        <img class="hm-page-loader__logo" src="./assets/ia-colombia-logo.png" alt="" decoding="async" loading="eager" fetchpriority="high" onload="this.parentElement.classList.add('has-logo-image')" onerror="this.hidden=true;this.parentElement.classList.add('is-logo-fallback')" />
+        <span>IA</span>
+      </span>
+      <strong class="hm-page-loader__brand">IA Colombia</strong>
+      <span class="hm-page-loader__message">cargando...</span>
+    </div>
+  </section>
+
+  <main class="hm-experience" id="hmExperience" aria-live="polite" aria-busy="true">
+    <a class="hm-skip" href="#hmQuestion" data-i18n-text="ui.skip"></a>
+
+    <section class="hm-stage" data-i18n-aria="ui.stageLabel" aria-label="" aria-busy="false">
+      <div class="hm-ambient" aria-hidden="true">
+        <div class="hm-scene-backdrop" id="hmSceneBackdrop" data-symbol="IA"><img class="hm-scene-backdrop__image" id="hmSceneBackdropImage" alt="" decoding="async" loading="eager" aria-hidden="true" /><span id="hmSceneBackdropLabel"></span></div>
+        <div class="hm-ambient__wash"></div>
+        <div class="hm-ambient__diagonal hm-ambient__diagonal--main"></div>
+        <div class="hm-ambient__diagonal hm-ambient__diagonal--soft"></div>
+        <div class="hm-ambient__grid"></div>
+        <div class="hm-transition-system" id="hmTransitionSystem" aria-hidden="true">
+          <span class="hm-transition-blade hm-transition-blade--one"></span>
+          <span class="hm-transition-blade hm-transition-blade--two"></span>
+          <span class="hm-transition-blade hm-transition-blade--three"></span>
+          <span class="hm-transition-pulse" data-i18n-text="meta.applicationName"></span>
         </div>
       </div>
 
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-				<div class="ocultar-tablet">
-	        <a href="#beneficios" data-t="nav1">Beneficios</a>
-	        <a href="#ejemplos" data-t="nav2">Ejemplos</a>
-	        <a href="#precios" data-t="nav3">Planes</a>
-	        <a href="#contact" data-t="nav4">Contacto</a>
-				</div>
-      </nav>
+      <header class="hm-topbar" data-i18n-aria="ui.topbarLabel" aria-label="">
+        <a class="hm-brand" href="#" data-action="restart" data-i18n-aria="ui.brandAria" aria-label="">
+          <span class="hm-brand__mark" data-logo-mark data-logo-src="./assets/ia-colombia-logo.png"><span>IA</span></span>
+          <span class="hm-brand__copy">
+            <strong data-i18n-text="meta.applicationName"></strong>
+            <small data-i18n-text="ui.brandSmall"></small>
+          </span>
+        </a>
 
-      <div class="cta">
-        <button class="btn-ghost" data-t="btnContact" onclick="abrirChat()">Contactar</button>
-        <div class="ocultar-movil">
-          <button class="btn-primary" data-t="btnDemo" onclick="abrirChat()">Solicitar demo</button>
+        <div class="hm-progress" data-i18n-aria="ui.progressLabel" aria-label="">
+          <span class="hm-progress__bar"><span id="hmProgressFill"></span></span>
+          <span class="hm-progress__text" id="hmProgressText"></span>
         </div>
+
+        <button class="hm-finance-now" id="hmPrimaryCta" type="button" data-action="finance-now" data-i18n-text="ui.primaryFinance" hidden></button>
+      </header>
+
+      <div class="hm-visual" id="hmVisual" aria-hidden="true">
+        <div class="hm-service-rail" id="hmServiceRail"></div>
+        <div class="hm-showcase">
+          <div class="hm-showcase__photo"><span id="hmSceneSymbol"></span></div>
+          <div class="hm-showcase__glass"></div>
+          <div class="hm-scene-art" id="hmSceneArt" data-symbol="">
+            <img class="hm-scene-art__image" id="hmSceneArtImage" alt="" decoding="async" loading="eager" aria-hidden="true" />
+            <span id="hmSceneArtLabel"></span>
+          </div>
+          <div class="hm-choice-orbit" id="hmChoiceOrbit"></div>
+          <div class="hm-showcase__product">
+            <span class="hm-product__signal"></span>
+            <span class="hm-product__core" id="hmProductCore"></span>
+            <span class="hm-product__road"></span>
+          </div>
+        </div>
+        <div class="hm-metrics" id="hmMetrics"></div>
       </div>
-    </header>
 
-    <!-- HERO -->
-    <main class="hero" role="main">
-      <section class="heroCard aos-init aos-animate" data-aos="fade-up">
-        <div class="kicker" data-t="kicker">Soluciones de IA a tu medida</div>
-        <h1 data-t="h1">Desarrollamos y entrenamos modelos de IA personalizados que funcionan online y offline</h1>
-        <p class="lead" data-t="lead">IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.</p>
+      <div class="hm-top-actions" id="hmTopActions" data-i18n-aria="ui.topActionsLabel" aria-label="Accesos rápidos de IA Colombia">
+        <a class="hm-seo-entry" id="hmSeoHubButton" href="/es/soluciones/" data-action="seo-hub" aria-controls="hmSeoHub" aria-expanded="false" data-seo-i18n-text="entryLabel" data-seo-i18n-aria="entryLabel">Soluciones IA</a>
 
-        <div class="ctaRow">
-          <button class="btn-primary" data-t="ctaDemo" onclick="abrirChat()">Solicitar Demo</button>
-          <button class="btn-ghost" data-t="ctaDocs" onclick="openDocs()">Ver documentación técnica</button>
+        <label class="hm-language" id="hmLanguageSelectorWrap" for="hmLanguageSelect">
+          <span data-i18n-text="ui.languageLabel"></span>
+          <select id="hmLanguageSelect" name="language" data-i18n-aria="ui.languageAria" aria-label=""></select>
+        </label>
+      </div>
+
+      <span class="hm-intro-logo" data-intro-logo data-logo-src="./assets/ia-colombia-logo.png" aria-hidden="true"><span>IA</span></span>
+
+      <div class="hm-card-decision-flow" data-i18n-aria="ui.contentLabel" aria-label="">
+        <section class="hm-card" aria-labelledby="hmQuestion">
+          <h1 class="hm-question hm-intro-title" id="hmQuestion" aria-label=""></h1>
+          <p class="hm-copy hm-copy--intro-signature" id="hmCopy"></p>
+          <div class="hm-home-proof-entry" data-i18n-aria="ui.proofEntryAria" aria-label="Acceso a experiencia y confianza de IA Colombia">
+<button class="hm-textbutton hm-home-proof-entry__button" id="hmProofOpenButton" type="button" data-action="proof-open" aria-controls="hmProofWindow" aria-expanded="false" data-i18n-text="ui.proofOpenButton" style="margin-top: 18px; margin-bottom: 18px;">Nuestra Experiencia</button>
+          </div>
+          <p class="hm-insight" id="hmInsight" hidden></p>
+
+          <div class="hm-path" id="hmPath" data-i18n-aria="ui.pathLabelAria" aria-label=""></div>
+
+          <form class="hm-contact" id="hmContact" hidden novalidate>
+            <div class="hm-contact__summary" id="hmSummary" data-i18n-aria="ui.summaryLabelAria" aria-label="" hidden></div>
+            <label class="hm-field hm-field--contact-group">
+              <span data-i18n-text="ui.contactLabel"></span>
+              <span class="hm-contact__inputs">
+                <input id="hmContactInfo" name="email" type="email" inputmode="email" autocomplete="email" data-i18n-placeholder="ui.contactPlaceholder" placeholder="" aria-describedby="hmFormNote" required />
+                <input id="hmContactPhone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="WhatsApp" aria-describedby="hmFormNote" required />
+              </span>
+            </label>
+            <label class="hm-field">
+              <span data-i18n-text="ui.commentLabel"></span>
+              <textarea id="hmComment" name="comment" rows="5" data-i18n-placeholder="ui.commentPlaceholder" placeholder=""></textarea>
+            </label>
+            <div class="hm-contact__actions">
+              <button class="hm-button hm-button--primary" type="submit" data-i18n-text="ui.submitRoute"></button>
+              <button class="hm-button hm-button--ghost" type="button" data-action="copy-summary" data-i18n-text="ui.copySummaryAction"></button>
+            </div>
+            <p class="hm-form-note" id="hmFormNote" role="status" data-i18n-text="ui.formNote"></p>
+          </form>
+
+          <section class="hm-commercial-status" id="hmCommercialStatus" role="alertdialog" aria-modal="true" aria-labelledby="hmCommercialStatusTitle" aria-describedby="hmCommercialStatusMessage" aria-live="assertive" hidden>
+            <div class="hm-commercial-status__backdrop" aria-hidden="true"></div>
+            <div class="hm-commercial-status__surface" role="document">
+              <span class="hm-commercial-status__brand" aria-hidden="true"><span>IA</span></span>
+              <strong class="hm-commercial-status__name" id="hmCommercialStatusTitle">IA Colombia</strong>
+              <span class="hm-commercial-status__progress" id="hmCommercialProgress" aria-hidden="true"></span>
+              <span class="hm-commercial-status__check" id="hmCommercialCheck" aria-hidden="true">✓</span>
+              <p class="hm-commercial-status__message" id="hmCommercialStatusMessage">Enviando tu solicitud a IA Colombia...</p>
+            </div>
+          </section>
+        </section>
+        <br class="hm-card-decision-break" aria-hidden="true" />
+        <br class="hm-card-decision-break" aria-hidden="true" />
+        <aside class="hm-decision-zone" data-i18n-aria="ui.decisionZoneLabel" aria-label="">
+          <p class="hm-option-question" id="hmOptionQuestion" hidden></p>
+          <p class="hm-interaction-wait" id="hmInteractionWait" aria-live="polite"></p>
+          <div class="hm-options" id="hmOptions" role="list" hidden></div>
+        </aside>
+      </div>
+
+      <section class="hm-proof-window" id="hmProofWindow" role="dialog" aria-modal="true" aria-labelledby="hmProofTitle" aria-describedby="hmProofLead" hidden>
+        <div class="hm-proof-window__backdrop" data-action="proof-close" aria-hidden="true"></div>
+        <div class="hm-proof-window__surface">
+          <header class="hm-proof-window__header">
+            <div class="hm-proof-window__intro">
+              <span class="hm-proof-window__kicker">IA Colombia</span>
+              <h2 id="hmProofTitle" data-i18n-text="ui.proofTitle">IA empresarial entrenada</h2>
+              <p id="hmProofLead" data-i18n-text="ui.proofLead">IA Colombia desarrolla y entrena modelos de inteligencia artificial personalizados para empresas que necesitan automatizar ventas, atención, soporte técnico, análisis, procesos críticos o conocimiento interno, con opciones de despliegue online, offline, on-premise, en la nube o mediante APIs seguras.</p>
+            </div>
+            <button class="hm-proof-window__close" id="hmProofClose" type="button" data-action="proof-close" data-i18n-aria="ui.proofCloseAria" aria-label="Cerrar experiencia de IA Colombia">×</button>
+          </header>
+
+          <section class="hm-home-proof" id="hmHomeProofContent" data-i18n-aria="ui.proofContentAria" aria-label="Prueba social, confianza, metodología y preguntas rápidas de IA Colombia">
+            <article class="hm-home-proof__summary" data-i18n-aria="ui.proofSummaryAria" aria-label="Confianza técnica de IA Colombia">
+              <h3 data-i18n-text="ui.proofSummaryTitle">Modelos de IA propios, seguros y reentrenables para operar con o sin internet</h3>
+              <p><strong data-i18n-text="ui.proofTrustLabel">Confianza técnica:</strong> <span data-i18n-text="ui.proofTrustText">entrenamiento con información real, despliegue offline, nube, on-premise y edge, APIs, webhooks, cifrado, control de acceso, auditoría, reentrenamiento automático, soporte técnico, integración con CRM/ERP y operación empresarial.</span></p>
+              <p><strong data-i18n-text="ui.proofMethodLabel">Metodología:</strong> <span data-i18n-text="ui.proofMethodText">analizamos el proceso, ordenamos la información, definimos datos de entrenamiento, diseñamos la arquitectura, preparamos seguridad, entrenamos o ajustamos el modelo, validamos respuestas y desplegamos la IA donde la empresa la necesite.</span></p>
+              <p><strong data-i18n-text="ui.proofUseCasesLabel">Casos de uso:</strong> <span data-i18n-text="ui.proofUseCasesText">Chat-IA para webs, IA offline, IA online, soporte técnico industrial, IA Center, IA comercial autoentrenable, LexIA legal, Omnia IA, PostAI por API, atención al cliente, ventas, mantenimiento, diagnóstico documental y clasificación.</span></p>
+            </article>
+
+            <section class="hm-home-proof__brands" aria-labelledby="hmProofBrandsTitle">
+              <h3 id="hmProofBrandsTitle" data-i18n-text="ui.proofBrandsTitle">Soluciones y líneas de IA Colombia</h3>
+              <ul class="hm-home-proof__logos" id="hmProofLogoList" data-proof-logo-list data-i18n-aria="ui.proofBrandsAria" aria-label="Logos de empresas, marcas y proyectos relacionados con IA Colombia detectados automáticamente desde assets/clientes">
+                <li class="hm-proof-logo hm-proof-logo--placeholder is-logo-missing" data-proof-logo-placeholder>
+                  <figure>
+                    <span class="hm-proof-logo__frame">
+                      <span class="hm-proof-logo__fallback" aria-hidden="true"><span>IA</span></span>
+                    </span>
+                    <figcaption data-i18n-text="ui.proofLogoPlaceholder">IA Colombia</figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </section>
+
+            <dl class="hm-home-proof__faq" data-i18n-aria="ui.proofFaqAria" aria-label="FAQ rápido sobre experiencia y forma de trabajo de IA Colombia">
+              <dt data-i18n-text="ui.proofFaqWhyQuestion">¿Por qué contratar a IA Colombia?</dt>
+              <dd data-i18n-text="ui.proofFaqWhyAnswer">Porque convierte información empresarial real en modelos útiles, privados y desplegables en la nube, en servidores propios o sin conexión, con integración técnica y acompañamiento especializado.</dd>
+              <dt data-i18n-text="ui.proofFaqWhoQuestion">¿Para quién es?</dt>
+              <dd data-i18n-text="ui.proofFaqWhoAnswer">Para empresas, plantas de producción, entidades, equipos legales, áreas comerciales o negocios que necesitan una IA propia para responder, analizar, clasificar, aprender y automatizar procesos críticos.</dd>
+              <dt data-i18n-text="ui.proofFaqStartQuestion">¿Cómo empiezo?</dt>
+              <dd data-i18n-text="ui.proofFaqStartAnswer">Solicita un diagnóstico para revisar tus datos, definir el tipo de IA, elegir despliegue online u offline, estimar integración, seguridad, entrenamiento y ruta de implementación.</dd>
+            </dl>
+          </section>
         </div>
-
-        <h2 data-t="h2">Ventajas de usar sistemas de IA</h2>
-
-        <div class="grid" style="margin-top:20px;">
-          <div class="card"><h4 data-t="card1h">1. Respuestas hiper-relevantes</h4><p data-t="card1p">Modelos entrenados con base de datos reales y específicas reducen ambigüedad y mejoran el rendimiento.</p></div>
-          <div class="card"><h4 data-t="card2h">2. Privacidad total</h4><p data-t="card2p">Opciones cifradas para datos sensibles y cumplimiento normativo.</p></div>
-          <div class="card"><h4 data-t="card3h">3. Operación offline</h4><p data-t="card3p">Despliegue local para entornos sin internet, ideal para actividades empresariales y gubernamentales.</p></div>
-          <div class="card"><h4 data-t="card4h">4. Operación Online</h4><p data-t="card4p">Personalización de procesos IA para apps, webs, software, empresas y entidades estatales.</p></div>
-          <div class="card"><h4 data-t="card5h">5. Ahorro operativo offline</h4><p data-t="card5p">No requiere mensualidades; una sola compra obtiene una IA propia entrenada con la información de tu empresa.</p></div>
-          <div class="card"><h4 data-t="card6h">6. Sistema de Reentrenamiento automático</h4><p data-t="card6p">Sistema comercial con auto-entrenamiento, ideal para alimentación de modelos en líneas de producción.</p></div>
-          <div class="card"><h4 data-t="card7h">7. Desarrollo local por IA Colombia</h4><p data-t="card7p">Atención directa, instalación e implementación en sitio o por videollamada con personal técnico especializado.</p></div>
-        </div>
-
       </section>
 
-      <aside class="visual aos-init aos-animate" data-aos="fade-left">
-        <div class="glowPulse" aria-hidden="true"></div>
-        <div class="glassCard" id="deviceVisual" style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
-          <img src="https://ia-col.com/img/IA-Colombia.webp" alt="" data-t="visualAlt">
+      <section class="hm-seo-hub" id="hmSeoHub" role="dialog" aria-modal="true" aria-labelledby="hmSeoHubTitle" aria-describedby="hmSeoHubLead" hidden>
+        <div class="hm-seo-hub__backdrop" data-action="seo-close" aria-hidden="true"></div>
+        <div class="hm-seo-hub__surface">
+          <header class="hm-seo-hub__header">
+            <div class="hm-seo-hub__intro">
+              <span class="hm-seo-hub__kicker" id="hmSeoHubKicker">IA Colombia</span>
+              <h2 id="hmSeoHubTitle"></h2>
+              <p id="hmSeoHubLead"></p>
+            </div>
+            <button class="hm-seo-hub__close" id="hmSeoHubClose" type="button" data-action="seo-close" data-seo-i18n-aria="closeLabel" aria-label="Cerrar">×</button>
+          </header>
+          <nav class="hm-seo-hub__categories" id="hmSeoHubCategories" role="tablist" data-seo-i18n-aria="uiLabels.categoryNavLabel" aria-label="Categorías de soluciones IA Colombia"></nav>
+          <div class="hm-seo-hub__cards" id="hmSeoHubCards" role="list"></div>
+          <article class="hm-seo-hub__detail" id="hmSeoHubDetail" hidden></article>
+          <a class="hm-seo-hub__classic" id="hmSeoClassicLink" href="/es/soluciones/" data-action="seo-classic-toggle" aria-pressed="false" data-seo-i18n-text="uiLabels.classicViewLabel" data-seo-i18n-aria="uiLabels.classicViewAriaLabel" aria-label="Ver soluciones como landing page clásica">Vista clásica</a>
         </div>
-      </aside>
-    </main>
+      </section>
 
-    <!-- EJEMPLOS -->
-    <section id="ejemplos" class="section aos-init aos-animate" data-aos="fade-up">
-      <h2 data-t="ejemplosTitle">Tipo de IA y Cómo ganar dinero usándola</h2>
-      <div class="pricing">
-        <div class="plan" data-t="example1"><strong>1. IA Entrenada:</strong> Inteligencia Adaptada a Tu Necesidad.<br><br>IA Entrenada es una solución personalizada que permite a empresas y profesionales crear su propia inteligencia artificial especializada, entrenada específicamente con la información y conocimientos que cada organización necesita.<br><br>Con esta opción, podrás definir el campo o sector en el que tu IA debe sobresalir —como derecho, medicina, manufactura, educación, ventas, soporte técnico, o cualquier otro— y proporcionarle los documentos, casos, experiencias y datos reales que la harán experta en ese ámbito.<br><br>Además, IA Entrenada no se queda estática, puede seguir aprendiendo continuamente, incorporando nuevos datos, informes, registros o actualizaciones del cliente para mantener su conocimiento siempre fresco, preciso y relevante.<br><br>En resumen, IA Entrenada te permite tener una inteligencia artificial única, diseñada para entender tu negocio, hablar su mismo lenguaje y evolucionar junto a él.</div>
-        <div class="plan" data-t="example2"><strong>2. IA Soporte Tecnico:</strong>&nbsp;Asistencia técnica inteligente para plantas de producción sin conexión a internet.<br>Esta IA está diseñada para apoyar al personal en la reparación y mantenimiento de equipos industriales, incluso en entornos sin red.<br><br>Su mayor ventaja es que aprende de los problemas reales que han ocurrido en la planta y de las soluciones aplicadas anteriormente. Así, cuando un nuevo operario se enfrenta a una falla que ya ocurrió antes, la IA puede recordar cómo se resolvió, ofrecer instrucciones paso a paso, y guiarlo durante todo el proceso, garantizando continuidad operativa incluso con rotación de personal.</div>
-        <div class="plan" data-t="example3"><strong>3. SISTEMA IA Center:</strong> Crea tu propia empresa impulsada por inteligencia artificial. Con IA Center puedes desplegar tu propio sistema tipo <strong>ChatGPT</strong>, totalmente alojado en tus propios servidores y bajo tu marca. <br><br>Tendrás un portal personalizado donde podrás ofrecer servicios de conversación, automatización o asistencia inteligente a empresas y usuarios finales, <strong> podras generar ingresos mediante suscripciones o planes de acceso</strong>. <br><br>Esta solución te brinda control total sobre los datos, la infraestructura y la personalización de tu IA, permitiéndote construir un verdadero negocio tecnológico con identidad propia.</div>
-        <div class="plan" data-t="example4"><strong>4. LexIA:</strong> Es una inteligencia artificial especializada en leyes, derecho penal y jurisprudencia, diseñada para bufetes de abogados, consultores jurídicos y departamentos legales. <br><br>A diferencia de otros sistemas, <strong>LexIA la puede reentrenar continuamente</strong> con las nuevas leyes o informacion que le suministre como: decretos, sentencias y casos registrados dentro del propio bufete, aprendiendo de los documentos y estrategias legales utilizadas por los abogados.</div>
-        <div class="plan" data-t="example5"><strong>5. SISTEMA Omnia IA:</strong> Inteligencia Abierta y Autoentrenable<br><br>OmniaIA es una inteligencia artificial universal diseñada para <strong>aprender de cualquier entorno, industria o conocimiento humano</strong>. Su arquitectura abierta permite entrenarla con información específica de tu empresa, procesos, productos o servicios, logrando una <strong>IA personalizada que evoluciona automáticamente</strong> con cada nueva interacción.<br><br>Gracias a su entrenamiento automático y adaptable, OmniaIA puede:<br><br> • Aprender procedimientos técnicos, manuales o administrativos sin intervención humana.<br><br> • Proporcionar soporte inteligente en tiempo real en cualquier campo (educación, industria, salud, ventas, etc.).<br><br> • Crear modelos de conocimiento únicos según la información y lenguaje de cada organización.<br><br> • Integrarse con sistemas internos o externos para autoactualizar su base de conocimiento.<br><br> Con OmniaIA, puedes transformar la experiencia de soporte, capacitación y automatización de tu empresa con una IA que aprende, enseña y evoluciona por sí sola y podras crear IA entrenadas para venderlas a Empresas.</div>
-        <div class="plan" data-t="example6"><strong>6. Post AI:</strong> Inteligencia Analítica por Solicitud<br><br>PostAI es una IA diseñada para procesar y analizar información recibida a través de solicitudes POST, permitiendo integrar análisis avanzados en cualquier sistema, aplicación o entorno empresarial.<br><br>Mediante una conexión simple vía API, los desarrolladores pueden enviar datos estructurados o no estructurados, y PostAI devuelve respuestas inteligentes, análisis, clasificaciones, predicciones o diagnósticos en tiempo real.<br><br>Ideal para empresas que buscan automatizar procesos de decisión, clasificación o soporte, PostAI puede:<br><br>• Analizar texto, números, imágenes o registros enviados mediante POST.<br><br>• Responder con resultados precisos y optimizados para su sistema cliente.<br><br>• Adaptarse a diferentes contextos de negocio: soporte técnico, análisis financiero, gestión de riesgos, diagnóstico industrial o clasificación documental.<br><br>• Entrenarse con ejemplos propios para mejorar continuamente la precisión de los resultados.<br><br>PostAI convierte cada solicitud POST en una oportunidad de aprendizaje y análisis inteligente, sin necesidad de interfaces visuales ni complejas integraciones.</div>
-        <div class="plan" data-t="example7"><strong>1. IA Entrenada:</strong> Inteligencia Adaptada a Tu Necesidad.<br><br>IA Entrenada es una solución personalizada que permite a empresas y profesionales crear su propia inteligencia artificial especializada, entrenada específicamente con la información y conocimientos que cada organización necesita.<br><br>Con esta opción, podrás definir el campo o sector en el que tu IA debe sobresalir —como derecho, medicina, manufactura, educación, ventas, soporte técnico, o cualquier otro— y proporcionarle los documentos, casos, experiencias y datos reales que la harán experta en ese ámbito.<br><br>Además, IA Entrenada no se queda estática, puede seguir aprendiendo continuamente, incorporando nuevos datos, informes, registros o actualizaciones del cliente para mantener su conocimiento siempre fresco, preciso y relevante.<br><br>En resumen, IA Entrenada te permite tener una inteligencia artificial única, diseñada para entender tu negocio, hablar su mismo lenguaje y evolucionar junto a él.</div>
-      </div>
-
-      <div style="margin-top:14px; color:var(--muted)">
-        <h3 data-t="potencialTitle">Potencial ampliado</h3>
-        <p data-t="potencialP1">Una IA entrenada con la información propia de tu empresa puede transformar por completo tus operaciones: reduce pérdida de clientes, acelera ventas y mejora cumplimiento.</p>
-        <p data-t="potencialP2">Además, puedes instalarla en tus propios servidores (on-premise), funcionando sin conexión y manteniendo control sobre tus datos sensibles.</p>
-      </div>
+      <footer class="hm-footer" data-i18n-aria="ui.footerLabel" aria-label="">
+        <button class="hm-nav-button" type="button" data-action="back" id="hmBackButton" data-i18n-text="ui.back"></button>
+        <button class="hm-nav-button" type="button" data-action="restart" data-i18n-text="ui.restart"></button>
+      </footer>
     </section>
+  </main>
 
-    <!-- CAPACIDADES -->
-    <section class="section aos-init aos-animate" data-aos="fade-up">
-      <h2 data-t="capacidadesTitle">Capacidades técnicas</h2>
-      <div class="examples">
-        <div class="card" data-t="cap1">Conectamos tu IA mediante APIs estándar y webhooks en tiempo real para integrarla sin fricción.</div>
-        <div class="card" data-t="cap2">Instalación en tus servidores (on-premise), en la nube o en dispositivos edge según tu necesidad.</div>
-        <div class="card" data-t="cap3">Optimización y cuantización para rendimiento en GPU y CPU, logrando modelos ligeros y eficientes.</div>
-        <div class="card" data-t="cap4">Reentrenamiento automático que mantiene el conocimiento del modelo actualizado.</div>
-        <div class="card" data-t="cap5">Cifrado completo, control de acceso granular y soporte para cumplimiento normativo.</div>
-      </div>
-    </section>
-
-    <!-- PLANES -->
-    <section id="precios" class="section aos-init aos-animate" data-aos="fade-up">
-      <h2 data-t="planesTitle">Planes y despliegue</h2>
-      <div class="pricing">
-        <div class="plan">
-          <h4 data-t="plan1h">Chat-IA para webs</h4>
-          <p data-t="plan1p">Chat-IA para Webs es una inteligencia artificial integrada directamente en sitios web, capaz de interactuar con visitantes en tiempo real. Se entrena con información personalizada del negocio, productos y servicios, permitiendo ofrecer soporte automático, atención al cliente y asistencia inteligente. Beneficios: Mejora la conversión al atender usuarios 24/7. Reduce carga de trabajo humano al automatizar respuestas frecuentes. Se adapta al tono y estilo del sitio web, ofreciendo una experiencia coherente con la marca. Ofrece la forma de contactar a la empresa o vendedor cuando es requerido.</p>
-          <p><strong data-t="plan1IdealTitle">Ideal para:</strong> <span data-t="plan1Ideal">Páginas web.</span></p>
-        </div>
-        <div class="plan">
-          <h4 data-t="plan2h">IA offline para empresas (entrenamiento previo)</h4>
-          <p data-t="plan2p">IA Offline es una inteligencia artificial de uso privado que funciona completamente sin conexión a internet, diseñada para empresas que requieren seguridad y confidencialidad total. Se entrena localmente con información corporativa o técnica específica. Beneficios: Funciona sin depender de servidores externos o conexión a internet. Garantiza confidencialidad al mantener los datos dentro de la empresa. Permite ejecutar consultas, clasificaciones y análisis de documentos internos. Ideal para entornos industriales, gubernamentales o de alta seguridad.</p>
-          <p><strong data-t="plan2IdealTitle">Ideal para:</strong> <span data-t="plan2Ideal">"Entornos industriales o gubernamentales que requieren alta seguridad.</span></p>
-        </div>
-        <div class="plan">
-          <h4 data-t="plan3h">IA online para empresas (nube)</h4>
-          <p data-t="plan3p">A Online para Empresas es un modelo alojado en la nube que aprende y responde en tiempo real utilizando datos propios del negocio. Permite acceso remoto desde cualquier dispositivo, ideal para atención al cliente, análisis de ventas, o automatización de procesos. Beneficios: Actualización continua y aprendizaje dinámico en la nube. Permite integración con CRM, ERPs y plataformas corporativas. Escalable para atender miles de solicitudes simultáneamente. Entrenamiento flexible con datos públicos o privados.</p>
-          <p><strong data-t="plan3IdealTitle">Ideal para:</strong> <span data-t="plan3Ideal">Grandes empresas que necesitan escalabilidad y actualización continua.</span></p>
-        </div>
-        <div class="plan">
-          <h4 data-t="plan4h">IA Center (Centro de IA personalizada)</h4>
-          <p data-t="plan4p">IA Center es una plataforma centralizada que permite crear, administrar y distribuir inteligencias artificiales personalizadas. Actúa como un núcleo de gestión donde empresas y desarrolladores pueden entrenar modelos, ofrecer servicios de IA o integrarlos a sus sistemas. Beneficios: Entorno unificado para entrenamiento, despliegue y monitoreo de IA. Permite ofrecer servicios de IA a terceros, como OpenAI. Control total sobre modelos, datos y rendimiento. Compatible con modelos locales y en la nube.</p>
-          <p><strong data-t="plan4IdealTitle">Ideal para:</strong> <span data-t="plan4Ideal">Empresas que buscan ofrecer servicios de IA a terceros.</span></p>
-        </div>
-        <div class="plan">
-          <h4 data-t="plan5h">IA Comercial Entrenamiento Abierto</h4>
-          <p data-t="plan5p">IA Comercial de Entrenamiento Abierto es una inteligencia artificial de tipo configurativo, diseñada para permitir a empresas crear y ofrecer sus propias IA entrenadas. Combina herramientas de entrenamiento, personalización y despliegue para comercializar modelos bajo distintas marcas. Beneficios: Permite crear productos o servicios basados en IA entrenada. Sistema abierto y configurable para distintos sectores (educación, salud, ventas, etc.). Facilita la creación de startups o negocios basados en inteligencia artificial. Incluye soporte para entrenamiento local u online según la infraestructura disponible.</p>
-          <p><strong data-t="plan5IdealTitle">Ideal para:</strong> <span data-t="plan5Ideal">Empresas interesadas en monetizar soluciones IA.</span></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contact" class="section aos-init aos-animate" data-aos="fade-up" style="text-align:center; padding:80px 20px;">
-      <div style="max-width:600px;margin:auto;background:rgba(255,255,255,0.7);backdrop-filter:blur(16px);border-radius:24px;box-shadow:rgba(0,0,0,0.1) 0px 8px 32px;padding:40px 30px;transition:transform .3s;transform:scale(1);" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-        <h2 style="font-size:1.8em;color:#1e3a8a;margin-bottom:10px;" data-t="contactH">¿Necesitas ayuda o más información?</h2>
-        <p style="font-size:1.1em;color:#334155;margin-bottom:30px;" data-t="contactLead">Nuestro Chat-IA está disponible para responder tus preguntas y guiarte para obtener tu IA entrenada o contactarnos.</p>
-		<p style="font-size:1.1em;color:#334155;margin-bottom:30px;" data-t="contactLead2">IA disponible desde 10.000 USD</p>
-        <button onclick="abrirChat()" style="background:linear-gradient(90deg,#3b82f6,#1e40af);border:none;padding:14px 40px;color:#fff;font-size:1.05em;font-weight:600;border-radius:9999px;cursor:pointer;box-shadow:0 4px 12px rgba(59,130,246,0.4);transition:all .3s ease;" onmouseover="this.style.boxShadow='0 6px 18px rgba(59,130,246,0.6)'" onmouseout="this.style.boxShadow='0 4px 12px rgba(59,130,246,0.4)'" data-t="contactBtn">>>>
-          <!-- texto dinamico -->
-        </button>
-      </div>
-    </section>
-
-    <!-- FAQ y SEO ampliado -->
-    <section class="section aos-init aos-animate" data-aos="fade-up">
-      <h2 data-t="faqTitle">Preguntas frecuentes (FAQ)</h2>
-      <div style="display:grid;gap:8px;margin-top:10px;">
-        <details open>
-          <summary><strong data-t="faqQ1">¿La IA funciona sin internet?</strong></summary>
-          <div style="color:var(--muted);padding:8px 12px" data-t="faqA1">Sí. Ofrecemos opciones de despliegue para entornos con conectividad limitada pero tambien ofrecemos IA con conexion a internet que no requiere servidores propios.</div>
-        </details>
-        <details open>
-          <summary><strong data-t="faqQ2">¿Cómo protegen los datos sensibles?</strong></summary>
-          <div style="color:var(--muted);padding:8px 12px" data-t="faqA2">Ciframos datos en tránsito y en reposo, ofrecemos on‑premise y control de acceso granular. Lo que garantiza que tu seguridad es nuestra prioridad.</div>
-        </details>
-        <details open>
-          <summary><strong data-t="faqQ3">¿Pueden integrar una IA a un proceso propio?</strong></summary>
-          <div style="color:var(--muted);padding:8px 12px" data-t="faqA3">Sí. Integramos IA con procesos y sistemas mediante APIs y solicitudes POST para automatizar flujos empresariales.</div>
-        </details>
-      </div>
-    </section>
-
-    <footer>
-      <p data-t="footerText">© 2025 IA Colombia · Política de privacidad · Términos</p>
-	  <div class="small" style="margin-top:6px">Desarrollado por <a href="https://hashinmy.com" target="_blank" style="color:rgba(255,255,255,0.95)">Hashinmy</a></div>
-    </footer>
-  </div>
-
-  <!-- SCRIPTS -->
+  <script src="./js/hashinmy-immersive.js" defer></script>
   <script>
-    // textos extraídos en la clave 'es'
-    const idiomasTEXTOS = {
-      es: {
-        /* Header / Brand */
-        imgAlt: "Entrenamiento de modelos de IA en Colombia para empresas",
-        brandTitle: "IA Colombia",
-        brandSubtitle: "Entrenamiento y despliegue de IA — Online & Offline",
-        nav1: "Beneficios",
-        nav2: "Ejemplos",
-        nav3: "Planes",
-        nav4: "Contacto",
-        btnContact: "Contactar",
-        btnDemo: "Solicitar demo",
-    
-        /* Hero */
-        kicker: "Soluciones de IA a tu medida",
-        h1: "Desarrollamos y entrenamos modelos de IA personalizados que funcionan online y offline",
-        lead: "IA Colombia ofrece modelos finamente ajustados con tu información comercial, técnica o para automatizar ventas, atención y procesos críticos que necesite tu empresa.",
-        ctaDemo: "Solicitar Demo",
-        ctaDocs: "Ver documentación técnica",
-    
-        /* Cards principales */
-        h2: "Ventajas de usar sistemas de IA",
-        card1h: "1. Respuestas hiper-relevantes",
-        card1p: "Modelos entrenados con base de datos reales y específicas reducen ambigüedad y mejoran el rendimiento.",
-        card2h: "2. Privacidad total",
-        card2p: "Opciones cifradas para datos sensibles y cumplimiento normativo.",
-        card3h: "3. Operación offline",
-        card3p: "Despliegue local para entornos sin internet, ideal para actividades empresariales y gubernamentales.",
-        card4h: "4. Operación Online",
-        card4p: "Personalización de procesos IA para apps, webs, software, empresas y entidades estatales.",
-        card5h: "5. Ahorro operativo offline",
-        card5p: "No requiere mensualidades; una sola compra obtiene una IA propia entrenada con la información de tu empresa.",
-        card6h: "6. Sistema de Reentrenamiento automático",
-        card6p: "Sistema comercial con auto-entrenamiento, ideal para alimentación de modelos en líneas de producción.",
-        card7h: "7. Desarrollo local por IA Colombia",
-        card7p: "Atención directa, instalación e implementación en sitio o por videollamada con personal técnico especializado.",
-    
-        visualAlt: "Visual — IA Colombia",
-    
-        /* Ejemplos largos */
-        ejemplosTitle: "Tipo de IA y Cómo ganar dinero usándola",
-        example7: "<strong>7. IA Webs:</strong>&nbsp;Un Asistente de ventas y atencion al cliente para paginas webs puede ayudarte a dar informacion, precios e informacion de los productos que ofreces, permitiendo una atencion 24/7.",
-        example2: "<strong>2. IA Soporte Tecnico:</strong>&nbsp;Asistencia técnica inteligente para plantas de producción sin conexión a internet.<br>Esta IA está diseñada para apoyar al personal en la reparación y mantenimiento de equipos industriales, incluso en entornos sin red.<br><br>Su mayor ventaja es que aprende de los problemas reales que han ocurrido en la planta y de las soluciones aplicadas anteriormente. Así, cuando un nuevo operario se enfrenta a una falla que ya ocurrió antes, la IA puede recordar cómo se resolvió, ofrecer instrucciones paso a paso, y guiarlo durante todo el proceso, garantizando continuidad operativa incluso con rotación de personal.",
-        example3: "<strong>3. SISTEMA IA Center:</strong> Crea tu propia empresa impulsada por inteligencia artificial. Con IA Center puedes desplegar tu propio sistema tipo <strong>ChatGPT</strong>, totalmente alojado en tus propios servidores y bajo tu marca. <br><br>Tendrás un portal personalizado donde podrás ofrecer servicios de conversación, automatización o asistencia inteligente a empresas y usuarios finales, <strong> podras generar ingresos mediante suscripciones o planes de acceso</strong>. <br><br>Esta solución te brinda control total sobre los datos, la infraestructura y la personalización de tu IA, permitiéndote construir un verdadero negocio tecnológico con identidad propia.",
-        example4: "<strong>4. LexIA:</strong> Es una inteligencia artificial especializada en leyes, derecho penal y jurisprudencia, diseñada para bufetes de abogados, consultores jurídicos y departamentos legales. <br><br>A diferencia de otros sistemas, <strong>LexIA la puede reentrenar continuamente</strong> con las nuevas leyes o informacion que le suministre como: decretos, sentencias y casos registrados dentro del propio bufete, aprendiendo de los documentos y estrategias legales utilizadas por los abogados.",
-        example5: "<strong>5. SISTEMA Omnia IA:</strong> Inteligencia Abierta y Autoentrenable<br><br>OmniaIA es una inteligencia artificial universal diseñada para <strong>aprender de cualquier entorno, industria o conocimiento humano</strong>. Su arquitectura abierta permite entrenarla con información específica de tu empresa, procesos, productos o servicios, logrando una <strong>IA personalizada que evoluciona automáticamente</strong> con cada nueva interacción.<br><br>Gracias a su entrenamiento automático y adaptable, OmniaIA puede:<br><br> • Aprender procedimientos técnicos, manuales o administrativos sin intervención humana.<br><br> • Proporcionar soporte inteligente en tiempo real en cualquier campo (educación, industria, salud, ventas, etc.).<br><br> • Crear modelos de conocimiento únicos según la información y lenguaje de cada organización.<br><br> • Integrarse con sistemas internos o externos para autoactualizar su base de conocimiento.<br><br> Con OmniaIA, puedes transformar la experiencia de soporte, capacitación y automatización de tu empresa con una IA que aprende, enseña y evoluciona por sí sola y podras crear IA entrenadas para venderlas a Empresas.",
-        example6: "<strong>6. Post AI:</strong> Inteligencia Analítica por Solicitud<br><br>PostAI es una IA diseñada para procesar y analizar información recibida a través de solicitudes POST, permitiendo integrar análisis avanzados en cualquier sistema, aplicación o entorno empresarial.<br><br>Mediante una conexión simple vía API, los desarrolladores pueden enviar datos estructurados o no estructurados, y PostAI devuelve respuestas inteligentes, análisis, clasificaciones, predicciones o diagnósticos en tiempo real.<br><br>Ideal para empresas que buscan automatizar procesos de decisión, clasificación o soporte, PostAI puede:<br><br>• Analizar texto, números, imágenes o registros enviados mediante POST.<br><br>• Responder con resultados precisos y optimizados para su sistema cliente.<br><br>• Adaptarse a diferentes contextos de negocio: soporte técnico, análisis financiero, gestión de riesgos, diagnóstico industrial o clasificación documental.<br><br>• Entrenarse con ejemplos propios para mejorar continuamente la precisión de los resultados.<br><br>PostAI convierte cada solicitud POST en una oportunidad de aprendizaje y análisis inteligente, sin necesidad de interfaces visuales ni complejas integraciones.",
-        example1: "<strong>1. IA Entrenada:</strong> Inteligencia Adaptada a Tu Necesidad.<br><br>IA Entrenada es una solución personalizada que permite a empresas y profesionales crear su propia inteligencia artificial especializada, entrenada específicamente con la información y conocimientos que cada organización necesita.<br><br>Con esta opción, podrás definir el campo o sector en el que tu IA debe sobresalir —como derecho, medicina, manufactura, educación, ventas, soporte técnico, o cualquier otro— y proporcionarle los documentos, casos, experiencias y datos reales que la harán experta en ese ámbito.<br><br>Además, IA Entrenada no se queda estática, puede seguir aprendiendo continuamente, incorporando nuevos datos, informes, registros o actualizaciones del cliente para mantener su conocimiento siempre fresco, preciso y relevante.<br><br>En resumen, IA Entrenada te permite tener una inteligencia artificial única, diseñada para entender tu negocio, hablar su mismo lenguaje y evolucionar junto a él.",
-    
-        potencialTitle: "Potencial ampliado",
-        potencialP1: "Una IA entrenada con la información propia de tu empresa puede transformar por completo tus operaciones: reduce pérdida de clientes, acelera ventas y mejora cumplimiento.",
-        potencialP2: "Además, puedes instalarla en tus propios servidores (on-premise), funcionando sin conexión y manteniendo control sobre tus datos sensibles.",
-    
-        /* Capacidades técnicas */
-        capacidadesTitle: "Capacidades técnicas",
-        cap1: "Conectamos tu IA mediante APIs estándar y webhooks en tiempo real para integrarla sin fricción.",
-        cap2: "Instalación en tus servidores (on-premise), en la nube o en dispositivos edge según tu necesidad.",
-        cap3: "Optimización y cuantización para rendimiento en GPU y CPU, logrando modelos ligeros y eficientes.",
-        cap4: "Reentrenamiento automático que mantiene el conocimiento del modelo actualizado.",
-        cap5: "Cifrado completo, control de acceso granular y soporte para cumplimiento normativo.",
-    
-        /* Planes */
-        planesTitle: "Planes y despliegue",
-        plan1h: "Chat-IA para webs",
-        plan1p: "Chat-IA para Webs es una inteligencia artificial integrada directamente en sitios web, capaz de interactuar con visitantes en tiempo real. Se entrena con información personalizada del negocio, productos y servicios, permitiendo ofrecer soporte automático, atención al cliente y asistencia inteligente. Beneficios: Mejora la conversión al atender usuarios 24/7. Reduce carga de trabajo humano al automatizar respuestas frecuentes. Se adapta al tono y estilo del sitio web, ofreciendo una experiencia coherente con la marca. Ofrece la forma de contactar a la empresa o vendedor cuando es requerido.",
-        plan1IdealTitle: "Ideal para:",
-        plan1Ideal: "Páginas web.",
-    
-        plan2h: "IA offline para empresas (entrenamiento previo)",
-        plan2p: "IA Offline es una inteligencia artificial de uso privado que funciona completamente sin conexión a internet, diseñada para empresas que requieren seguridad y confidencialidad total. Se entrena localmente con información corporativa o técnica específica. Beneficios: Funciona sin depender de servidores externos o conexión a internet. Garantiza confidencialidad al mantener los datos dentro de la empresa. Permite ejecutar consultas, clasificaciones y análisis de documentos internos. Ideal para entornos industriales, gubernamentales o de alta seguridad.",
-        plan2IdealTitle: "Ideal para:",
-        plan2Ideal: "Entornos industriales o gubernamentales que requieren alta seguridad.",
-    
-        plan3h: "IA online para empresas (nube)",
-        plan3p: "A Online para Empresas es un modelo alojado en la nube que aprende y responde en tiempo real utilizando datos propios del negocio. Permite acceso remoto desde cualquier dispositivo, ideal para atención al cliente, análisis de ventas, o automatización de procesos. Beneficios: Actualización continua y aprendizaje dinámico en la nube. Permite integración con CRM, ERPs y plataformas corporativas. Escalable para atender miles de solicitudes simultáneamente. Entrenamiento flexible con datos públicos o privados.",
-        plan3IdealTitle: "Ideal para:",
-        plan3Ideal: "Grandes empresas que necesitan escalabilidad y actualización continua.",
-    
-        plan4h: "IA Center (Centro de IA personalizada)",
-        plan4p: "IA Center es una plataforma centralizada que permite crear, administrar y distribuir inteligencias artificiales personalizadas. Actúa como un núcleo de gestión donde empresas y desarrolladores pueden entrenar modelos, ofrecer servicios de IA o integrarlos a sus sistemas. Beneficios: Entorno unificado para entrenamiento, despliegue y monitoreo de IA. Permite ofrecer servicios de IA a terceros, como OpenAI. Control total sobre modelos, datos y rendimiento. Compatible con modelos locales y en la nube.",
-        plan4IdealTitle: "Ideal para:",
-        plan4Ideal: "Empresas que buscan ofrecer servicios de IA a terceros.",
-    
-        plan5h: "IA Comercial Entrenamiento Abierto",
-        plan5p: "IA Comercial de Entrenamiento Abierto es una inteligencia artificial de tipo configurativo, diseñada para permitir a empresas crear y ofrecer sus propias IA entrenadas. Combina herramientas de entrenamiento, personalización y despliegue para comercializar modelos bajo distintas marcas. Beneficios: Permite crear productos o servicios basados en IA entrenada. Sistema abierto y configurable para distintos sectores (educación, salud, ventas, etc.). Facilita la creación de startups o negocios basados en inteligencia artificial. Incluye soporte para entrenamiento local u online según la infraestructura disponible.",
-        plan5IdealTitle: "Ideal para:",
-        plan5Ideal: "Empresas interesadas en monetizar soluciones IA.",
-    
-        /* Contacto */
-        contactH: "¿Necesitas ayuda o más información?",
-        contactLead: "Nuestro Chat-IA está disponible para responder tus preguntas y guiarte para obtener tu IA entrenada o contactarnos.",
-		contactLead2: "IA disponible desde 10.000 USD",
-        contactBtn: ">>>",
-    
-        /* FAQ */
-        faqTitle: "Preguntas frecuentes (FAQ)",
-        faqQ1: "¿La IA funciona sin internet?",
-        faqA1: "Sí. Ofrecemos opciones de despliegue para entornos con conectividad limitada pero tambien ofrecemos IA con conexion a internet que no requiere servidores propios.",
-        faqQ2: "¿Cómo protegen los datos sensibles?",
-        faqA2: "Ciframos datos en tránsito y en reposo, ofrecemos on‑premise y control de acceso granular. Lo que garantiza que tu seguridad es nuestra prioridad.",
-        faqQ3: "¿Pueden integrar una IA a un proceso propio?",
-        faqA3: "Sí. Integramos IA con procesos y sistemas mediante APIs y solicitudes POST para automatizar flujos empresariales.",
-    
-        footerText: "© 2025 IA Colombia · Política de privacidad · Términos"
-      },
-    
-      en: {
-        /* Header / Brand */
-        imgAlt: "AI model training in Colombia for businesses",
-        brandTitle: "IA Colombia",
-        brandSubtitle: "AI Training & Deployment — Online & Offline",
-        nav1: "Benefits",
-        nav2: "Examples",
-        nav3: "Plans",
-        nav4: "Contact",
-        btnContact: "Contact",
-        btnDemo: "Request demo",
-    
-        /* Hero */
-        kicker: "Tailored AI solutions",
-        h1: "We develop and train personalized AI models that work online and offline",
-        lead: "IA Colombia offers finely tuned models using your business or technical data to automate sales, customer service, and critical processes your company needs.",
-        ctaDemo: "Request Demo",
-        ctaDocs: "View technical documentation",
-    
-        /* Cards principales */
-        h2: "Advantages of using AI systems",
-        card1h: "1. Highly relevant responses",
-        card1p: "Models trained with real and specific datasets reduce ambiguity and improve performance.",
-        card2h: "2. Total privacy",
-        card2p: "Encrypted options for sensitive data and regulatory compliance.",
-        card3h: "3. Offline operation",
-        card3p: "Local deployment for environments without internet, ideal for corporate and government activities.",
-        card4h: "4. Online operation",
-        card4p: "Personalization of AI processes for apps, websites, software, businesses, and government entities.",
-        card5h: "5. Offline operational savings",
-        card5p: "No subscriptions required; a single purchase gives you a trained AI using your company's information.",
-        card6h: "6. Automatic retraining system",
-        card6p: "Commercial system with self-training, ideal for feeding models in production lines.",
-        card7h: "7. Local development by IA Colombia",
-        card7p: "Direct support, installation, and on-site or video call implementation with specialized technical staff.",
-    
-        visualAlt: "Visual — IA Colombia",
-    
-        /* Ejemplos largos */
-        ejemplosTitle: "AI Types and How to Make Money Using Them",
-        example7: "<strong>7. Web AI:</strong>&nbsp;A sales and customer support assistant for websites can help provide information, prices, and product details, enabling 24/7 service.",
-        example2: "<strong>2. Technical Support AI:</strong>&nbsp;Intelligent technical assistance for offline production plants.<br>This AI is designed to support personnel in repairing and maintaining industrial equipment, even in offline environments.<br><br>Its main advantage is learning from real problems and previously applied solutions. When a new operator faces a recurring issue, the AI can recall the solution, give step-by-step instructions, and guide throughout the process, ensuring operational continuity despite staff rotation.",
-        example3: "<strong>3. IA Center System:</strong> Build your own AI-driven company. With IA Center you can deploy your own <strong>ChatGPT</strong>-type system, fully hosted on your servers and under your brand. <br><br>You’ll have a personalized portal to offer conversation services, automation, or smart assistance to businesses and end users, <strong>generating revenue via subscriptions or access plans</strong>. <br><br>This solution gives full control over your data, infrastructure, and AI customization, allowing you to build a true tech business with your own identity.",
-        example4: "<strong>4. LexIA:</strong> AI specialized in law, criminal law, and jurisprudence, designed for law firms, legal consultants, and legal departments. <br><br>Unlike other systems, <strong>LexIA can be continuously retrained</strong> with new laws or information like decrees, rulings, and internal cases, learning from documents and legal strategies used by lawyers.",
-        example5: "<strong>5. Omnia IA System:</strong> Open and self-trainable AI<br><br>OmniaIA is a universal AI designed to <strong>learn from any environment, industry, or human knowledge</strong>. Its open architecture allows training with specific company data, processes, products, or services, achieving a <strong>personalized AI that evolves automatically</strong> with each new interaction.<br><br>Thanks to its adaptable self-training, OmniaIA can:<br><br> • Learn technical, manual, or administrative procedures without human intervention.<br><br> • Provide real-time intelligent support in any field (education, industry, health, sales, etc.).<br><br> • Create unique knowledge models based on each organization's information and language.<br><br> • Integrate with internal or external systems for automatic knowledge base updates.<br><br>With OmniaIA, you can transform support, training, and automation experiences with a learning AI, and create trained AI to sell to companies.",
-        example6: "<strong>6. Post AI:</strong> Analytics on Demand<br><br>PostAI is an AI designed to process and analyze data sent via POST requests, enabling advanced analysis in any system, app, or business environment.<br><br>Through a simple API connection, developers can send structured or unstructured data, and PostAI returns intelligent responses, analysis, classifications, predictions, or diagnostics in real-time.<br><br>Ideal for companies automating decision-making, classification, or support, PostAI can:<br><br>• Analyze text, numbers, images, or POST-submitted records.<br><br>• Respond with precise and optimized results for the client system.<br><br>• Adapt to different business contexts: technical support, financial analysis, risk management, industrial diagnostics, or document classification.<br><br>• Train with own examples to continuously improve result accuracy.<br><br>PostAI turns each POST request into a learning and intelligent analysis opportunity without visual interfaces or complex integrations.",
-        example1: "<strong>1. Trained AI:</strong> Intelligence Adapted to Your Needs.<br><br>Trained AI is a personalized solution that allows businesses and professionals to create their own specialized AI, trained specifically with the information and knowledge each organization requires.<br><br>This option lets you define the field in which your AI should excel —law, medicine, manufacturing, education, sales, technical support, etc.— and provide documents, cases, experiences, and real data to make it expert in that field.<br><br>Trained AI continues learning continuously, incorporating new data, reports, records, or client updates to keep its knowledge fresh, accurate, and relevant.<br><br>In short, Trained AI allows you to have a unique AI designed to understand your business, speak its language, and evolve with it.",
-    
-        potencialTitle: "Expanded Potential",
-        potencialP1: "AI trained with your company's own data can completely transform your operations: reduce customer loss, accelerate sales, and improve compliance.",
-        potencialP2: "You can also install it on your own servers (on-premise), working offline while keeping control of sensitive data.",
-    
-        /* Capacidades técnicas */
-        capacidadesTitle: "Technical capabilities",
-        cap1: "Connect your AI via standard APIs and real-time webhooks for seamless integration.",
-        cap2: "Installation on your servers (on-premise), cloud, or edge devices according to your needs.",
-        cap3: "Optimization and quantization for GPU and CPU performance, achieving lightweight and efficient models.",
-        cap4: "Automatic retraining keeping the model's knowledge up to date.",
-        cap5: "Full encryption, granular access control, and compliance support.",
-    
-        /* Planes */
-        planesTitle: "Plans & Deployment",
-        plan1h: "Web Chat-AI",
-        plan1p: "Web Chat-AI is an AI integrated directly into websites, capable of interacting with visitors in real-time. Trained with personalized business, product, and service data, it offers automatic support, customer service, and intelligent assistance. Benefits: Improve conversion by attending users 24/7. Reduce human workload by automating frequent responses. Adapts to site tone and style for a coherent brand experience. Provides ways to contact the company or salesperson when required.",
-        plan1IdealTitle: "Ideal for:",
-        plan1Ideal: "Websites.",
-    
-        plan2h: "Offline AI for companies (pre-trained)",
-        plan2p: "Offline AI is a private AI fully functional without internet, designed for companies needing total security and confidentiality. Locally trained with specific corporate or technical information. Benefits: Works without relying on external servers or internet connection. Maintains confidentiality by keeping data within the company. Allows document queries, classification, and analysis. Ideal for industrial, governmental, or high-security environments.",
-        plan2IdealTitle: "Ideal for:",
-        plan2Ideal: "Industrial or governmental environments requiring high security.",
-    
-        plan3h: "Online AI for companies (cloud)",
-        plan3p: "Online AI for Companies is a cloud-hosted model that learns and responds in real-time using proprietary business data. Provides remote access from any device, ideal for customer service, sales analysis, or process automation. Benefits: Continuous update and dynamic cloud learning. Integration with CRM, ERP, and corporate platforms. Scalable for thousands of simultaneous requests. Flexible training with public or private data.",
-        plan3IdealTitle: "Ideal for:",
-        plan3Ideal: "Large companies needing scalability and continuous updates.",
-    
-        plan4h: "IA Center (Custom AI Hub)",
-        plan4p: "IA Center is a centralized platform allowing creation, management, and distribution of personalized AI. Acts as a management hub where companies and developers can train models, offer AI services, or integrate them into systems. Benefits: Unified environment for training, deployment, and AI monitoring. Allows offering AI services to third parties like OpenAI. Full control over models, data, and performance. Compatible with local and cloud models.",
-        plan4IdealTitle: "Ideal for:",
-        plan4Ideal: "Companies looking to offer AI services to third parties.",
-    
-        plan5h: "Open Training Commercial AI",
-        plan5p: "Open Training Commercial AI is a configurable AI designed to let companies create and offer their own trained AI. Combines training, personalization, and deployment tools for commercialization under different brands. Benefits: Allows creation of products or services based on trained AI. Open and configurable system for various sectors (education, health, sales, etc.). Facilitates creation of AI startups or businesses. Includes support for local or online training depending on infrastructure.",
-        plan5IdealTitle: "Ideal for:",
-        plan5Ideal: "Companies looking to monetize AI solutions.",
-    
-        /* Contacto */
-        contactH: "Need help or more information?",
-        contactLead: "Our Chat-AI is available to answer your questions and guide you to get your trained AI or contact us.",
-		contactLead2: "AI available from 10,000 USD",
-        contactBtn: ">>>",
-    
-        /* FAQ */
-        faqTitle: "Frequently Asked Questions (FAQ)",
-        faqQ1: "Does the AI work offline?",
-        faqA1: "Yes. We offer deployment options for limited connectivity environments but also provide AI with internet connection that does not require own servers.",
-        faqQ2: "How do you protect sensitive data?",
-        faqA2: "We encrypt data in transit and at rest, offer on-premise and granular access control, ensuring your security is our priority.",
-        faqQ3: "Can AI be integrated into a proprietary process?",
-        faqA3: "Yes. We integrate AI with processes and systems via APIs and POST requests to automate business workflows.",
-    
-        footerText: "© 2025 IA Colombia · Privacy Policy · Terms"
-      },
-    
-      fr: {
-        /* Header / Brand */
-        imgAlt: "Formation de modèles IA en Colombie pour les entreprises",
-        brandTitle: "IA Colombie",
-        brandSubtitle: "Formation et déploiement d'IA — En ligne & Hors ligne",
-        nav1: "Avantages",
-        nav2: "Exemples",
-        nav3: "Plans",
-        nav4: "Contact",
-        btnContact: "Contacter",
-        btnDemo: "Demander une démo",
-    
-        /* Hero */
-        kicker: "Solutions IA sur mesure",
-        h1: "Nous développons et entraînons des modèles IA personnalisés qui fonctionnent en ligne et hors ligne",
-        lead: "IA Colombie propose des modèles finement ajustés avec vos données commerciales ou techniques pour automatiser ventes, support client et processus critiques de votre entreprise.",
-        ctaDemo: "Demander Démo",
-        ctaDocs: "Voir la documentation technique",
-    
-        /* Cards principales */
-        h2: "Avantages des systèmes IA",
-        card1h: "1. Réponses hyper pertinentes",
-        card1p: "Les modèles entraînés sur des bases de données réelles et spécifiques réduisent l'ambiguïté et améliorent les performances.",
-        card2h: "2. Confidentialité totale",
-        card2p: "Options chiffrées pour les données sensibles et conformité réglementaire.",
-        card3h: "3. Fonctionnement hors ligne",
-        card3p: "Déploiement local pour les environnements sans internet, idéal pour les activités d'entreprise et gouvernementales.",
-        card4h: "4. Fonctionnement en ligne",
-        card4p: "Personnalisation des processus IA pour applications, sites web, logiciels, entreprises et institutions publiques.",
-        card5h: "5. Économies opérationnelles hors ligne",
-        card5p: "Pas d'abonnements nécessaires ; un seul achat vous donne une IA propre entraînée avec les informations de votre entreprise.",
-        card6h: "6. Système de réentraînement automatique",
-        card6p: "Système commercial avec auto-entraînement, idéal pour alimenter des modèles dans les chaînes de production.",
-        card7h: "7. Développement local par IA Colombie",
-        card7p: "Assistance directe, installation et mise en œuvre sur site ou par visioconférence avec du personnel technique spécialisé.",
-    
-        visualAlt: "Visuel — IA Colombie",
-    
-        /* Ejemplos largos */
-        ejemplosTitle: "Types d'IA et comment en tirer profit",
-        example7: "<strong>7. IA Web :</strong>&nbsp;Un assistant commercial et support client pour sites web peut fournir informations, prix et détails des produits, permettant un service 24/7.",
-        example2: "<strong>2. IA Support Technique :</strong>&nbsp;Assistance technique intelligente pour usines hors ligne.<br>Cette IA est conçue pour aider le personnel à réparer et entretenir les équipements industriels, même hors réseau.<br><br>Son principal avantage est d'apprendre des problèmes réels et des solutions précédemment appliquées. Lorsqu'un nouvel opérateur rencontre un problème récurrent, l'IA peut se rappeler la solution, donner des instructions étape par étape et guider tout le processus, assurant la continuité opérationnelle malgré la rotation du personnel.",
-        example3: "<strong>3. Système IA Center :</strong> Créez votre propre entreprise propulsée par IA. Avec IA Center, vous pouvez déployer votre propre système type <strong>ChatGPT</strong>, hébergé sur vos serveurs et sous votre marque. <br><br>Vous disposerez d'un portail personnalisé pour offrir des services de conversation, d'automatisation ou d'assistance intelligente aux entreprises et utilisateurs finaux, <strong>générant des revenus via abonnements ou plans d'accès</strong>. <br><br>Cette solution offre un contrôle total sur vos données, votre infrastructure et la personnalisation de votre IA, vous permettant de construire une véritable entreprise technologique avec votre propre identité.",
-        example4: "<strong>4. LexIA :</strong> IA spécialisée en droit, droit pénal et jurisprudence, conçue pour cabinets d'avocats, consultants juridiques et départements juridiques. <br><br>Contrairement à d'autres systèmes, <strong>LexIA peut être continuellement réentraînée</strong> avec de nouvelles lois ou informations telles que décrets, jugements et cas internes, apprenant des documents et stratégies juridiques utilisés par les avocats.",
-        example5: "<strong>5. Système Omnia IA :</strong> IA ouverte et auto-entraînable<br><br>OmniaIA est une IA universelle conçue pour <strong>apprendre de tout environnement, industrie ou connaissance humaine</strong>. Son architecture ouverte permet l'entraînement avec des données spécifiques de l'entreprise, processus, produits ou services, obtenant une <strong>IA personnalisée évoluant automatiquement</strong> à chaque interaction.<br><br>Grâce à son auto-entraînement adaptable, OmniaIA peut:<br><br> • Apprendre des procédures techniques, manuelles ou administratives sans intervention humaine.<br><br> • Fournir un support intelligent en temps réel dans tout domaine (éducation, industrie, santé, ventes, etc.).<br><br> • Créer des modèles de connaissance uniques selon les informations et le langage de chaque organisation.<br><br> • S'intégrer aux systèmes internes ou externes pour mettre à jour automatiquement sa base de connaissances.<br><br>Avec OmniaIA, vous pouvez transformer l'expérience de support, formation et automatisation avec une IA qui apprend, enseigne et évolue seule, et créer des IA entraînées à vendre aux entreprises.",
-        example6: "<strong>6. Post AI :</strong> Analytique à la demande<br><br>PostAI est une IA conçue pour traiter et analyser les données reçues via des requêtes POST, permettant une analyse avancée dans tout système, application ou environnement professionnel.<br><br>Via une connexion API simple, les développeurs peuvent envoyer des données structurées ou non, et PostAI renvoie des réponses intelligentes, analyses, classifications, prédictions ou diagnostics en temps réel.<br><br>Idéal pour les entreprises automatisant la prise de décision, classification ou support, PostAI peut:<br><br>• Analyser texte, chiffres, images ou enregistrements envoyés par POST.<br><br>• Répondre avec des résultats précis et optimisés pour le système client.<br><br>• S'adapter à différents contextes professionnels : support technique, analyse financière, gestion des risques, diagnostic industriel ou classification documentaire.<br><br>• S'entraîner avec des exemples propres pour améliorer continuellement la précision des résultats.<br><br>PostAI transforme chaque requête POST en opportunité d'apprentissage et d'analyse intelligente sans interfaces visuelles ni intégrations complexes.",
-        example1: "<strong>1. IA Entraînée :</strong> Intelligence adaptée à vos besoins.<br><br>IA Entraînée est une solution personnalisée permettant aux entreprises et professionnels de créer leur propre IA spécialisée, entraînée spécifiquement avec les informations et connaissances nécessaires à chaque organisation.<br><br>Cette option permet de définir le domaine dans lequel l'IA doit exceller — droit, médecine, fabrication, éducation, ventes, support technique, etc.— et fournir documents, cas, expériences et données réelles pour la rendre experte dans ce domaine.<br><br>IA Entraînée continue d'apprendre en permanence, incorporant nouvelles données, rapports, enregistrements ou mises à jour client pour garder ses connaissances fraîches, précises et pertinentes.<br><br>En résumé, IA Entraînée permet d'avoir une IA unique, conçue pour comprendre votre entreprise, parler son langage et évoluer avec elle.",
-    
-        potencialTitle: "Potentiel élargi",
-        potencialP1: "Une IA entraînée avec vos propres données peut transformer complètement vos opérations : réduire la perte de clients, accélérer les ventes et améliorer la conformité.",
-        potencialP2: "Vous pouvez également l'installer sur vos serveurs (on-premise), fonctionnant hors ligne tout en gardant le contrôle des données sensibles.",
-    
-        /* Capacidades técnicas */
-        capacidadesTitle: "Capacités techniques",
-        cap1: "Connectez votre IA via APIs standard et webhooks en temps réel pour une intégration fluide.",
-        cap2: "Installation sur vos serveurs (on-premise), cloud ou dispositifs edge selon vos besoins.",
-        cap3: "Optimisation et quantification pour performances GPU et CPU, modèles légers et efficaces.",
-        cap4: "Réentraînement automatique maintenant les connaissances du modèle à jour.",
-        cap5: "Cryptage complet, contrôle d'accès granulaire et support conformité.",
-    
-        /* Planes */
-        planesTitle: "Plans & Déploiement",
-        plan1h: "Chat-AI pour sites web",
-        plan1p: "Chat-AI pour sites web est une IA intégrée directement aux sites, capable d'interagir en temps réel. Entraînée avec données personnalisées, elle offre support automatique, service client et assistance intelligente. Avantages: améliore la conversion en assistant 24/7. Réduit la charge humaine par automatisation. S'adapte au ton et style du site pour une expérience cohérente. Fournit des moyens de contacter l'entreprise ou vendeur.",
-        plan1IdealTitle: "Idéal pour:",
-        plan1Ideal: "Sites web.",
-    
-        plan2h: "IA hors ligne pour entreprises (pré-entraînée)",
-        plan2p: "IA hors ligne est une IA privée fonctionnant totalement sans internet, conçue pour entreprises nécessitant sécurité et confidentialité totale. Entraînée localement avec informations spécifiques. Avantages: fonctionne sans serveurs externes ou internet. Garantit confidentialité en conservant données internes. Permet requêtes, classifications et analyses internes. Idéal pour environnements industriels, gouvernementaux ou hautement sécurisés.",
-        plan2IdealTitle: "Idéal pour:",
-        plan2Ideal: "Environnements industriels ou gouvernementaux nécessitant haute sécurité.",
-    
-        plan3h: "IA en ligne pour entreprises (cloud)",
-        plan3p: "IA en ligne pour entreprises est un modèle hébergé cloud qui apprend et répond en temps réel avec données propriétaires. Accès distant depuis tout dispositif, idéal pour service client, analyse des ventes ou automatisation. Avantages: mise à jour continue, apprentissage dynamique. Intégration CRM, ERP, plateformes. Scalable pour milliers de requêtes simultanées. Entraînement flexible avec données publiques ou privées.",
-        plan3IdealTitle: "Idéal pour:",
-        plan3Ideal: "Grandes entreprises nécessitant scalabilité et mises à jour continues.",
-    
-        plan4h: "IA Center (Hub IA personnalisé)",
-        plan4p: "IA Center est une plateforme centralisée permettant création, gestion et distribution d'IA personnalisées. Sert de hub de gestion où entreprises et développeurs peuvent entraîner modèles, offrir services IA ou intégrer aux systèmes. Avantages: environnement unifié pour entraînement, déploiement, monitoring IA. Permet services IA à tiers comme OpenAI. Contrôle total sur modèles, données et performance. Compatible local et cloud.",
-        plan4IdealTitle: "Idéal pour:",
-        plan4Ideal: "Entreprises offrant services IA à tiers.",
-    
-        plan5h: "IA Commerciale Entraînement Ouvert",
-        plan5p: "IA Commerciale Entraînement Ouvert est une IA configurable permettant aux entreprises de créer et offrir leurs propres IA entraînées. Combine outils d'entraînement, personnalisation et déploiement pour commercialiser modèles sous différentes marques. Avantages: création produits/services basés IA. Système ouvert/configurable pour secteurs variés (éducation, santé, ventes). Facilite création startups IA. Support entraînement local ou online selon infrastructure.",
-        plan5IdealTitle: "Idéal pour:",
-        plan5Ideal: "Entreprises cherchant à monétiser solutions IA.",
-    
-        /* Contacto */
-        contactH: "Besoin d'aide ou plus d'informations ?",
-        contactLead: "Notre Chat-AI est disponible pour répondre à vos questions et vous guider pour obtenir votre IA entraînée ou nous contacter.",
-		contactLead2: "IA disponible à partir de 10.000 USD",
-        contactBtn: ">>>",
-    
-        /* FAQ */
-        faqTitle: "Questions fréquentes (FAQ)",
-        faqQ1: "L'IA fonctionne-t-elle sans internet ?",
-        faqA1: "Oui. Nous proposons des options pour environnements à connectivité limitée et aussi IA avec connexion internet sans serveur propre.",
-        faqQ2: "Comment protégez-vous les données sensibles ?",
-        faqA2: "Nous chiffrons les données en transit et au repos, proposons on-premise et contrôle d'accès granulaire, garantissant que votre sécurité est notre priorité.",
-        faqQ3: "Peut-on intégrer l'IA à un processus propre ?",
-        faqA3: "Oui. Nous intégrons IA à des processus et systèmes via APIs et requêtes POST pour automatiser les flux d'entreprise.",
-    
-        footerText: "© 2025 IA Colombie · Politique de confidentialité · Conditions"
-      },
-
-		ar: {
-			/* Header / Brand */
-		    imgAlt: "تدريب نماذج الذكاء الاصطناعي في كولومبيا للشركات",
-		    brandTitle: "الذكاء الاصطناعي كولومبيا",
-		    brandSubtitle: "تدريب ونشر أنظمة الذكاء الاصطناعي — متصل وغير متصل",
-		    nav1: "الفوائد",
-		    nav2: "أمثلة",
-		    nav3: "الخطط",
-		    nav4: "تواصل",
-		    btnContact: "اتصل بنا",
-		    btnDemo: "اطلب عرضًا تجريبيًا",
-		
-		    /* Hero */
-		    kicker: "حلول ذكاء اصطناعي مصمَّمة حسب احتياجك",
-		    h1: "نطوّر وندرّب نماذج ذكاء اصطناعي مخصصة تعمل متصلًا وغير متصل",
-		    lead: "تقدّم IA Colombia نماذج مدرّبة خصيصًا باستخدام بيانات شركتك لأتمتة المبيعات والدعم والعمليات الحرجة.",
-		    ctaDemo: "اطلب عرضًا تجريبيًا",
-		    ctaDocs: "عرض الوثائق التقنية",
-		
-		    /* Cards principales */
-		    h2: "مزايا استخدام أنظمة الذكاء الاصطناعي",
-		    card1h: "1. إجابات عالية الصلة",
-		    card1p: "نماذج مدرّبة على بيانات حقيقية تقلل الغموض وتحسن الأداء.",
-		    card2h: "2. خصوصية كاملة",
-		    card2p: "خيارات تشفير للبيانات الحساسة والامتثال التنظيمي.",
-		    card3h: "3. تشغيل دون اتصال",
-		    card3p: "نشر محلي للبيئات بدون إنترنت — مناسب للشركات والجهات الحكومية.",
-		    card4h: "4. تشغيل عبر الإنترنت",
-		    card4p: "تخصيص عمليات الذكاء الاصطناعي للتطبيقات والمواقع والبرمجيات.",
-		    card5h: "5. تقليل التكاليف التشغيلية",
-		    card5p: "لا الحاجة لاشتراكات شهرية — شراء واحد ينتهي بذكاء اصطناعي خاص بك.",
-		    card6h: "6. نظام إعادة تدريب تلقائي",
-		    card6p: "نظام تجاري يعيد تدريب نفسه تلقائيًا، مناسب لسلاسل الإنتاج.",
-		    card7h: "7. تطوير محلي من IA Colombia",
-		    card7p: "دعم مباشر وتركيب وتنفيذ في الموقع أو عبر مكالمة فيديو.",
-		
-		    visualAlt: "صورة — IA Colombia",
-		
-		    /* Ejemplos largos */
-		    ejemplosTitle: "أنواع الذكاء الاصطناعي وكيفية جني الأرباح",
-		    example7: "<strong>7. روبوتات ويب:</strong>&nbsp;مساعد مبيعات ودعم على المواقع يقدّم معلومات وأسعار ومنتجات على مدار الساعة.",
-		    example2: "<strong>2. دعم فني بالذكاء الاصطناعي:</strong>&nbsp;مساعدة فنية للمصانع تعمل دون اتصال بالإنترنت، تتعلم من الأعطال السابقة وتقدّم إرشادات خطوة بخطوة.",
-		    example3: "<strong>3. نظام IA Center:</strong> أنشئ شركتك المدفوعة بالذكاء الاصطناعي — نظام شبيه بـ <strong>ChatGPT</strong> مستضاف ضمن خوادمك وتحمله علامتك التجارية.",
-		    example4: "<strong>4. LexIA:</strong> ذكاء اصطناعي قانوني مخصّص للمكاتب والمحامين، قابل لإعادة التدريب على القوانين والأحكام المحلية.",
-		    example5: "<strong>5. Omnia IA:</strong> ذكاء مفتوح وقابل لإعادة التعلم يدمج بيانات شركتك لإنشاء نموذج مخصص يتطور تلقائيًا.",
-		    example6: "<strong>6. Post AI:</strong> تحليل ذكي عن طريق طلبات POST — أرسل بيانات عبر API واحصل على تحليلات وتصنيفات فورية.",
-		    example1: "<strong>1. الذكاء الاصطناعي المدرّب:</strong> حل مخصّص لتدريب نموذج يفهم لغة عملك ويطوّر نفسه مع الوقت.",
-		
-		    potencialTitle: "إمكانات موسّعة",
-		    potencialP1: "الذكاء الاصطناعي المدرب ببيانات شركتك يمكن أن يحوّل عملياتك: يقلل فقدان العملاء، يسرع المبيعات ويحسّن الامتثال.",
-		    potencialP2: "يمكن نشره على خوادمك الخاصة (on-premise) للعمل دون اتصال مع الحفاظ على التحكم بالبيانات.",
-		
-		    /* Capacidades técnicas */
-		    capacidadesTitle: "القدرات التقنية",
-		    cap1: "نوصّل ذكاءك الصناعي عبر APIs وwebhooks في الوقت الحقيقي.",
-		    cap2: "تركيب على خوادمك، في السحابة أو على الأجهزة الطرفية حسب الحاجة.",
-		    cap3: "تحسين وكمّ النماذج لأداء أعلى على GPU وCPU.",
-		    cap4: "إعادة تدريب تلقائية للحفاظ على المعرفة محدثة.",
-		    cap5: "تشفير كامل وتحكم وصول دقيق ودعم للامتثال.",
-		
-		    /* Planes */
-		    planesTitle: "الخطط والنشر",
-		    plan1h: "دردشة ذكية للمواقع",
-		    plan1p: "دردشة ذكية مدمجة في المواقع للتفاعل مع الزوار في الوقت الحقيقي، مدرّبة على بيانات النشاط التجاري.",
-		    plan1IdealTitle: "مثالي لـ:",
-		    plan1Ideal: "مواقع الويب",
-		
-		    plan2h: "ذكاء اصطناعي دون اتصال (تدريب مسبق)",
-		    plan2p: "حل يعمل بالكامل دون اتصال، مناسب للبيئات التي تتطلب سرية عالية.",
-		    plan2IdealTitle: "مثالي لـ:",
-		    plan2Ideal: "المصانع والبيئات الحكومية",
-		
-		    plan3h: "ذكاء اصطناعي عبر السحابة",
-		    plan3p: "نموذج سحابي يتعلم ويرد في الوقت الحقيقي، قابل للتوسيع والتكامل.",
-		    plan3IdealTitle: "مثالي لـ:",
-		    plan3Ideal: "الشركات الكبيرة",
-		
-		    plan4h: "IA Center",
-		    plan4p: "منصة مركزية لإنشاء وإدارة وتوزيع نماذج ذكية مخصصة.",
-		    plan4IdealTitle: "مثالي لـ:",
-		    plan4Ideal: "الشركات المزودة لخدمات الذكاء الاصطناعي",
-		
-		    plan5h: "تدريب تجاري مفتوح",
-		    plan5p: "نظام قابل للتكوين لإنشاء وبيع نماذج مدرّبة حسب الحاجة.",
-		    plan5IdealTitle: "مثالي لـ:",
-		    plan5Ideal: "الشركات الباحثة عن تحقيق دخل من حلول الذكاء الاصطناعي",
-		
-		    /* Contacto */
-		    contactH: "هل تحتاج مساعدة أو مزيد من المعلومات؟",
-		    contactLead: "دردشة الذكاء الاصطناعي لدينا جاهزة للإجابة عن أسئلتك ومساعدتك في الحصول على نموذج مدرّب أو التواصل معنا.",
-		    contactLead2: "أنظمة الذكاء الاصطناعي متاحة ابتداءً من 10,000 دولار أمريكي",
-		    contactBtn: ">>>",
-		
-		    /* FAQ */
-		    faqTitle: "الأسئلة المتكررة (FAQ)",
-		    faqQ1: "هل يعمل الذكاء الاصطناعي دون اتصال بالإنترنت؟",
-		    faqA1: "نعم. نوفر خيارات نشر دون اتصال/on-premise للبيئات ذات الاتصال المحدود.",
-		    faqQ2: "كيف تحمون البيانات الحساسة؟",
-		    faqA2: "نشفّر البيانات ونوفّر سياسات وصول ومراقبة للامتثال.",
-		    faqQ3: "هل يمكن دمج الذكاء الاصطناعي في العمليات الخاصة بي؟",
-		    faqA3: "نعم. ندمج الأنظمة عبر APIs وطلبات POST لأتمتة تدفق العمل.",
-		
-		    footerText: "© 2025 الذكاء الاصطناعي كولومبيا · سياسة الخصوصية · الشروط"
-		  },
-		
-		  pl: {
-		    /* Header / Brand */
-		    imgAlt: "Szkolenie modeli sztucznej inteligencji w Kolumbii dla firm",
-		    brandTitle: "AI Kolumbia",
-		    brandSubtitle: "Szkolenie i wdrażanie AI — online i offline",
-		    nav1: "Korzyści",
-		    nav2: "Przykłady",
-		    nav3: "Plany",
-		    nav4: "Kontakt",
-		    btnContact: "Skontaktuj się",
-		    btnDemo: "Zamów demo",
-		
-		    /* Hero */
-		    kicker: "Rozwiązania AI dopasowane do Ciebie",
-		    h1: "Tworzymy i trenujemy spersonalizowane modele AI działające online i offline",
-		    lead: "AI Kolumbia oferuje modele dostrojone do Twoich danych handlowych i technicznych, do automatyzacji sprzedaży, obsługi i procesów krytycznych.",
-		    ctaDemo: "Zamów demo",
-		    ctaDocs: "Zobacz dokumentację techniczną",
-		
-		    /* Cards principales */
-		    h2: "Zalety stosowania systemów AI",
-		    card1h: "1. Hiper-relewantne odpowiedzi",
-		    card1p: "Modele trenowane na rzeczywistych danych zmniejszają niejednoznaczność i poprawiają wyniki.",
-		    card2h: "2. Pełna prywatność",
-		    card2p: "Szyfrowane opcje dla danych wrażliwych i zgodność z regulacjami.",
-		    card3h: "3. Działanie offline",
-		    card3p: "Lokalne wdrożenie dla środowisk bez internetu — idealne dla przemysłu i instytucji.",
-		    card4h: "4. Działanie online",
-		    card4p: "Personalizacja procesów AI dla aplikacji, stron i systemów.",
-		    card5h: "5. Oszczędności operacyjne",
-		    card5p: "Brak comiesięcznych opłat — jednorazowy zakup daje własny, wytrenowany model AI.",
-		    card6h: "6. Automatyczny system retreningu",
-		    card6p: "System komercyjny z automatycznym retreningiem, idealny dla linii produkcyjnych.",
-		    card7h: "7. Lokalny rozwój przez AI Kolumbia",
-		    card7p: "Bezpośrednie wsparcie, instalacja i wdrożenie na miejscu lub przez wideokonferencję.",
-		
-		    visualAlt: "Wizualizacja — AI Kolumbia",
-		
-		    /* Ejemplos largos */
-		    ejemplosTitle: "Rodzaje AI i jak na nich zarabiać",
-		    example7: "<strong>7. AI dla stron WWW:</strong>&nbsp;Asystent sprzedaży i obsługi na stronie, który przekazuje informacje, ceny i dostępność produktów 24/7.",
-		    example2: "<strong>2. AI wsparcie techniczne:</strong>&nbsp;Inteligentne wsparcie dla zakładów produkcyjnych działające bez internetu, uczące się na podstawie rzeczywistych awarii i rozwiązań.",
-		    example3: "<strong>3. SYSTEM IA Center:</strong> Stwórz własną firmę opartą na AI — wdroż system podobny do <strong>ChatGPT</strong> na swoich serwerach i pod swoją marką.",
-		    example4: "<strong>4. LexIA:</strong> AI specjalizująca się w prawie i orzecznictwie, zaprojektowana dla kancelarii i działów prawnych.",
-		    example5: "<strong>5. Omnia IA:</strong> Otwarte i samoucące się AI, które można trenować na danych specyficznych dla firmy, tworząc unikalny model wiedzy.",
-		    example6: "<strong>6. Post AI:</strong> Analityka na żądanie przez POST — wysyłasz dane przez API, otrzymujesz analizy i predykcje.",
-		    example1: "<strong>1. Wytrenowane AI:</strong> Spersonalizowane rozwiązanie trenowane na dokumentach i danych firmy, które rozumie język Twojego biznesu.",
-		
-		    potencialTitle: "Rozszerzony potencjał",
-		    potencialP1: "Wytrenowane AI na danych firmy może zrewolucjonizować operacje: zmniejsza churn, przyspiesza sprzedaż i poprawia zgodność.",
-		    potencialP2: "Możliwość instalacji on-premise, działanie offline i pełna kontrola nad danymi.",
-		
-		    /* Capacidades técnicas */
-		    capacidadesTitle: "Możliwości techniczne",
-		    cap1: "Integracja przez standardowe API i webhooks w czasie rzeczywistym.",
-		    cap2: "Instalacja na serwerach klienta, w chmurze lub na edge devices.",
-		    cap3: "Optymalizacja i kwantyzacja dla lepszej wydajności na GPU/CPU.",
-		    cap4: "Automatyczny retrening, który utrzymuje model aktualnym.",
-		    cap5: "Pełne szyfrowanie, kontrola dostępu i wsparcie zgodności.",
-		
-		    /* Planes */
-		    planesTitle: "Plany i wdrożenie",
-		    plan1h: "Chat-AI dla stron",
-		    plan1p: "Chat-AI zintegrowany ze stroną, trenowany na danych firmy, poprawia konwersję i obsługę klienta.",
-		    plan1IdealTitle: "Idealne dla:",
-		    plan1Ideal: "Strony internetowe",
-		
-		    plan2h: "AI offline dla firm",
-		    plan2p: "Prywatne rozwiązanie działające bez internetu, trenowane lokalnie dla maksymalnej prywatności.",
-		    plan2IdealTitle: "Idealne dla:",
-		    plan2Ideal: "Środowiska przemysłowe i rządowe",
-		
-		    plan3h: "AI w chmurze",
-		    plan3p: "Model w chmurze, uczący się i odpowiadający w czasie rzeczywistym, skalowalny i integracyjny.",
-		    plan3IdealTitle: "Idealne dla:",
-		    plan3Ideal: "Duże przedsiębiorstwa",
-		
-		    plan4h: "IA Center",
-		    plan4p: "Platforma do tworzenia, zarządzania i dystrybucji spersonalizowanych modeli AI.",
-		    plan4IdealTitle: "Idealne dla:",
-		    plan4Ideal: "Firm oferujących usługi AI",
-		
-		    plan5h: "Handlowe szkolenie AI",
-		    plan5p: "Konfigurowalny system do tworzenia i komercjalizacji wytrenowanych modeli AI.",
-		    plan5IdealTitle: "Idealne dla:",
-		    plan5Ideal: "Firm chcących monetyzować rozwiązania AI",
-		
-		    /* Contacto */
-		    contactH: "Potrzebujesz pomocy lub więcej informacji?",
-		    contactLead: "Nasz czat AI jest dostępny, by odpowiedzieć na pytania i pomóc w uzyskaniu własnej wytrenowanej AI.",
-		    contactLead2: "AI dostępna od 10 000 USD",
-		    contactBtn: ">>>",
-		
-		    /* FAQ */
-		    faqTitle: "Najczęściej zadawane pytania (FAQ)",
-		    faqQ1: "Czy AI działa bez internetu?",
-		    faqA1: "Tak — oferujemy rozwiązania on-premise i offline dla środowisk o ograniczonym połączeniu.",
-		    faqQ2: "Jak chronione są dane wrażliwe?",
-		    faqA2: "Szyfrujemy dane, zapewniamy kontrolę dostępu i wsparcie zgodności.",
-		    faqQ3: "Czy można zintegrować AI z moimi procesami?",
-		    faqA3: "Tak — integrujemy przez API i żądania POST, automatyzując przepływy pracy.",
-		
-		    footerText: "© 2025 AI Kolumbia · Polityka prywatności · Warunki"
-		  },
-		zh: {
-    /* Header / Brand */
-    imgAlt: "为企业在哥伦比亚提供人工智能模型训练",
-    brandTitle: "IA Colombia",
-    brandSubtitle: "人工智能的训练与部署 — 在线与离线",
-    nav1: "优势",
-    nav2: "示例",
-    nav3: "方案",
-    nav4: "联系",
-    btnContact: "联系",
-    btnDemo: "申请演示",
-
-    /* Hero */
-    kicker: "为你定制的人工智能解决方案",
-    h1: "我们开发并训练可在线与离线运行的定制人工智能模型",
-    lead: "IA Colombia 使用您的商业和技术数据训练高精度模型，用以自动化销售、客服和企业关键流程。",
-    ctaDemo: "申请演示",
-    ctaDocs: "查看技术文档",
-
-    /* Cards principales */
-    h2: "使用人工智能系统的优势",
-    card1h: "1. 高度相关的回答",
-    card1p: "基于真实且特定数据库训练的模型可减少歧义并提升性能。",
-    card2h: "2. 完全隐私保护",
-    card2p: "对敏感数据提供加密选项并符合合规要求。",
-    card3h: "3. 离线运行",
-    card3p: "适用于无网络环境的本地部署，特别适合企业和政府场景。",
-    card4h: "4. 在线运行",
-    card4p: "为应用、网站、软件、企业和政府机构定制的人工智能流程。",
-    card5h: "5. 离线运营节省成本",
-    card5p: "无需订阅；一次性购买即可获得基于企业数据训练的专属人工智能。",
-    card6h: "6. 自动再训练系统",
-    card6p: "具备自动再训练功能的商业系统，适合生产线模型数据持续输入。",
-    card7h: "7. 本地化开发由 IA Colombia 提供",
-    card7p: "提供现场或远程安装、实施与技术支持。",
-
-    visualAlt: "视觉 — IA Colombia",
-
-    /* Ejemplos largos */
-    ejemplosTitle: "人工智能类型以及如何从中获利",
-    example7: "<strong>7. 网站AI：</strong>&nbsp;为网站提供的销售与客户助手，可展示产品信息、价格并提供 24/7 支持，提升转化率。",
-    example2: "<strong>2. 技术支持AI：</strong>&nbsp;为无网络的生产车间提供智能维护与维修支持。<br>该系统可学习历史故障与解决方案，当新的操作员遇到已发生的问题时，AI 可以回忆并提供逐步操作指导，确保即便人员更替也能维持生产连续性。",
-    example3: "<strong>3. IA Center 系统：</strong>构建您自己的人工智能公司。使用 IA Center，您可以部署类似 <strong>ChatGPT</strong> 的系统，托管在自有服务器并以您的品牌对外提供服务。<br><br>您将得到一个个性化门户，用于提供对话服务、自动化或智能支持，<strong>可通过订阅或付费计划产生收入</strong>。此方案使您对数据、基础设施与模型个性化拥有完全控制，从而构建具有自主品牌的技术业务。",
-    example4: "<strong>4. LexIA：</strong>专注法律与判例的人工智能，面向律所与法律团队。<br><br>与其他系统不同，<strong>LexIA 可不断使用新法规、判决与内部案例进行再训练</strong>，从而在具体法律场景中提供高价值建议。",
-    example5: "<strong>5. Omnia IA 系统：</strong>开放且自学习的通用人工智能。<br><br>OmniaIA 可从任何行业或环境中学习，允许用企业的专有数据训练出不断进化的定制模型。其能力包括：<br><br>• 自动学习操作流程与手册；<br>• 实时提供跨领域的智能支持；<br>• 根据组织语言与资料构建独特知识模型；<br>• 与内部系统集成以自动更新知识库。<br><br>借助 OmniaIA，您可以将支持、培训与自动化转型为具有商业价值的产品。",
-    example6: "<strong>6. Post AI：</strong>按请求提供分析的人工智能。<br><br>PostAI 可处理通过 POST 发送的数据，返回分析、分类、预测或诊断，便于任何系统集成并实现自动化决策。适用于财务分析、风险管理、工业诊断与文档分类等场景。",
-    example1: "<strong>1. 训练型人工智能：</strong>为您的需求量身打造的智能。<br><br>训练型人工智能允许企业使用自身文档、案例与数据训练专属模型，适用于法律、医疗、制造、教育、销售或客户支持等领域。模型可持续学习并保持知识更新，从而长期提高准确性与相关性。",
-
-    potencialTitle: "扩展潜力",
-    potencialP1: "使用企业专属数据训练的人工智能可彻底改变业务：减少客户流失、加速销售并提升合规性。",
-    potencialP2: "同时可部署在本地服务器（on-premise），离线运行并保持对敏感数据的完全控制。",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "技术能力",
-    cap1: "通过标准 API 与实时 webhook 将人工智能无缝集成。",
-    cap2: "支持本地（on-premise）、云端或边缘设备部署，按需选择。",
-    cap3: "针对 GPU 与 CPU 优化与量化，提升模型性能与效率。",
-    cap4: "自动再训练机制可保持模型知识的新鲜度。",
-    cap5: "端到端加密、细粒度访问控制与合规支持。",
-
-    /* Planes */
-    planesTitle: "方案与部署",
-    plan1h: "网站聊天人工智能",
-    plan1p: "网站聊天 AI 是一种直接嵌入网站的人工智能，能够实时与访问者互动。该系统使用企业定制数据训练，提供自动化支持、客户服务与智能协助。优势：24/7 响应提升转化；减少人工工时；风格与品牌一致的体验；并在需要时联络人工客服。",
-    plan1IdealTitle: "适用场景：",
-    plan1Ideal: "网站。",
-
-    plan2h: "企业离线人工智能（预先训练）",
-    plan2p: "离线 AI 是一种在没有互联网连接的环境中运行的私有人工智能，适用于需要高度安全与隐私的企业。通过本地训练实现对敏感数据的保护。优势：无需外部服务器、数据留存企业内部、支持内部文档查询与分析。适用于工业或政府等高安全场景。",
-    plan2IdealTitle: "适用场景：",
-    plan2Ideal: "需要高安全性的工业或政府环境。",
-
-    plan3h: "企业在线人工智能（云端）",
-    plan3p: "在线企业 AI 是部署在云端的模型，实时学习并响应企业数据。支持远程访问、适用于客户支持、销售分析与流程自动化。优势：持续更新、可与 CRM/ERP 集成、可扩展以处理大量并发请求。",
-    plan3IdealTitle: "适用场景：",
-    plan3Ideal: "需要可扩展性与持续更新的大型企业。",
-
-    plan4h: "IA Center（个性化 AI 中心）",
-    plan4p: "IA Center 是一个集中平台，用于创建、管理与分发个性化 AI。为企业与开发者提供训练、部署与监控功能，允许对外提供 AI 服务并完全控制模型与数据。",
-    plan4IdealTitle: "适用场景：",
-    plan4Ideal: "想为第三方提供 AI 服务的企业。",
-
-    plan5h: "商用开放训练 AI",
-    plan5p: "商用开放训练 AI 是一种可配置的人工智能，允许企业创建并销售自有训练模型。结合训练、定制与部署工具，适用于教育、医疗、销售等多个行业，支持本地或在线训练。",
-    plan5IdealTitle: "适用场景：",
-    plan5Ideal: "有意将 AI 产品化并获利的企业。",
-
-    /* Contacto */
-    contactH: "需要帮助或更多信息吗？",
-    contactLead: "我们的聊天式人工智能随时为您解答问题，并指导您获取专属训练的 AI 或联系我们。",
-    contactLead2: "人工智能服务起价 10,000 美元",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "常见问题（FAQ）",
-    faqQ1: "人工智能可以离线运行吗？",
-    faqA1: "可以。我们提供适用于网络受限环境的部署选项，也提供无需自建服务器的在线方案。",
-    faqQ2: "如何保护敏感数据？",
-    faqA2: "我们对传输与静态数据实行加密，提供本地部署和细粒度访问控制，确保数据安全。",
-    faqQ3: "可以将 AI 集成到已有流程中吗？",
-    faqA3: "可以。我们通过 API 与 POST 请求将 AI 集成到现有流程和系统中，实现自动化。",
-
-    footerText: "© 2025 IA Colombia · 隐私政策 · 条款"
-  },
-
-  hi: {
-    /* Header / Brand */
-    imgAlt: "कोलंबिया में कंपनियों के लिए कृत्रिम बुद्धिमत्ता मॉडल प्रशिक्षण",
-    brandTitle: "IA Colombia",
-    brandSubtitle: "कृत्रिम बुद्धिमत्ता का प्रशिक्षण और तैनाती — ऑनलाइन और ऑफलाइन",
-    nav1: "लाभ",
-    nav2: "उदाहरण",
-    nav3: "योजनाएँ",
-    nav4: "संपर्क",
-    btnContact: "संपर्क करें",
-    btnDemo: "डेमो का अनुरोध करें",
-
-    /* Hero */
-    kicker: "आपके लिए अनुकूलित AI समाधान",
-    h1: "हम ऐसे कस्टम AI मॉडल विकसित और प्रशिक्षित करते हैं जो ऑनलाइन और ऑफलाइन दोनों में काम करते हैं",
-    lead: "IA Colombia आपके व्यावसायिक और तकनीकी डेटा से उच्च-प्रदर्शन मॉडल तैयार करता है, जिससे बिक्री, ग्राहक सेवा और महत्वपूर्ण प्रक्रियाओं का स्वचालन संभव होता है।",
-    ctaDemo: "डेमो अनुरोध करें",
-    ctaDocs: "तकनीकी दस्तावेज़ देखें",
-
-    /* Cards principales */
-    h2: "AI सिस्टम उपयोग करने के लाभ",
-    card1h: "1. अत्यधिक प्रासंगिक उत्तर",
-    card1p: "वास्तविक और विशिष्ट डेटाबेस पर प्रशिक्षित मॉडल अस्पष्टता को कम कर प्रदर्शन बढ़ाते हैं।",
-    card2h: "2. पूर्ण गोपनीयता",
-    card2p: "संवेदनशील डेटा के लिए एन्क्रिप्टेड विकल्प और अनुपालन समर्थन।",
-    card3h: "3. ऑफलाइन संचालन",
-    card3p: "बिना इंटरनेट के स्थानीय तैनाती के लिए उपयुक्त, खासकर औद्योगिक और सरकारी परिदृश्यों के लिए।",
-    card4h: "4. ऑनलाइन संचालन",
-    card4p: "ऐप, वेबसाइट, सॉफ़्टवेयर, कंपनियों और सरकारी संस्थानों के लिए AI प्रक्रियाओं का अनुकूलन।",
-    card5h: "5. ऑफलाइन परिचालन लागत में बचत",
-    card5p: "सब्सक्रिप्शन की आवश्यकता नहीं; एक बार खरीदें और अपने डेटा से प्रशिक्षित समर्पित AI प्राप्त करें।",
-    card6h: "6. स्वचालित पुनःप्रशिक्षण प्रणाली",
-    card6p: "उत्पादन लाइन में मॉडल फीड के लिए उपयुक्त स्वचालित पुनःप्रशिक्षण व्यावसायिक प्रणाली।",
-    card7h: "7. IA Colombia द्वारा स्थानीय विकास",
-    card7p: "स्थानीय या वीडियो कॉल के माध्यम से सीधे समर्थन, इंस्टॉलेशन और तैनाती।",
-
-    visualAlt: "विजुअल — IA Colombia",
-
-    /* Ejemplos largos */
-    ejemplosTitle: "AI के प्रकार और इससे पैसे कैसे कमाएँ",
-    example7: "<strong>7. वेबसाइट AI:</strong>&nbsp;वेबसाइट के लिए एक बिक्री और ग्राहक सहायता सहायक, जो उत्पाद जानकारी और कीमतें दिखा सकता है और 24/7 सहायता प्रदान कर सकता है।",
-    example2: "<strong>2. तकनीकी समर्थन AI:</strong>&nbsp;ऑफलाइन उत्पादन संयंत्रों के लिए बुद्धिमान मरम्मत और रखरखाव सहायता।<br>यह AI पहले की समस्याओं और उनके समाधानों से सीखती है, जिससे नए ऑपरेटरों को चरण-दर-चरण मार्गदर्शन मिल सके।",
-    example3: "<strong>3. IA Center सिस्टम:</strong>अपनी AI-आधारित कंपनी शुरू करें। IA Center के साथ आप अपने सर्वरों पर होस्ट किए गए ChatGPT जैसे सिस्टम तैनात कर सकते हैं और अपनी ब्रांड के अंतर्गत सेवाएँ प्रदान कर सकते हैं।<br><br>यह आपको एक कस्टम पोर्टल देता है जिससे आप संवाद सेवाएँ, ऑटोमेशन या बुद्धिमान सहायता प्रदान कर सकते हैं और <strong>सब्सक्रिप्शन या पहुंच योजनाओं के माध्यम से आय उत्पन्न कर सकते हैं</strong>।",
-    example4: "<strong>4. LexIA:</strong>कानून और न्यायशास्त्र के लिए विशेषज्ञ AI, वकीलों और कानूनी टीमों के लिए डिज़ाइन किया गया।<br><br>अन्य प्रणालियों के विपरीत, <strong>LexIA को नई विधियों, फैसलों और आंतरिक मामलों के साथ लगातार फिर से प्रशिक्षित किया जा सकता है</strong>।",
-    example5: "<strong>5. Omnia IA सिस्टम:</strong>खुला और स्व-प्रशिक्षण करने वाला सार्वभौमिक AI।<br><br>OmniaIA किसी भी उद्योग या वातावरण से सीख सकता है, और आपकी कंपनी के विशिष्ट डेटा से प्रशिक्षित होकर स्वतः विकसित होता है। यह प्रक्रियाओं, प्रशिक्षण और स्वचालन को रूपान्तरित कर सकता है।",
-    example6: "<strong>6. Post AI:</strong>रिक्वेस्ट पर विश्लेषणात्मक AI।<br><br>PostAI POST के माध्यम से भेजे गए डेटा का विश्लेषण कर सकता है और API के जरिए संरचित परिणाम लौटाता है—वहां से आप रिपोर्टिंग, क्लासिफिकेशन या निर्णय समर्थन पाइपलाइन बना सकते हैं।",
-    example1: "<strong>1. प्रशिक्षित AI:</strong>आपकी आवश्यकताओं के अनुसार अनुकूलित बुद्धिमत्ता।<br><br>प्रशिक्षित AI कंपनियों को अपने दस्तावेज़ों, मामलों और डेटा के साथ विशेष मॉडल बनाने की सुविधा देता है—कानून, चिकित्सा, निर्माण, शिक्षा, बिक्री और समर्थन जैसे क्षेत्रों के लिए। ये मॉडल सतत रूप से सीखते रहते हैं और समय के साथ सटीकता में सुधार करते हैं।",
-
-    potencialTitle: "विस्तारित क्षमता",
-    potencialP1: "कंपनी के अपने डेटा से प्रशिक्षित AI आपकी ऑपरेशन पूरी तरह बदल सकता है: ग्राहक खोने को कम, बिक्री तेज और अनुपालन बेहतर कर सकता है।",
-    potencialP2: "इसे आपके अपने सर्वरों पर (on-premise) इंस्टॉल किया जा सकता है, ऑफलाइन काम कर सकता है और संवेदनशील डेटा पर पूर्ण नियंत्रण बनाए रखता है।",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "तकनीकी क्षमताएँ",
-    cap1: "हम मानक API और वास्तविक-समय webhook के माध्यम से AI को निर्बाध रूप से जोड़ते हैं।",
-    cap2: "आवश्यकतानुसार ऑन-प्रेमाइस, क्लाउड या एज़-डिवाइस पर तैनाती।",
-    cap3: "GPU और CPU पर प्रदर्शन के लिए अनुकूलन और क्वांटाइज़ेशन।",
-    cap4: "ऑटोमैटिक पुनःप्रशिक्षण मॉडल ज्ञान को अद्यतित रखता है।",
-    cap5: "पूर्ण एन्क्रिप्शन, सूक्ष्म-लेवल एक्सेस कंट्रोल और अनुपालन समर्थन।",
-
-    /* Planes */
-    planesTitle: "योजनाएँ और तैनाती",
-    plan1h: "वेबसाइट के लिए चैट-AI",
-    plan1p: "वेबसाइट चैट-AI एक ऐसी प्रणाली है जो सीधे आपकी साइट में बही जाती है और आगंतुकों के साथ रीयल-टाइम में संवाद करती है। यह आपके व्यापार के डेटा से प्रशिक्षित होती है और स्वचालित समर्थन, ग्राहक सेवा और बुद्धिमान सहायता प्रदान करती है। लाभ: 24/7 समर्थन से रूपांतरण बढ़ेगा; मानवीय कार्यभार घटेगा; ब्रांड टोन से मेल खाती अनुभव।",
-    plan1IdealTitle: "उपयुक्त:",
-    plan1Ideal: "वेबसाइट।",
-
-    plan2h: "कंपनी के लिए ऑफलाइन AI (पूर्व-प्रशिक्षित)",
-    plan2p: "ऑफलाइन AI एक निजी प्रणाली है जो बिना इंटरनेट के भी काम करती है, जो उन कंपनियों के लिए है जिनको उच्च सुरक्षा की ज़रूरत है। यह स्थानीय रूप से प्रशिक्षित होती है और संवेदनशील डेटा को सुरक्षित रखती है।",
-    plan2IdealTitle: "उपयुक्त:",
-    plan2Ideal: "उच्च-सुरक्षा औद्योगिक या सरकारी वातावरण।",
-
-    plan3h: "क्लाउड-आधारित एंटरप्राइज़ AI",
-    plan3p: "ऑनलाइन एंटरप्राइज़ AI क्लाउड पर होस्ट किया जाता है और वास्तविक-समय में सीखकर प्रतिक्रिया देता है। यह CRM, ERP और अन्य प्लेटफ़ॉर्म के साथ एकीकृत हो सकता है और बड़े पैमाने पर उपयोग के लिए स्केल किया जा सकता है।",
-    plan3IdealTitle: "उपयुक्त:",
-    plan3Ideal: "वृहद् कंपनियाँ जिन्हें स्केलेबिलिटी और लगातार अपडेट चाहिए।",
-
-    plan4h: "IA Center (कस्टम AI सेंट्रल)",
-    plan4p: "IA Center एक केंद्रित प्लेटफ़ॉर्म है जो मॉडल निर्माण, प्रबंधन और वितरण की अनुमति देता है—आप चैनल के रूप में AI सेवाएँ प्रदान कर सकते हैं और पूर्ण नियंत्रण रख सकते हैं।",
-    plan4IdealTitle: "उपयुक्त:",
-    plan4Ideal: "वे कंपनियाँ जो तीसरे पक्ष को AI सेवाएँ देना चाहती हैं।",
-
-    plan5h: "व्यावसायिक ओपन-ट्रेन AI",
-    plan5p: "यह समाधान कंपनियों को उनके अपने प्रशिक्षित AI को कॉन्फ़िगर और व्यावसायिक रूप से बेचने का अवसर देता है—शिक्षा, स्वास्थ्य, बिक्री जैसे उद्योगों के लिए उपयुक्त।",
-    plan5IdealTitle: "उपयुक्त:",
-    plan5Ideal: "AI उत्पाद बनाकर मुद्रीकरण करना चाहने वाली कंपनियाँ।",
-
-    /* Contacto */
-    contactH: "क्या आपको सहायता या अधिक जानकारी चाहिए?",
-    contactLead: "हमारी चैट-AI आपकी पूछताछ का उत्तर देने और आपके लिए कस्टम-प्रशिक्षित AI उपलब्ध कराने में मदद के लिए तैयार है।",
-    contactLead2: "कृत्रिम बुद्धिमत्ता 10,000 USD से उपलब्ध",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "अक्सर पूछे जाने वाले प्रश्न (FAQ)",
-    faqQ1: "क्या AI इंटरनेट के बिना काम करती है?",
-    faqA1: "हाँ। हम नेटवर्क-सीमित वातावरण के लिए तैनाती विकल्प प्रदान करते हैं और साथ ही ऑनलाइन विकल्प भी उपलब्ध हैं जो बाहरी सर्वर की आवश्यकता नहीं रखते।",
-    faqQ2: "संवेदनशील डेटा की सुरक्षा कैसे की जाती है?",
-    faqA2: "हम ट्रांज़िट और एट-रेस्ट में एन्क्रिप्शन करते हैं, ऑन-प्रेमाइस विकल्प और सूक्ष्म-लेवल एक्सेस कंट्रोल प्रदान करते हैं।",
-    faqQ3: "क्या AI को मौजूदा प्रक्रियाओं में जोड़ा जा सकता है?",
-    faqA3: "हाँ। हम API और POST अनुरोधों के माध्यम से AI को मौजूदा प्रणालियों में एकीकृत करते हैं और प्रक्रियाओं का स्वचालन करते हैं।",
-
-    footerText: "© 2025 IA Colombia · गोपनीयता नीति · शर्तें"
-  },
-
-		br: {
-    /* Header / Brand */
-    imgAlt: "Treinamento de modelos de IA na Colômbia para empresas",
-    brandTitle: "IA Colômbia",
-    brandSubtitle: "Treinamento e implantação de Inteligência Artificial — Online & Offline",
-    nav1: "Benefícios",
-    nav2: "Exemplos",
-    nav3: "Planos",
-    nav4: "Contato",
-    btnContact: "Contatar",
-    btnDemo: "Solicitar demo",
-
-    /* Hero */
-    kicker: "Soluções de IA sob medida",
-    h1: "Desenvolvemos e treinamos modelos de IA personalizados que funcionam online e offline",
-    lead: "A IA Colômbia oferece modelos ajustados com suas informações comerciais e técnicas para automatizar vendas, atendimento e processos críticos da sua empresa.",
-    ctaDemo: "Solicitar Demo",
-    ctaDocs: "Ver documentação técnica",
-
-    /* Cards principales */
-    h2: "Vantagens de usar sistemas de IA",
-    card1h: "1. Respostas hiper-relevantes",
-    card1p: "Modelos treinados com bases de dados reais e específicas reduzem ambiguidades e melhoram o desempenho.",
-    card2h: "2. Privacidade total",
-    card2p: "Opções criptografadas para dados sensíveis e conformidade regulamentar.",
-    card3h: "3. Operação offline",
-    card3p: "Implantação local para ambientes sem internet, ideal para empresas e órgãos governamentais.",
-    card4h: "4. Operação online",
-    card4p: "Personalização de processos de IA para apps, sites, software, empresas e entidades públicas.",
-    card5h: "5. Economia operacional offline",
-    card5p: "Sem mensalidades — uma compra única fornece uma IA própria treinada com os dados da sua empresa.",
-    card6h: "6. Sistema de Re-Treinamento automático",
-    card6p: "Sistema comercial com auto-treinamento, ideal para alimentar modelos em linhas de produção.",
-    card7h: "7. Desenvolvimento local pela IA Colômbia",
-    card7p: "Atendimento direto, instalação e implementação no local ou por videoconferência com técnicos especializados.",
-
-    visualAlt: "Visual — IA Colômbia",
-
-    /* Ejemplos largos (adaptados) */
-    ejemplosTitle: "Tipos de IA e como monetizá-las",
-    example7: "<strong>7. IA para sites:</strong>&nbsp;Um assistente de vendas e atendimento para sites pode fornecer informações, preços e detalhes dos seus produtos, permitindo atendimento 24/7.",
-    example2: "<strong>2. IA de Suporte Técnico:</strong>&nbsp;Assistência técnica inteligente para plantas de produção sem conexão à internet.<br>Projetada para apoiar equipes na reparação e manutenção de equipamentos industriais, mesmo em ambientes sem rede.<br><br>Sua maior vantagem é aprender com problemas reais da planta e as soluções aplicadas anteriormente. Assim, quando um novo operador enfrentar uma falha já ocorrida, a IA pode lembrar como foi resolvida, oferecer instruções passo a passo e guiar todo o processo, garantindo continuidade operacional mesmo com rotatividade de pessoal.",
-    example3: "<strong>3. SISTEMA IA Center:</strong> Crie sua própria empresa impulsionada por Inteligência Artificial. Com o IA Center você pode implantar um sistema tipo <strong>ChatGPT</strong> em seus servidores e sob sua marca. <br><br>Terá um portal personalizado para oferecer serviços de conversação, automação ou assistência inteligente a empresas e usuários, <strong>podendo gerar receita via assinaturas ou planos de acesso</strong>. <br><br>Essa solução dá controle total sobre dados, infraestrutura e personalização da sua IA, permitindo construir um negócio tecnológico com identidade própria.",
-    example4: "<strong>4. LexIA:</strong> Uma IA especializada em direito, legislação e jurisprudência para escritórios de advocacia e departamentos jurídicos. <br><br>Diferente de outros sistemas, <strong>LexIA pode ser re-treinada continuamente</strong> com novas leis, decretos e sentenças fornecidas pelo escritório, aprendendo com documentos e estratégias jurídicas usadas pelos advogados.",
-    example5: "<strong>5. SISTEMA Omnia IA:</strong> Inteligência Aberta e Auto-Treinável<br><br>OmniaIA é uma IA universal projetada para <strong>aprender de qualquer setor, indústria ou conhecimento humano</strong>. Sua arquitetura aberta permite treiná-la com informações específicas da sua empresa, produtos ou serviços, gerando uma <strong>IA personalizada que evolui automaticamente</strong> a cada interação.<br><br>Com treinamento automático e adaptável, OmniaIA pode:<br><br> • Aprender procedimentos técnicos, manuais ou administrativos sem intervenção humana.<br><br> • Fornecer suporte inteligente em tempo real em diversos campos (educação, indústria, saúde, vendas, etc.).<br><br> • Criar modelos de conhecimento únicos conforme a informação e linguagem da sua organização.<br><br> • Integrar-se com sistemas internos ou externos para atualizar automaticamente sua base de conhecimento.<br><br>OmniaIA transforma suporte, treinamento e automação com uma IA que aprende, ensina e evolui sozinha, permitindo criar IAs treinadas para comercializar a empresas.",
-    example6: "<strong>6. Post AI:</strong> Inteligência Analítica sob Demanda<br><br>PostAI processa e analisa informações enviadas via requisições POST, integrando análises avançadas em qualquer sistema, aplicação ou ambiente empresarial.<br><br>Através de uma API simples, desenvolvedores enviam dados estruturados ou não estruturados, e o PostAI retorna respostas inteligentes, análises, classificações, previsões ou diagnósticos em tempo real.<br><br>Ideal para automatizar decisões, classificação ou suporte, PostAI pode:<br><br>• Analisar texto, números, imagens ou registros enviados via POST.<br><br>• Responder com resultados precisos e otimizados para o sistema do cliente.<br><br>• Adaptar-se a contextos de negócio como suporte técnico, análise financeira, gestão de risco, diagnóstico industrial ou classificação documental.<br><br>• Treinar-se com exemplos próprios para melhorar continuamente a precisão.<br><br>PostAI transforma cada requisição em oportunidade de aprendizado e análise inteligente, sem necessidade de interfaces complexas.",
-    example1: "<strong>1. IA Treinada:</strong> Inteligência adaptada à sua necessidade.<br><br>IA Treinada é uma solução personalizada que permite empresas e profissionais criarem sua própria IA especializada, treinada com as informações e conhecimentos da organização.<br><br>Com essa opção, você define o setor onde a IA deve se destacar — direito, medicina, manufatura, educação, vendas, suporte técnico, etc. — e fornece documentos, casos e dados que tornarão a IA especialista no tema.<br><br>IA Treinada não é estática: aprende continuamente, incorporando novos dados e atualizações do cliente para manter o conhecimento sempre atual e preciso.<br><br>Resumindo, IA Treinada permite ter uma IA única, que entende seu negócio, fala sua linguagem e evolui junto com ele.",
-
-    potencialTitle: "Potencial ampliado",
-    potencialP1: "Uma IA treinada com os dados da sua empresa pode transformar operações: reduzir evasão de clientes, acelerar vendas e melhorar conformidade.",
-    potencialP2: "Também pode ser instalada em seus servidores (on-premise), funcionando offline e mantendo controle total sobre dados sensíveis.",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "Capacidades técnicas",
-    cap1: "Conectamos sua IA via APIs padrão e webhooks em tempo real para integração sem atritos.",
-    cap2: "Instalação em seus servidores (on-premise), na nuvem ou em dispositivos edge conforme necessidade.",
-    cap3: "Otimização e quantização para performance em GPU e CPU, alcançando modelos leves e eficientes.",
-    cap4: "Re-treinamento automático que mantém o conhecimento do modelo atualizado.",
-    cap5: "Criptografia completa, controle de acesso granular e suporte para conformidade regulatória.",
-
-    /* Planes */
-    planesTitle: "Planos e implantação",
-    plan1h: "Chat-IA para sites",
-    plan1p: "Chat-IA para Sites é uma IA integrada diretamente ao site, capaz de interagir com visitantes em tempo real. É treinada com informações do negócio, produtos e serviços para oferecer suporte automático, atendimento ao cliente e assistência inteligente. Benefícios: aumenta conversões, atende 24/7 e reduz carga humana ao responder dúvidas recorrentes. Adapta-se ao tom do site e permite contato com a empresa quando necessário.",
-    plan1IdealTitle: "Ideal para:",
-    plan1Ideal: "Sites.",
-
-    plan2h: "IA offline para empresas (treinamento prévio)",
-    plan2p: "IA Offline é uma IA privada que funciona totalmente sem internet, projetada para empresas que exigem alta segurança e confidencialidade. É treinada localmente com dados corporativos. Benefícios: não depende de servidores externos, garante confidencialidade e permite consultas e análises internas. Ideal para ambientes industriais ou governamentais que exigem segurança.",
-    plan2IdealTitle: "Ideal para:",
-    plan2Ideal: "Ambientes industriais ou governamentais que exigem alta segurança.",
-
-    plan3h: "IA online para empresas (nuvem)",
-    plan3p: "IA Online é um modelo hospedado na nuvem que aprende e responde em tempo real usando dados do negócio. Permite acesso remoto e integração com CRM, ERPs e plataformas corporativas. Benefícios: atualização contínua, escalabilidade e treinamento flexível.",
-    plan3IdealTitle: "Ideal para:",
-    plan3Ideal: "Grandes empresas que necessitam escalabilidade e atualização contínua.",
-
-    plan4h: "IA Center (Centro de IA personalizado)",
-    plan4p: "IA Center é uma plataforma para criar, administrar e distribuir IAs personalizadas. Permite treinar modelos, oferecer serviços e integrá-los a sistemas. Benefícios: ambiente unificado para treinamento, implantação e monitoramento, controle total sobre dados e desempenho.",
-    plan4IdealTitle: "Ideal para:",
-    plan4Ideal: "Empresas que desejam oferecer serviços de IA a terceiros.",
-
-    plan5h: "IA Comercial Treinamento Aberto",
-    plan5p: "IA Comercial de Treinamento Aberto é uma solução configurável para empresas criarem e comercializarem suas IAs. Oferece ferramentas de treinamento, personalização e implantação para diferentes setores. Benefícios: possibilita produtos baseados em IA, é configurável e suporta treinamento local ou na nuvem.",
-    plan5IdealTitle: "Ideal para:",
-    plan5Ideal: "Empresas interessadas em monetizar soluções de IA.",
-
-    /* Contacto */
-    contactH: "Precisa de ajuda ou mais informações?",
-    contactLead: "Nosso Chat-IA está disponível para responder suas perguntas e ajudar a obter sua IA personalizada.",
-    contactLead2: "IA disponível a partir de 10.000 USD",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "Perguntas frequentes",
-    faqQ1: "A IA funciona sem internet?",
-    faqA1: "Sim. Oferecemos opções de implantação para ambientes com conectividade limitada e também IA online que não requer servidores próprios.",
-    faqQ2: "Como protegem dados sensíveis?",
-    faqA2: "Criptografamos dados em trânsito e em repouso, oferecemos opções on-premise e controle de acesso granular.",
-    faqQ3: "Podem integrar IA em processos próprios?",
-    faqA3: "Sim. Integramos IA com processos e sistemas via APIs e requisições POST para automatizar fluxos empresariais.",
-
-    footerText: "© 2025 IA Colômbia · Política de privacidade · Termos"
-  },
-
-  pt: {
-    /* Header / Brand */
-    imgAlt: "Formação de modelos de Inteligência Artificial na Colômbia para empresas",
-    brandTitle: "IA Colômbia",
-    brandSubtitle: "Formação e implementação de Inteligência Artificial — Online & Offline",
-    nav1: "Vantagens",
-    nav2: "Exemplos",
-    nav3: "Planos",
-    nav4: "Contacto",
-    btnContact: "Contactar",
-    btnDemo: "Solicitar demonstração",
-
-    /* Hero */
-    kicker: "Soluções de IA à medida",
-    h1: "Desenvolvemos e treinamos modelos de IA personalizados que funcionam online e offline",
-    lead: "A IA Colômbia oferece modelos ajustados com a informação comercial e técnica da sua empresa para automatizar vendas, atendimento e processos críticos.",
-    ctaDemo: "Solicitar Demonstração",
-    ctaDocs: "Ver documentação técnica",
-
-    /* Cards principales */
-    h2: "Vantagens de usar sistemas de IA",
-    card1h: "1. Respostas altamente relevantes",
-    card1p: "Modelos treinados com dados reais e específicos reduzem ambiguidade e aumentam a eficiência.",
-    card2h: "2. Privacidade total",
-    card2p: "Opções encriptadas para dados sensíveis e conformidade regulatória.",
-    card3h: "3. Funcionamento offline",
-    card3p: "Implementação local para ambientes sem internet, ideal para empresas e entidades públicas.",
-    card4h: "4. Funcionamento online",
-    card4p: "Personalização de processos de IA para aplicações, websites, software e organizações.",
-    card5h: "5. Poupança operacional offline",
-    card5p: "Sem subscrições mensais — uma compra única fornece uma IA própria treinada com os dados da sua empresa.",
-    card6h: "6. Sistema de Re-Treinamento automático",
-    card6p: "Sistema comercial com autoaprendizagem, ideal para alimentar modelos em linhas de produção.",
-    card7h: "7. Desenvolvimento local pela IA Colômbia",
-    card7p: "Apoio direto, instalação e implementação no local ou por videoconferência com técnicos especializados.",
-
-    visualAlt: "Visual — IA Colômbia",
-
-    /* Ejemplos largos (adaptados) */
-    ejemplosTitle: "Tipos de IA e como rentabilizá-las",
-    example7: "<strong>7. IA para websites:</strong>&nbsp;Um assistente de vendas e atendimento para páginas web pode ajudar a fornecer informação, preços e detalhes de produtos, permitindo atendimento 24/7.",
-    example2: "<strong>2. IA de Suporte Técnico:</strong>&nbsp;Assistência técnica inteligente para unidades de produção sem ligação à internet.<br>Concebida para apoiar técnicos na reparação e manutenção de equipamentos industriais, mesmo em ambientes sem rede.<br><br>A principal vantagem é que aprende com os problemas reais que ocorreram na fábrica e com as soluções aplicadas. Assim, quando um novo operador enfrenta uma falha já ocorrida, a IA pode lembrar a solução, oferecer instruções passo a passo e guiar o processo, garantindo continuidade operacional mesmo com rotatividade de pessoal.",
-    example3: "<strong>3. SISTEMA IA Center:</strong> Crie a sua própria empresa impulsionada por Inteligência Artificial. Com o IA Center pode implantar um sistema tipo <strong>ChatGPT</strong> nos seus servidores e sob a sua marca. <br><br>Terá um portal personalizado para oferecer serviços de conversação, automação ou assistência inteligente a empresas e utilizadores finais, <strong>podendo gerar receitas através de assinaturas ou planos de acesso</strong>. <br><br>Esta solução oferece controlo total sobre dados, infraestrutura e personalização da sua IA, permitindo construir um negócio tecnológico com identidade própria.",
-    example4: "<strong>4. LexIA:</strong> Uma IA especializada em direito, legislação e jurisprudência, concebida para escritórios de advogados e departamentos jurídicos. <br><br>Diferentemente de outros sistemas, <strong>LexIA pode ser re-treinada continuamente</strong> com novas leis, decretos e acórdãos fornecidos pelo escritório, aprendendo com documentos e estratégias jurídicas dos advogados.",
-    example5: "<strong>5. SISTEMA Omnia IA:</strong> Inteligência Aberta e Auto-Treinável<br><br>OmniaIA é uma IA universal projetada para <strong>aprender de qualquer contexto, indústria ou conhecimento humano</strong>. A sua arquitetura aberta permite treiná-la com informação específica da sua empresa, produtos ou serviços, criando uma <strong>IA personalizada que evolui automaticamente</strong> a cada interação.<br><br>Com treino automático e adaptável, OmniaIA pode:<br><br> • Aprender procedimentos técnicos, manuais ou administrativos sem intervenção humana.<br><br> • Fornecer suporte inteligente em tempo real em áreas como educação, indústria, saúde, vendas, etc.<br><br> • Criar modelos de conhecimento únicos conforme a informação e linguagem da organização.<br><br> • Integrar-se com sistemas internos ou externos para atualizar automaticamente a sua base de conhecimento.<br><br>OmniaIA transforma suporte, formação e automação com uma IA que aprende, ensina e evolui autónomamente, permitindo criar IAs treinadas para venda a empresas.",
-    example6: "<strong>6. Post AI:</strong> Inteligência Analítica por Pedido<br><br>PostAI processa e analisa informação enviada por requisições POST, integrando análises avançadas em qualquer sistema ou aplicação empresarial.<br><br>Através de uma API simples, os desenvolvedores enviam dados estruturados ou não estruturados, e o PostAI devolve respostas inteligentes, análises, classificações, previsões ou diagnósticos em tempo real.<br><br>Ideal para automatizar decisões, classificação ou suporte, PostAI pode:<br><br>• Analisar texto, números, imagens ou registos enviados por POST.<br><br>• Responder com resultados precisos e otimizados para o sistema cliente.<br><br>• Adaptar-se a contextos de negócio: suporte técnico, análise financeira, gestão de risco, diagnóstico industrial ou classificação documental.<br><br>• Treinar-se com exemplos próprios para melhorar continuamente a precisão.<br><br>PostAI transforma cada requisição numa oportunidade de aprendizagem e análise inteligente, sem necessidade de interfaces complexas.",
-    example1: "<strong>1. IA Treinada:</strong> Inteligência adaptada à sua necessidade.<br><br>IA Treinada é uma solução personalizada que permite a empresas e profissionais criar a sua própria IA especializada, treinada com a informação e conhecimentos da organização.<br><br>Com esta opção, pode definir o setor onde a IA deve destacar-se — direito, medicina, fabrico, educação, vendas, suporte técnico, etc. — e fornecer documentos, casos e dados que tornarão a IA especialista no tema.<br><br>IA Treinada não fica estática: aprende continuamente, incorporando novos dados e atualizações do cliente para manter o conhecimento sempre atual e preciso.<br><br>Em suma, IA Treinada permite ter uma IA única, que entende o seu negócio, fala a sua linguagem e evolui com ele.",
-
-    potencialTitle: "Potencial ampliado",
-    potencialP1: "Uma IA treinada com a informação da sua empresa pode transformar operações: reduzir perda de clientes, acelerar vendas e melhorar conformidade.",
-    potencialP2: "Pode também ser instalada nos seus servidores (on-premise), funcionando offline e mantendo controlo total sobre dados sensíveis.",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "Capacidades técnicas",
-    cap1: "Conectamos a sua IA via APIs padrão e webhooks em tempo real para integração sem atritos.",
-    cap2: "Instalação em servidores próprios (on-premise), na nuvem ou em dispositivos edge conforme necessidade.",
-    cap3: "Otimização e quantização para desempenho em GPU e CPU, obtendo modelos leves e eficientes.",
-    cap4: "Re-treinamento automático que mantém o conhecimento do modelo atualizado.",
-    cap5: "Criptografia completa, controlo de acesso granular e suporte à conformidade regulamentar.",
-
-    /* Planos */
-    planesTitle: "Planos e implementação",
-    plan1h: "Chat-IA para websites",
-    plan1p: "Chat-IA para Websites é uma IA integrada diretamente em sites, capaz de interagir em tempo real com visitantes. Treinada com informação do negócio, produtos e serviços, permite suporte automático, atendimento ao cliente e assistência inteligente. Benefícios: aumenta conversões, atende 24/7 e reduz carga humana ao automatizar respostas frequentes. Adapta-se ao tom e permite contacto com a empresa quando necessário.",
-    plan1IdealTitle: "Ideal para:",
-    plan1Ideal: "Websites.",
-
-    plan2h: "IA offline para empresas (treino prévio)",
-    plan2p: "IA Offline é uma IA privada que funciona sem ligação à internet, pensada para empresas que exigem confidencialidade e segurança. Treinada localmente com dados corporativos. Benefícios: não depende de servidores externos, garante confidencialidade e permite análises e consultas internas. Ideal para ambientes industriais ou governamentais que exigem segurança elevada.",
-    plan2IdealTitle: "Ideal para:",
-    plan2Ideal: "Ambientes industriais ou governamentais com alta exigência de segurança.",
-
-    plan3h: "IA online para empresas (cloud)",
-    plan3p: "IA Online é um modelo hospedado na nuvem que aprende e responde em tempo real usando dados do negócio. Permite integração com CRM, ERP e plataformas corporativas, sendo escalável e com treino flexível.",
-    plan3IdealTitle: "Ideal para:",
-    plan3Ideal: "Grandes empresas que necessitam de escalabilidade e atualizações contínuas.",
-
-    plan4h: "IA Center (Centro de IA personalizado)",
-    plan4p: "IA Center é uma plataforma para criar, gerir e distribuir IAs personalizadas. Permite treinar modelos, oferecer serviços e integrar com sistemas. Benefícios: ambiente unificado para treino, implementação e monitoramento, com controle total sobre dados e desempenho.",
-    plan4IdealTitle: "Ideal para:",
-    plan4Ideal: "Empresas que procuram oferecer serviços de IA a clientes e parceiros.",
-
-    plan5h: "IA Comercial de Treino Aberto",
-    plan5p: "IA Comercial de Treino Aberto é uma solução configurável para empresas criarem e comercializarem IAs. Oferece ferramentas de treino, personalização e implementação para vários setores. Benefícios: possibilita criar produtos baseados em IA e suporta treino local ou cloud.",
-    plan5IdealTitle: "Ideal para:",
-    plan5Ideal: "Empresas interessadas em monetizar soluções de IA.",
-
-    /* Contacto */
-    contactH: "Precisa de ajuda ou mais informações?",
-    contactLead: "O nosso Chat-IA está disponível para responder às suas perguntas e ajudá-lo a obter a sua IA personalizada.",
-    contactLead2: "IA disponível a partir de 10.000 USD",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "Perguntas Frequentes",
-    faqQ1: "A IA funciona sem internet?",
-    faqA1: "Sim. Oferecemos opções para operação offline e online sem necessidade de servidores próprios.",
-    faqQ2: "Como são protegidos os dados sensíveis?",
-    faqA2: "Com encriptação em trânsito e em repouso, opções on-premise e controle de acesso rigoroso.",
-    faqQ3: "Podem integrar IA em processos próprios?",
-    faqA3: "Sim. Integramos IA com APIs e sistemas internos via POST para automatizar fluxos empresariais.",
-
-    footerText: "© 2025 IA Colômbia · Política de privacidade · Termos"
-  },
-
-		/* 🇰🇷 Coreano (ko) */
-  ko: {
-    /* Header / Brand */
-    imgAlt: "콜롬비아 기업을 위한 인공지능(AI) 모델 훈련",
-    brandTitle: "AI 콜롬비아",
-    brandSubtitle: "AI 교육 및 배포 — 온라인 & 오프라인",
-    nav1: "장점",
-    nav2: "예시",
-    nav3: "요금제",
-    nav4: "문의",
-    btnContact: "문의하기",
-    btnDemo: "데모 요청",
-
-    /* Hero */
-    kicker: "맞춤형 AI 솔루션",
-    h1: "온라인과 오프라인에서 작동하는 맞춤형 인공지능 모델을 개발·훈련합니다",
-    lead: "AI 콜롬비아는 귀사의 상업적·기술적 데이터를 기반으로 세밀하게 조정된 모델을 제공합니다. 영업, 고객응대 및 핵심 프로세스 자동화를 지원합니다.",
-    ctaDemo: "데모 요청",
-    ctaDocs: "기술 문서 보기",
-
-    /* Cards principales */
-    h2: "AI 시스템 사용의 장점",
-    card1h: "1. 고도로 관련성 있는 응답",
-    card1p: "실제 데이터로 훈련된 모델은 모호성을 줄이고 성능을 향상시킵니다.",
-    card2h: "2. 완전한 개인정보 보호",
-    card2p: "민감한 데이터를 위한 암호화 옵션과 규제 준수 지원.",
-    card3h: "3. 오프라인 동작",
-    card3p: "인터넷이 없는 환경에서도 로컬로 배포 가능—기업 및 공공기관에 적합.",
-    card4h: "4. 온라인 동작",
-    card4p: "앱, 웹, 소프트웨어 및 기업 시스템에 맞춘 AI 프로세스 제공.",
-    card5h: "5. 오프라인 운영 비용 절감",
-    card5p: "월 구독 불필요 — 단일 구입으로 자체 훈련된 AI 확보.",
-    card6h: "6. 자동 재훈련 시스템",
-    card6p: "생산 라인에 적합한 자동 학습 상용 시스템.",
-    card7h: "7. 현지 개발 및 지원",
-    card7p: "현장 또는 원격으로 직접 설치·지원하는 전문 기술팀 제공.",
-
-    visualAlt: "비주얼 — AI 콜롬비아",
-
-    /* Ejemplos largos */
-    ejemplosTitle: "AI 유형과 수익 창출 방법",
-    example7: `<strong>7. 웹용 AI:</strong> 웹사이트용 영업 및 고객지원 어시스턴트는 제품 정보, 가격, FAQ를 24/7 제공하여 전환율을 높입니다.`,
-    example2: `<strong>2. 기술지원 AI:</strong> 오프라인 환경의 생산설비를 위한 지능형 지원. 과거 사례를 학습하여 단계별 가이드를 제공하고 운영 연속성을 보장합니다.`,
-    example3: `<strong>3. IA Center 시스템:</strong> 자체 호스팅 가능한 <strong>ChatGPT</strong>-유형 서비스 구축. 맞춤 포털을 통해 대화형 서비스·자동화·유료 플랜 제공 가능.`,
-    example4: `<strong>4. LexIA:</strong> 법률·판례 전문 AI. 법령·판결·내부 사례로 재학습하여 정확한 법률 자문을 지원합니다.`,
-    example5: `<strong>5. Omnia AI:</strong> 개방형·자기학습 AI로 어떤 산업 데이터도 학습하여 지속적으로 진화합니다.`,
-    example6: `<strong>6. Post AI:</strong> POST 기반 분석 AI. 개발자가 API로 데이터를 보내면 실시간으로 분석·분류·예측을 반환합니다.`,
-    example1: `<strong>1. 트레이닝된 AI:</strong> 기업 맞춤형 데이터로 특화된 능력을 갖춘 AI를 제공합니다 (의료, 법률, 교육, 판매 등).`,
-
-    potencialTitle: "확장 가능성",
-    potencialP1: "기업 고유의 데이터로 훈련된 AI는 고객 이탈 감소, 판매 가속화, 규정 준수 개선 등 운영을 혁신합니다.",
-    potencialP2: "온-프레미스 설치로 인터넷 없이도 작동하며 민감한 데이터 컨트롤을 유지할 수 있습니다.",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "기술적 역량",
-    cap1: "표준 API와 웹훅으로 실시간 통합을 지원합니다.",
-    cap2: "온-프레미스, 클라우드 또는 엣지 디바이스에 설치 가능합니다.",
-    cap3: "GPU/CPU 성능을 위한 최적화 및 양자화 지원.",
-    cap4: "지속적 재훈련으로 모델 지식 유지.",
-    cap5: "완전한 암호화, 세분화된 접근 제어 및 규정 준수 지원.",
-
-    /* Planes */
-    planesTitle: "플랜 및 배포",
-    plan1h: "웹용 채팅 AI",
-    plan1p: "웹용 채팅 AI는 방문자와 실시간 상호작용하며 24/7 지원으로 전환율을 향상시킵니다.",
-    plan1IdealTitle: "권장 대상:",
-    plan1Ideal: "웹사이트 운영자",
-
-    plan2h: "오프라인 기업용 AI (사전 훈련)",
-    plan2p: "오프라인 환경에서 민감 데이터를 로컬로 처리하고 분석할 수 있는 솔루션입니다.",
-    plan2IdealTitle: "권장 대상:",
-    plan2Ideal: "보안이 중요한 산업/정부 기관",
-
-    plan3h: "온라인 기업용 AI (클라우드)",
-    plan3p: "실시간 학습과 확장이 가능한 클라우드 기반 모델로 대규모 요청 처리에 적합합니다.",
-    plan3IdealTitle: "권장 대상:",
-    plan3Ideal: "대기업",
-
-    plan4h: "IA Center (AI 플랫폼)",
-    plan4p: "AI를 생성·관리·배포할 수 있는 중앙 플랫폼으로 비즈니스용 서비스 제공을 지원합니다.",
-    plan4IdealTitle: "권장 대상:",
-    plan4Ideal: "서비스 제공 기업",
-
-    plan5h: "상업용 오픈 트레이닝 AI",
-    plan5p: "브랜드별 AI 제품화를 위한 도구 및 배포 지원을 포함합니다.",
-    plan5IdealTitle: "권장 대상:",
-    plan5Ideal: "AI 기반 제품을 상업화하려는 회사",
-
-    /* Contacto */
-    contactH: "도움이 필요하신가요?",
-    contactLead: "AI 챗봇이 질문에 답변하고 맞춤형 AI 획득을 안내합니다.",
-    contactLead2: "AI는 10,000 USD부터 이용 가능합니다",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "자주 묻는 질문 (FAQ)",
-    faqQ1: "AI는 인터넷 없이 작동하나요?",
-    faqA1: "네. 연결이 제한된 환경에서도 작동하는 옵션을 제공합니다.",
-    faqQ2: "민감한 데이터는 어떻게 보호하나요?",
-    faqA2: "전송 및 저장시 암호화를 적용하고 온-프레미스 옵션을 제공합니다.",
-    faqQ3: "AI를 기존 프로세스에 통합할 수 있나요?",
-    faqA3: "예. 표준 API와 POST 요청으로 통합하여 자동화를 지원합니다.",
-
-    footerText: "© 2025 AI 콜롬비아 · 개인정보 처리방침 · 이용약관"
-  },
-
-  /* 🇯🇵 Japonés (ja) */
-  ja: {
-    /* Header / Brand */
-    imgAlt: "コロンビア企業向けAIモデルのトレーニング",
-    brandTitle: "AIコロンビア",
-    brandSubtitle: "AIのトレーニングと展開 — オンライン & オフライン",
-    nav1: "利点",
-    nav2: "例",
-    nav3: "プラン",
-    nav4: "お問い合わせ",
-    btnContact: "お問い合わせ",
-    btnDemo: "デモを依頼",
-
-    /* Hero */
-    kicker: "あなたのためのAIソリューション",
-    h1: "オンラインとオフラインで動作するカスタムAIモデルを開発・訓練します",
-    lead: "AIコロンビアは、貴社の業務情報に基づいて最適化されたモデルを提供し、販売、カスタマーサポート、重要業務の自動化を可能にします。",
-    ctaDemo: "デモを依頼",
-    ctaDocs: "技術文書を見る",
-
-    /* Cards principales */
-    h2: "AIシステム導入のメリット",
-    card1h: "1. 高精度で関連性の高い応答",
-    card1p: "実データで訓練されたモデルは曖昧さを減らし、性能を向上させます。",
-    card2h: "2. 完全なプライバシー保護",
-    card2p: "機密データの暗号化とコンプライアンス対応を提供します。",
-    card3h: "3. オフライン動作",
-    card3p: "インターネット接続が不要な環境でもローカルで稼働します。企業・官公庁に最適です。",
-    card4h: "4. オンライン動作",
-    card4p: "アプリやウェブ、企業システム向けにAIプロセスをカスタマイズします。",
-    card5h: "5. オフライン運用コスト削減",
-    card5p: "月額不要 — 一度の導入で自社専用AIを利用できます。",
-    card6h: "6. 自動再学習システム",
-    card6p: "生産ライン向けの自律学習型商用システムです。",
-    card7h: "7. AIコロンビアのローカルサポート",
-    card7p: "専門スタッフが現地またはリモートで導入・支援を行います。",
-
-    visualAlt: "ビジュアル — AIコロンビア",
-
-    /* Ejemplos largos */
-    ejemplosTitle: "AIの種類と収益化の方法",
-    example7: `<strong>7. ウェブ向けAI：</strong>ウェブサイトの販売・顧客対応アシスタントとして、商品情報や価格を提供し、24/7で顧客対応を行いCVRを向上させます。`,
-    example2: `<strong>2. テクニカルサポートAI：</strong>オフラインの生産現場向けの支援AI。過去の事象を学習し、手順を示して保守の効率と継続性を高めます。`,
-    example3: `<strong>3. IA Centerシステム：</strong>自社ホスティング可能な<strong>ChatGPT</strong>タイプのサービスを構築。カスタムポータルで会話・自動化・有料プランを提供できます。`,
-    example4: `<strong>4. LexIA：</strong>法律・判例に特化したAI。法令や判決で継続的に再学習し、専門的な法律助言を提供します。`,
-    example5: `<strong>5. Omnia AI：</strong>あらゆる業界知識を学習するオープンで自己学習型のAI。企業固有のデータで進化します。`,
-    example6: `<strong>6. Post AI：</strong>POSTリクエストで動作する分析AI。API経由でデータを送り、リアルタイムで分析・分類・予測を返します。`,
-    example1: `<strong>1. トレーニング済みAI：</strong>企業のデータで特化訓練されたAIを提供し、医療・法務・教育・販売など各分野で活用できます。`,
-
-    potencialTitle: "拡張ポテンシャル",
-    potencialP1: "自社データで訓練されたAIは、顧客離脱の削減、販売の加速、コンプライアンス向上など、業務を大きく変革します。",
-    potencialP2: "オンプレミス導入により、インターネット不要で機密データを完全にコントロールできます。",
-
-    /* Capacidades técnicas */
-    capacidadesTitle: "技術的機能",
-    cap1: "標準APIとWebhookによるリアルタイム統合を提供します。",
-    cap2: "オンプレミス、クラウド、エッジデバイスへインストール可能です。",
-    cap3: "GPU/CPU向けの最適化および量子化をサポートします。",
-    cap4: "自動再学習でモデルの知識を最新化します。",
-    cap5: "フル暗号化、詳細なアクセス制御および規制対応を提供します。",
-
-    /* Planes */
-    planesTitle: "プランと展開",
-    plan1h: "ウェブ向けチャットAI",
-    plan1p: "ウェブに統合され、訪問者とリアルタイムで対話するAI。24/7対応でコンバージョンを改善します。",
-    plan1IdealTitle: "推奨対象：",
-    plan1Ideal: "ウェブサイト運営者",
-
-    plan2h: "オフライン企業向けAI（事前訓練）",
-    plan2p: "ローカルで機密データを処理できるオフラインソリューションです。",
-    plan2IdealTitle: "推奨対象：",
-    plan2Ideal: "セキュリティを重視する企業や官公庁",
-
-    plan3h: "オンライン企業向けAI（クラウド）",
-    plan3p: "スケーラブルなクラウドモデルで大量リクエストに対応し、継続的学習が可能です。",
-    plan3IdealTitle: "推奨対象：",
-    plan3Ideal: "大企業",
-
-    plan4h: "IA Center（AIプラットフォーム）",
-    plan4p: "AIの作成・管理・配布を行う中央プラットフォームで、サードパーティ向けサービスを提供できます。",
-    plan4IdealTitle: "推奨対象：",
-    plan4Ideal: "サービス提供企業",
-
-    plan5h: "商用オープントレーニングAI",
-    plan5p: "ブランド化されたAI製品を作るためのツールとデプロイ支援を提供します。",
-    plan5IdealTitle: "推奨対象：",
-    plan5Ideal: "AI製品の商用化を目指す企業",
-
-    /* Contacto */
-    contactH: "サポートや詳細が必要ですか？",
-    contactLead: "当社のAIチャットがご質問にお答えし、訓練済みAIの導入やお問い合わせをサポートします。",
-    contactLead2: "AIは10,000 USDからご利用いただけます",
-    contactBtn: ">>>",
-
-    /* FAQ */
-    faqTitle: "よくある質問 (FAQ)",
-    faqQ1: "AIはオフラインで動作しますか？",
-    faqA1: "はい。接続の限られた環境でも動作するオプションを提供しています。",
-    faqQ2: "機密データはどのように保護しますか？",
-    faqA2: "転送時・保存時の暗号化、オンプレミス選択肢と細かなアクセス制御を提供します。",
-    faqQ3: "既存プロセスへの統合は可能ですか？",
-    faqA3: "可能です。標準APIやPOSTリクエストで統合し、自動化を支援します。",
-
-    footerText: "© 2025 AIコロンビア · プライバシーポリシー · 利用規約"
-  },
-
-    };
-
-
-    // 1️⃣ Idioma por defecto
-    let lang = 'en'; //se pone en 'fr' para saber si detecta idioma automaticamente
-
-    // 2️⃣ Revisar hash #/en
-    const hashPath = window.location.hash.slice(2) || null; 
-    
-    // 3️⃣ Revisar query param ?lang=
-    const urlParams = new URLSearchParams(window.location.search);
-    const langQuery = urlParams.get('lang') || null;
-    
-    // 4️⃣ Prioridad: query param > hash > variable global > default
-    if (langQuery && idiomasTEXTOS[langQuery]) {
-      lang = langQuery;
-      window.history.replaceState({}, document.title, `/${lang}`);
-		aplicarDireccion(lang);
-    } else if (hashPath && idiomasTEXTOS[hashPath]) {
-      lang = hashPath;
-      window.history.replaceState({}, document.title, `/${lang}`);
-		aplicarDireccion(lang);
-    } else {
-      // 5️⃣ Escuchar variable inyectada por widget
-      const waitIdioma = () => new Promise(resolve => {
-        if (window.idiomaMapsX) return resolve(window.idiomaMapsX);
-        const handler = () => {
-          window.removeEventListener('idiomaMapsXReady', handler); // solo una vez
-          resolve(window.idiomaMapsX);
-        };
-        window.addEventListener('idiomaMapsXReady', handler);
-      });
-  
-      function actualizarTextos(lang) {
-        // Reemplaza todos los elementos con atributo data-t
-        document.querySelectorAll('[data-t]').forEach(el => {
-          const key = el.getAttribute('data-t');
-          if (!key) return;
-          const value = idiomasTEXTOS[lang][key];
-          if (value === undefined) {
-            // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
-            el.innerHTML = '';
-            return;
-          }
-          // Si el elemento es un input/alt/meta se tratan aparte
-          const tag = el.tagName.toLowerCase();
-          if (tag === 'img') {
-            el.setAttribute('alt', value);
-          } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
-            // ya manejadas arriba
-          } else if (tag === 'input' || tag === 'textarea') {
-            el.value = value;
-          } else {
-            el.innerHTML = value;
-          }
-        });
-      }
-  		
-		waitIdioma().then(lang => {
-		  aplicarDireccion(lang);
-		  actualizarTextos(lang);
-		});
-
-    }
-    
-    console.log("Idioma inicial:", lang);
-
-
-
-
-
-
-
-
-
-
-    // Actualizar meta tags y elementos especiales
-    document.getElementById('meta-title').textContent = idiomasTEXTOS[lang].brandTitle + " | " + "Inteligencia Artificial Entrenada para Empresas (Online & Offline)";
-    document.getElementById('meta-description').setAttribute('content', idiomasTEXTOS[lang].lead);
-    document.getElementById('meta-keywords').setAttribute('content', "IA Colombia, inteligencia artificial, IA empresarial, IA offline, IA online, automatización, modelos entrenados");
-
-    // OG / Twitter
-    document.getElementById('og-title').setAttribute('content', idiomasTEXTOS[lang].brandTitle + " — Entrenamiento y Despliegue de IA");
-    document.getElementById('og-description').setAttribute('content', idiomasTEXTOS[lang].lead);
-    document.getElementById('og-image').setAttribute('content', "https://ia-col.com/img/IA-Colombia.webp");
-
-    document.getElementById('tw-title').setAttribute('content', idiomasTEXTOS[lang].brandTitle + " — Entrenamiento y Despliegue de IA");
-    document.getElementById('tw-description').setAttribute('content', idiomasTEXTOS[lang].lead);
-    document.getElementById('tw-image').setAttribute('content', "https://ia-col.com/img/IA-Colombia.webp");
-
-    // Reemplaza todos los elementos con atributo data-t
-    document.querySelectorAll('[data-t]').forEach(el => {
-      const key = el.getAttribute('data-t');
-      if (!key) return;
-      const value = idiomasTEXTOS[lang][key];
-      if (value === undefined) {
-        // si no existe la clave, dejar como texto vacío para evitar mostrar la clave
-        el.innerHTML = '';
-        return;
-      }
-      // Si el elemento es un input/alt/meta se tratan aparte
-      const tag = el.tagName.toLowerCase();
-      if (tag === 'img') {
-        el.setAttribute('alt', value);
-      } else if (tag === 'meta' || el.id === 'meta-description' || el.id === 'meta-keywords') {
-        // ya manejadas arriba
-      } else if (tag === 'input' || tag === 'textarea') {
-        el.value = value;
-      } else {
-        el.innerHTML = value;
-      }
-    });
-
-    // Generar JSON-LD dinámico (Organization + WebSite + FAQ)
-    function insertJSONLD(){
-      const org = {
-        "@context":"https://schema.org",
-        "@type":"Organization",
-        "name": idiomasTEXTOS[lang].brandTitle,
-        "url": "https://ia-col.com/",
-        "logo": "https://ia-col.com/img/IA-Colombia.webp",
-        "description": idiomasTEXTOS[lang].lead,
-        "contactPoint": [{
-          "@type":"ContactPoint",
-          "telephone":"+57-1-000-0000",
-          "contactType":"customer service",
-          "email":"contacto@ia-col.com",
-          "areaServed":"CO"
-        }],
-        "sameAs":["https://www.linkedin.com/company/ia-colombia"]
-      };
-
-      const website = {
-        "@context":"https://schema.org/",
-        "@type":"WebSite",
-        "name": idiomasTEXTOS[lang].brandTitle,
-        "url":"https://ia-col.com/",
-        "potentialAction": {
-          "@type":"SearchAction",
-          "target":"https://ia-col.com/?q={search_term_string}",
-          "query-input":"required name=search_term_string"
+    (() => {
+      const thirdPartyScripts = [
+        { src: 'https://memoriabackend.onrender.com/sdk/memoria.js?s=abc1234567', defer: true },
+        { src: 'https://mapsx.app/chat-ia', async: true, data: { source: 'mapsx' }, requiresOptIn: true }
+      ];
+
+      const isThirdPartyScriptEnabled = ({ requiresOptIn = false } = {}) => {
+        if (!requiresOptIn) return true;
+        try {
+          const params = new URLSearchParams(window.location.search || '');
+          return params.get('chatia') === '1' || document.documentElement.dataset.chatIaEnabled === 'true';
+        } catch {
+          return false;
         }
       };
 
-      const faq = {
-        "@context":"https://schema.org",
-        "@type":"FAQPage",
-        "mainEntity":[
-          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ1,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA1 } },
-          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ2,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA2 } },
-          { "@type":"Question","name":idiomasTEXTOS[lang].faqQ3,"acceptedAnswer":{ "@type":"Answer","text":idiomasTEXTOS[lang].faqA3 } }
-        ]
+      const appendScript = ({ src, async = false, defer = false, data = {}, requiresOptIn = false }) => {
+        if (!src || !isThirdPartyScriptEnabled({ requiresOptIn }) || document.querySelector(`script[src="${src}"]`)) return;
+        const script = document.createElement('script');
+        script.src = src;
+        script.async = Boolean(async);
+        script.defer = Boolean(defer);
+        Object.entries(data).forEach(([key, value]) => {
+          script.dataset[key] = value;
+        });
+        script.addEventListener('error', () => {
+          console.warn(`IA Colombia: recurso externo no disponible sin bloquear la experiencia principal: ${src}`);
+        }, { once: true });
+        document.head.appendChild(script);
       };
 
-      const scriptOrg = document.createElement('script');
-      scriptOrg.type = "application/ld+json";
-      scriptOrg.text = JSON.stringify(org, null, 2);
-      document.head.appendChild(scriptOrg);
+      const loadThirdPartyScripts = () => {
+        const run = () => thirdPartyScripts.forEach(appendScript);
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(run, { timeout: 2200 });
+        } else {
+          window.setTimeout(run, 800);
+        }
+      };
 
-      const scriptWeb = document.createElement('script');
-      scriptWeb.type = "application/ld+json";
-      scriptWeb.text = JSON.stringify(website, null, 2);
-      document.head.appendChild(scriptWeb);
+      const waitForExperienceReady = () => {
+        if (document.documentElement.dataset.appReady === 'true') {
+          loadThirdPartyScripts();
+          return;
+        }
+        window.setTimeout(waitForExperienceReady, 180);
+      };
 
-      const scriptFAQ = document.createElement('script');
-      scriptFAQ.type = "application/ld+json";
-      scriptFAQ.text = JSON.stringify(faq, null, 2);
-      document.head.appendChild(scriptFAQ);
-    }
+      window.setTimeout(() => {
+        if (document.documentElement.dataset.appReady === 'true') return;
+        const loader = document.getElementById('hmPageLoader');
+        if (loader) {
+          loader.dataset.state = 'closing';
+          loader.dataset.readyReason = 'startup-watchdog';
+          window.setTimeout(() => { loader.hidden = true; }, 460);
+        }
+        document.documentElement.dataset.appReady = 'true';
+        document.getElementById('hmExperience')?.setAttribute('aria-busy', 'false');
+        console.warn('IA Colombia: el cargador inicial fue liberado por watchdog para evitar una pantalla congelada.');
+      }, 8000);
 
-    insertJSONLD();
-
-    // Inicializar librerías de animación
-    if (window.AOS) AOS.init({duration:700, easing:'ease-out-cubic', once:true});
-    if (window.gsap) gsap.from('#deviceVisual', {y:10, opacity:0, duration:1, ease:'power3.out'});
-
-    // Funciones de ejemplo
-    function openDemo(){ window.alert('Abrir demo — configura la URL del demo en el script.'); }
-    function openDocs(){ window.alert('Abrir documentación — configura la URL en el script.'); }
-
-    // SEO extras: lazy load images (simple)
-    document.querySelectorAll('img').forEach(img=>{
-      if(!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
-    });
-
-    // Analytics (mantener la carga asíncrona)
-    (function(){
-      const s = document.createElement('script');
-      s.async = true;
-      s.src = "https://www.googletagmanager.com/gtag/js?id=G-KLM5SLY4ZT";
-      document.head.appendChild(s);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-KLM5SLY4ZT');
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', waitForExperienceReady, { once: true });
+      } else {
+        waitForExperienceReady();
+      }
     })();
-
-  	function aplicarDireccion(lang) { //aplica direccion de lectura para idiomas de derecha a izquierda
-	  // Lista de idiomas RTL (de derecha a izquierda)
-	  const rtlIdiomas = ['ar','he','fa','ur','ps','dv','ku','sd','ug','yi','arc','nqo','ks','ae','syr','sam','ckb'];// todos los idiomas que se escriben y leen de derecha a izquierda (RTL)
-
-	  // Si el idioma detectado está en la lista, aplica RTL
-	  if (rtlIdiomas.includes(lang) && idiomasTEXTOS[lang]) {
-	    document.documentElement.setAttribute('dir', 'rtl');
-	  } else {
-	    document.documentElement.setAttribute('dir', 'ltr');
-	  }
-	
-	  // También actualiza el atributo lang del HTML
-	  document.documentElement.setAttribute('lang', lang);
-	}
-
-
-	//onclick="abrirChat()"
-	function abrirChat() {
-		const btn = document.querySelector(".mapsx-float-btn");
-		if (btn) btn.click(); // dispara la apertura del chat
-	}
-
-
   </script>
 </body>
 </html>

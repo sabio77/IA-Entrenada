@@ -1,0 +1,9 @@
+{
+  "asset": "ia-scene-05-omnia-learning.png",
+  "brand": "IA Colombia",
+  "format": "png",
+  "purpose": "Omnia IA autoentrenable",
+  "prompt": "Red de conocimiento abierta que aprende de educación, salud, ventas, industria y soporte; nodos vivos sobre fondo claro, estilo sofisticado y luminoso, paleta azul cian violeta brillante, iluminación high-key, sensación de crecimiento positivo, sin texto.",
+  "negative_prompt": "No incluir texto ilegible, marcas externas, logos de terceros, fotografías reales de personas identificables ni elementos que aparenten ser una imagen ya existente. No generar imágenes oscuras, modo oscuro, fondos negros, fondos nocturnos, baja iluminación, sombras pesadas, estética lúgubre, escenas opacas ni composiciones con poco contraste.",
+  "fallback_behavior": "Si el archivo PNG no existe, la interfaz debe mostrar una figura geométrica responsiva del mismo tamaño y cargar automáticamente la imagen cuando sea agregada a assets."
+}
