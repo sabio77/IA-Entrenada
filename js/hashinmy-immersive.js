@@ -673,6 +673,8 @@
     summary: { file: 'ia-scene-08-roadmap-deploy.png' }
   };
 
+  const SCENE_NAVIGATION_ORDER = ['intro', 'serviceFamily', 'buildType', 'automationType', 'modernization', 'operation', 'value', 'risk', 'finance', 'timeline', 'summary'];
+
   const baseScenes = {
     intro: {
       options: [
@@ -785,6 +787,7 @@
   const elements = {};
   const loadedImages = new Map();
   const resolvedSceneImageUrls = new Map();
+  const pendingSceneImageLoads = new Map();
 
   function $(selector) {
     return document.querySelector(selector);
@@ -4355,11 +4358,66 @@
     state.activeImageUrl = url;
   }
 
+  function preloadSceneImageAsset(asset, forceRefreshKnownMiss = false) {
+    if (!asset?.file) return Promise.resolve(false);
+
+    const baseUrl = buildSceneAssetUrl(asset.file);
+    if (loadedImages.get(baseUrl) === true) return Promise.resolve(true);
+    if (pendingSceneImageLoads.has(baseUrl)) return pendingSceneImageLoads.get(baseUrl);
+
+    const shouldRetryWithFreshUrl = forceRefreshKnownMiss && loadedImages.get(baseUrl) === false;
+    const url = buildSceneAssetUrl(asset.file, shouldRetryWithFreshUrl);
+    const preloadPromise = new Promise((resolve) => {
+      const probe = new Image();
+      probe.decoding = 'async';
+      probe.addEventListener('load', () => {
+        loadedImages.set(baseUrl, true);
+        resolvedSceneImageUrls.set(baseUrl, url);
+        resolve(true);
+      }, { once: true });
+      probe.addEventListener('error', () => {
+        loadedImages.set(baseUrl, false);
+        resolve(false);
+      }, { once: true });
+      probe.src = url;
+    }).finally(() => {
+      pendingSceneImageLoads.delete(baseUrl);
+    });
+
+    pendingSceneImageLoads.set(baseUrl, preloadPromise);
+    return preloadPromise;
+  }
+
+  function getScenePreloadNames(sceneName = state.scene) {
+    const preloadNames = new Set(['intro']);
+    if (baseScenes[sceneName]) preloadNames.add(sceneName);
+
+    const sceneIndex = SCENE_NAVIGATION_ORDER.indexOf(sceneName);
+    if (sceneIndex > 0) preloadNames.add(SCENE_NAVIGATION_ORDER[sceneIndex - 1]);
+    if (sceneIndex >= 0 && sceneIndex < SCENE_NAVIGATION_ORDER.length - 1) preloadNames.add(SCENE_NAVIGATION_ORDER[sceneIndex + 1]);
+
+    getSceneOptions(baseScenes[sceneName] || {}).forEach((choice) => {
+      if (choice?.next && baseScenes[choice.next]) preloadNames.add(choice.next);
+    });
+
+    const previousSnapshot = state.history[state.history.length - 1];
+    const previousScene = typeof previousSnapshot === 'string' ? previousSnapshot : previousSnapshot?.scene;
+    if (previousScene && baseScenes[previousScene]) preloadNames.add(previousScene);
+
+    return Array.from(preloadNames);
+  }
+
+  function preloadNearbySceneImages(sceneName = state.scene) {
+    getScenePreloadNames(sceneName).forEach((name) => {
+      preloadSceneImageAsset(getSceneAsset(name), true).catch((error) => {
+        console.warn(`IA Colombia: no se pudo precargar la imagen de la escena ${name}.`, error);
+      });
+    });
+  }
+
   function updateSceneArt(sceneName) {
     const asset = getSceneAsset(sceneName);
     const baseUrl = buildSceneAssetUrl(asset.file);
-    const shouldRetryWithFreshUrl = loadedImages.get(baseUrl) === false;
-    const url = buildSceneAssetUrl(asset.file, shouldRetryWithFreshUrl);
 
     elements.sceneArtLabel.textContent = asset.label || 'IA Colombia';
     elements.sceneArt.dataset.symbol = asset.symbol || 'H';
@@ -4379,20 +4437,14 @@
       return;
     }
 
-    const probe = new Image();
-    probe.decoding = 'async';
-    probe.addEventListener('load', () => {
-      loadedImages.set(baseUrl, true);
-      resolvedSceneImageUrls.set(baseUrl, url);
-      if (getSceneAsset(state.scene).file === asset.file) {
-        applySceneImage(url);
+    preloadSceneImageAsset(asset, true).then((imageIsReady) => {
+      if (getSceneAsset(state.scene).file !== asset.file) return;
+      if (imageIsReady) {
+        applySceneImage(resolvedSceneImageUrls.get(baseUrl) || baseUrl);
+      } else {
+        clearSceneImageSource();
       }
-    }, { once: true });
-    probe.addEventListener('error', () => {
-      loadedImages.set(baseUrl, false);
-      clearSceneImageSource();
-    }, { once: true });
-    probe.src = url;
+    });
   }
 
   function renderChoiceOrbit(scene) {
@@ -4636,9 +4688,8 @@
   }
 
   function updateProgress(sceneName) {
-    const order = ['intro', 'serviceFamily', 'buildType', 'automationType', 'modernization', 'operation', 'value', 'risk', 'finance', 'timeline', 'summary'];
-    const index = Math.max(0, order.indexOf(sceneName));
-    const percent = Math.round((index / (order.length - 1)) * 100);
+    const index = Math.max(0, SCENE_NAVIGATION_ORDER.indexOf(sceneName));
+    const percent = Math.round((index / (SCENE_NAVIGATION_ORDER.length - 1)) * 100);
     elements.progressFill.style.width = `${percent}%`;
     elements.progressText.textContent = getScene().progress || '';
   }
@@ -4663,6 +4714,7 @@
 
     updateProgress(state.scene);
     updateSceneArt(state.scene);
+    preloadNearbySceneImages(state.scene);
     renderServiceRail();
     renderMetrics(state.scene);
     renderPath();
@@ -5154,6 +5206,16 @@
       logo.decoding = 'async';
       logo.loading = 'eager';
       logo.addEventListener('load', () => {
+        const aspectRatio = logo.naturalHeight > 0 ? logo.naturalWidth / logo.naturalHeight : 1;
+        const syncLogoWidth = () => {
+          if (!Number.isFinite(aspectRatio) || aspectRatio <= 0) return;
+          const markHeight = mark.getBoundingClientRect?.().height || Number.parseFloat(window.getComputedStyle(mark).height) || 40;
+          const visibleLogoHeight = markHeight * 1.4;
+          mark.style.setProperty('--hm-brand-logo-width', `${visibleLogoHeight * aspectRatio}px`);
+        };
+        syncLogoWidth();
+        window.addEventListener('resize', syncLogoWidth, { passive: true });
+        mark.classList.remove('is-logo-fallback');
         mark.classList.add('has-logo-image');
         mark.appendChild(logo);
       }, { once: true });

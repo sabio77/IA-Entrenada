@@ -410,25 +410,37 @@ body[data-transition-direction="back"] .hm-stage.is-changing .hm-transition-blad
 }
 
 .hm-brand {
+  --hm-brand-mark-height: 40px;
+  --hm-brand-logo-width: clamp(38px, 4vw, 48px);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-width: 0;
-  border-radius: 999px;
-  padding: 8px 12px 8px 8px;
-  background: rgba(255,255,255,.46);
-  border: 1px solid rgba(255,255,255,.54);
-  backdrop-filter: blur(18px);
+  min-height: var(--hm-brand-mark-height);
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  overflow: visible;
 }
 .hm-brand__mark {
   display: grid;
   place-items: center;
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
+  flex: 0 0 clamp(38px, 4vw, 48px);
+  width: clamp(38px, 4vw, 48px);
+  height: var(--hm-brand-mark-height);
+  border-radius: 0;
   color: #fff;
   font-weight: 900;
   letter-spacing: -.06em;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+.hm-brand__mark:not(.has-logo-image) {
+  border-radius: 50%;
   background: linear-gradient(135deg, #07152e, #2563eb);
   box-shadow: 0 12px 30px rgba(7,19,31,.22);
 }
@@ -1393,8 +1405,12 @@ body[data-scene="summary"] .hm-scene-art { transform: scale(1.04); }
   
 
 .hm-topbar { left: 10px; right: 10px; top: max(10px, var(--hm-safe-top)); }
-  .hm-brand { padding: 6px; }
-  .hm-brand__mark { width: 31px; height: 31px; }
+  .hm-brand { --hm-brand-mark-height: 34px; min-height: var(--hm-brand-mark-height); padding: 0; }
+  .hm-brand__mark {
+    flex-basis: 34px;
+    width: 34px;
+    height: var(--hm-brand-mark-height);
+  }
   .hm-brand__copy strong { display: none; }
   .hm-finance-now { font-size: .78rem; }
   .hm-showcase { top: 12%; }
@@ -1424,15 +1440,35 @@ body[data-scene="summary"] .hm-scene-art { transform: scale(1.04); }
 }
 
 /* Iteración robusta: logo real opcional, escena de confianza y compatibilidad de build inmersivo. */
-.hm-brand__mark { position: relative; overflow: hidden; }
-.hm-brand__mark > span { position: relative; z-index: 1; }
+.hm-brand__mark {
+  position: relative;
+  overflow: visible;
+}
+.hm-brand__mark.has-logo-image {
+  flex-basis: var(--hm-brand-logo-width);
+  width: var(--hm-brand-logo-width);
+  min-width: var(--hm-brand-logo-width);
+  border-radius: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+.hm-brand__mark > span {
+  position: relative;
+  z-index: 1;
+}
 .hm-brand__mark img {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  top: -20%;
+  left: 50%;
+  width: var(--hm-brand-logo-width);
+  height: 140%;
+  max-width: none;
+  object-fit: contain;
+  transform: translateX(-50%);
   opacity: 0;
+  filter: none;
   transition: opacity .22s var(--hm-ease);
 }
 .hm-brand__mark.has-logo-image img { opacity: 1; }
@@ -6077,4 +6113,89 @@ body[data-scene="intro"] .hm-seo-entry {
 
 body[data-scene="intro"] .hm-intro-logo {
   font-size: clamp(1.65rem, 3.41vw, 3.41rem);
+}
+
+/* Ajuste solicitado: logo hm-brand libre y opciones completas/centradas en escritorio. */
+.hm-brand {
+  gap: clamp(12px, 1.25vw, 18px) !important;
+  overflow: visible !important;
+}
+
+.hm-brand__mark.has-logo-image {
+  flex: 0 0 var(--hm-brand-logo-width) !important;
+  width: var(--hm-brand-logo-width) !important;
+  min-width: var(--hm-brand-logo-width) !important;
+  height: var(--hm-brand-mark-height) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  outline: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.hm-brand__mark.has-logo-image img {
+  top: -20% !important;
+  width: var(--hm-brand-logo-width) !important;
+  height: 140% !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  filter: none !important;
+  pointer-events: none;
+}
+
+.hm-brand__mark.has-logo-image > span {
+  opacity: 0 !important;
+}
+
+.hm-option {
+  box-sizing: border-box;
+  height: auto !important;
+  min-height: clamp(78px, 10.4vh, 116px) !important;
+  align-content: center;
+}
+
+.hm-option strong,
+.hm-option span {
+  display: block !important;
+  max-width: 100%;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  -webkit-line-clamp: unset !important;
+}
+
+html body .hm-options .hm-option span,
+html body .hm-options.is-ready .hm-option span,
+html body .hm-options.is-contour-ready.is-ready .hm-option span,
+html body .hm-options.is-ready .hm-option[data-priority="high"] span,
+html body .hm-options.is-contour-ready.is-ready .hm-option[data-priority="high"] span,
+html body[data-text-density] .hm-options .hm-option span,
+html[data-text-script] body[data-text-density] .hm-options .hm-option span,
+html body[data-scene] .hm-options.is-ready .hm-option span,
+html body[data-scene] .hm-options.is-contour-ready.is-ready .hm-option span,
+html body[data-scene] .hm-options.is-ready .hm-option[data-priority="high"] span,
+html body[data-scene] .hm-options.is-contour-ready.is-ready .hm-option[data-priority="high"] span {
+  display: block !important;
+}
+
+.hm-options {
+  align-content: center;
+}
+
+@media (min-aspect-ratio: 4 / 3) and (min-width: 761px) {
+  body:not([data-scene="intro"]):not([data-scene="summary"]) .hm-card-decision-flow {
+    top: 50% !important;
+    transform: translateY(-50%);
+    align-items: center !important;
+  }
+
+  body:not([data-scene="intro"]):not([data-scene="summary"]) .hm-decision-zone {
+    align-self: center !important;
+  }
+
+  body:not([data-scene="intro"]):not([data-scene="summary"]) .hm-options.is-ready,
+  body:not([data-scene="intro"]):not([data-scene="summary"]) .hm-options.is-contour-ready.is-ready {
+    align-self: center;
+  }
 }
